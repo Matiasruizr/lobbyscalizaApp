@@ -1,0 +1,48 @@
+
+
+<section class="container">
+    <h1>Encuentra información de sujeto activo o pasivo</h1>
+    <form class="form-inline row">
+  
+    
+
+   
+       
+        <label for="inputPassword2" class="sr-only">Password</label>
+        <input type="password" class="form-control col-lg-12" id="inputPassword2" placeholder="Password">
+        <br>
+        <input class="form-control" type="datetime-local col-lg-12" value="2011- 08-19T13:45:00" id="example-datetime-local-input">
+        <br>
+        <input class="form-control" type="datetime-local col-lg-12" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+        <br>
+        <button type="submit" class="btn btn-primary col-lg-6">Buscar</button>
+    
+    </form>
+    
+ 
+    </form>
+    <h2>Resultados de <%= params[:rut] %></h2>
+    <table class="table">
+    <thead>
+        <tr>
+      <th scope="col" class="text-center">Posición de organización</th>
+        <th scope="col">Rut</th>
+        <th scope="col">Nombre proveedor</th>
+        <th scope="col">Cantidad de audiencias</th>
+        <th scope="col">Monto total </th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @busquedalobbysta.each do |t| %>
+            <tr>
+                <th>1</th>
+                <th><%= t[0] %></th>
+                <th><%= t[1] %></th>
+                <th><%= t[2] %></th>
+                <th><%= t[3] %></th> 
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+</section>
+

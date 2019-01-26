@@ -11,11 +11,11 @@
 #
 default: &default
   adapter: mysql2
-  encoding: utf8
+  encoding: utf8 
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: multitudes_user
-  password: UDKbXY@ty2HNR6kv”
-  host: localhost
+  username: multitudes_user@multitudes
+  password: UDKbXY@ty2HNR6kv
+  host: multitudes.mysql.database.azure.com
 
 
 
@@ -24,8 +24,7 @@ default: &default
 
 development:
   <<: *default
-  database: lobbyscalizav2_development
-
+  database: multitudes
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
