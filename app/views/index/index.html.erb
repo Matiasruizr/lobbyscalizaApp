@@ -91,8 +91,8 @@
                 <th>1</th>
                 <th><%= t[0] %></th>
                 <th><%= t[1] %></th>
-                <th><%= t[2] %></th>
-                <th><%= t[3] %></th> 
+                <th><%= t[2] %></th> <!-- Cantidad de audiencias -->
+                <th><%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th> <!-- Monto total -->
             </tr>
         <% end %>
     </tbody>
@@ -101,7 +101,7 @@
 
 
 <section class="container">
-    <h2>TOP 10 COMPRADORES DEL ESTADO</h2>
+    <h2>TOP 10 COMPRADORES DEL ESTADO </h2>
     <table class="table">
     <thead>
         <tr>
@@ -114,19 +114,19 @@
         </tr>
     </thead>
     <tbody>
-        <%
-=begin%>
- <% @test.each do |t| %>
+        
+
+ <% @queryy.each do |t| %>
             <tr>
-                <th>1</th>
-                <th><%= t[0] %></th>
-                <th><%= t[1] %></th>
-                <th><%= t[2] %></th>
-                <th><%= t[3] %></th> 
+                <th scope="col" class="text-center">1</th><!-- Posicion -->
+                <th scope="col" class="text-center"><%= t[1] %></th><!-- Rut -->
+                <th scope="col" class="text-center"><%= t[2] %></th><!-- Nombre de proveedor -->
+                <th scope="col" class="text-center"><%= t[0] %></th><!-- Cantidad de audiencias -->
+                <th scope="col" class="text-center"><%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.' %></th><!-- Monto adjudicados -->
+                <th scope="col" class="text-center"><%= link_to 'detalle' , controller: 'buscador', action: 'activo', rut: t[1] %></th><!-- Rut -->
             </tr>
         <% end %> 
-<%
-=end%>
+
     </tbody>
     </table>
 </section>

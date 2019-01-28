@@ -1,0 +1,73 @@
+
+
+<section class="container top-nav">
+    <h1>Encuentra información de sujeto activo</h1>
+    <form class="form-inline row">
+        <label for="inputPassword2" class="sr-only">Password</label>
+        <input type="password" class="form-control col-lg-12" id="inputPassword2" placeholder="Password">
+        <br>
+        <input class="form-control" type="datetime-local col-lg-12" value="2011- 08-19T13:45:00" id="example-datetime-local-input">
+        <br>
+        <input class="form-control" type="datetime-local col-lg-12" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+        <br>
+        <button type="submit" class="btn btn-primary col-lg-6">Buscar</button>
+    
+    </form>
+    
+ 
+    </form>
+    <h1 class="text-center">Organizmo: <%= @busquedalobbysta.first[0] %></h1>
+    <h1 class="text-center">RUT: <%= @busquedalobbysta.first[1] %> </h1>
+    <h1 class="text-center">Monto:  </h1>
+
+    <h2>N° AUDIENCIAS QUE PARTICIPO</h2>
+    <table class="table">
+    <thead>
+        <tr>
+            <th scope="col" class="text-center">Sujeto activo</th>
+            <th scope="col">Remunerado</th>
+            <th scope="col">Cantidad de audiencias</th>
+            <th scope="col">Detalle</th>
+        </tr>
+    </thead>
+    <tbody>
+
+ <% @audiencias.each do |t| %>
+            <tr>
+                <th class="text-center"><%= t[0] %> <%= t[1] %></th>
+                <th class="text-center"><%= if t[2] == 0 then 'no' else 'si' end %></th>
+                <th class="text-center"> Cantidad pendiente <%=  t[3] %></th>
+                <th><%= link_to 'detalle', controller: 'audiencia', action: 'detalle',  id: t[4] %> </th>
+            </tr> 
+        <% end %> 
+
+    </tbody>
+    </table>
+      <h2>LICITACIONES ADJUDICADAS</h2>
+    <table class="table">
+    <thead>
+        <tr>
+            <th scope="col" class="text-center"> Sujecto   </th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Detalle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%
+=begin%>
+ <% @busquedalobbysta.each do |t| %>
+            <tr>
+                <th>1</th>
+                <th><%= t[0] %></th>
+                <th><%= t[1] %></th>
+                <th><%= t[2] %></th>
+                <th><%= t[3] %></th> 
+            </tr>
+        <% end %> 
+<%
+=end%>
+    </tbody>
+    </table>
+</section>
+

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'buscador/buscador'
+  get 'audiencia/detalle'
+  get 'buscador/activo'
   get 'index/index'
 
   root to: 'index#index'
