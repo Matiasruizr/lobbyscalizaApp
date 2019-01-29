@@ -67,7 +67,7 @@
                 <th>$<%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th> 
             
             </tr>
-        <% end %>
+            <% end %>
     </tbody>
     </table>
 </section>
@@ -116,17 +116,17 @@
     <tbody>
         
 
- <% @top10lobbista.each do |t| %>
+    <% @queryy.each do |t| %>
             <tr>
                 <th scope="col" class="text-center">1</th><!-- Posicion -->
                 <th scope="col" class="text-center"><%= t[1] %></th><!-- Rut -->
                 <th scope="col" class="text-center"><%= t[2] %></th><!-- Nombre de proveedor -->
                 <th scope="col" class="text-center"><%= t[0] %></th><!-- Cantidad de audiencias -->
-                <th scope="col" class="text-center"><%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.' %></th><!-- Monto adjudicados -->
+                <th scope="col" class="text-center"><%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th><!-- Monto adjudicados -->
                 <th scope="col" class="text-center"><%= link_to 'detalle' , controller: 'buscador', action: 'activo', rut: t[1] %></th><!-- Rut -->
             </tr>
         <% end %> 
-
+ 
     </tbody>
     </table>
 </section>
