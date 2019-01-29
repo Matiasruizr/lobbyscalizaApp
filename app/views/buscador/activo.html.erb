@@ -3,11 +3,11 @@
 <section class="container top-nav">
     <h1>Encuentra información de sujeto activo</h1>
 
-
+    <%= rut %>
     <form action="<%= buscador_activo_path %>" method = 'get' class="form-inline row">
-          Sujeto activo  <%= radio_button_tag  'tipo', 'activo', params[:tipo] %>
-            Sujeto pasivo  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo] %>
-          <%= text_field_tag :rut, params[:rut] %>
+        Sujeto activo  <%= radio_button_tag  'tipo', 'activo', params[:tipo] %>
+        Sujeto pasivo  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo] %>
+        <%= text_field_tag :rut, params[:rut] %>
 
         Consultar desde:<%= date_field :desde, params[:desde], :value => '2014-01-01' %>
         Hasta <%= date_field :hasta, params[:hasta], :value => Time.now.strftime('%Y-%m-%d') %>
