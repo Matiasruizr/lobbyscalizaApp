@@ -46,11 +46,11 @@
     <thead>
         <tr>
         <th scope="col" class="text-center">Posición de organización</th>
-        <th scope="col">Rut</th>
-        <th scope="col">Nombre proveedor</th>
-        <th scope="col">Cantidad de audiencias</th>
-        <th scope="col">Cantidad de contratos adjudicados </th>
-        <th scope="col">Monto total </th>
+        <th scope="col" class="text-center">Rut</th>
+        <th scope="col" class="text-center">Nombre proveedor</th>
+        <th scope="col" class="text-center">Cantidad de audiencias</th>
+        <th scope="col" class="text-center">Cantidad de contratos adjudicados </th>
+        <th scope="col" class="text-center">Monto total </th>
         </tr>
     </thead>
     <tbody>     
@@ -58,13 +58,12 @@
             <% @top10_lobbysta_proveedor.each do |t| %>
             <% @top10 += 1 %>
             <tr>
-                <th><%= @top10  %></th>
-                <th><%= t[1] %></th> <!-- Rut -->
-                <th><%= t[2] %></th>
-                <th><%= t[0].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th> <!-- CAntidad audiencias -->
-                <th>Contratos</th><!--  -->
-           
-                <th>$<%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th> 
+                <th scope="col" class="text-center"><%= @top10  %></th>
+                <th scope="col" class="text-center"><%= t[0] %></th> <!-- Rut -->                
+                <th scope="col" class="text-center"><%= t[1] %></th>
+                <th scope="col" class="text-center"><%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th> <!-- CAntidad audiencias -->
+                <th scope="col" class="text-center">Contratos</th><!--  -->
+                <th scope="col" class="text-center">$<%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th> 
             
             </tr>
             <% end %>
@@ -86,13 +85,15 @@
         </tr>
     </thead>
     <tbody>
+        <% @top10 = 0 %>
         <% @topproveedoresdelestado.each do |t| %>
+        <% @top10 += 1 %>
             <tr>
-                <th>1</th>
-                <th><%= t[0] %></th>
-                <th><%= t[1] %></th>
-                <th><%= t[2] %></th> <!-- Cantidad de audiencias -->
-                <th><%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th> <!-- Monto total -->
+                <th scope="col" class="text-center"> <%= @top10  %></th>
+                <th scope="col" class="text-center"><%= t[0] %></th>
+                <th scope="col" class="text-center"><%= t[1] %></th>
+                <th scope="col" class="text-center"><%= t[3] %></th> <!-- Cantidad de audiencias -->
+                <th scope="col" class="text-center"><%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th> <!-- Monto total -->
             </tr>
         <% end %>
     </tbody>
@@ -106,24 +107,25 @@
     <thead>
         <tr>
         <th scope="col" class="text-center">Posición de organización</th>
-        <th scope="col">Rut</th>
-        <th scope="col">Nombre proveedor</th>
-        <th scope="col">Cantidad de audiencias</th>
-        <th scope="col">Cantidad de contratos adjudicados </th>
-        <th scope="col">Monto total </th>
+        <th scope="col" class="text-center">Rut</th>
+        <th scope="col" class="text-center">Nombre proveedor</th>
+        <th scope="col" class="text-center">Monto</th>
+        <th scope="col" class="text-center">Cantidad de audiencias </th>
+        <th scope="col" class="text-center">Detalle</th>
         </tr>
     </thead>
     <tbody>
         
-
+    <% @top10 = 0 %>
     <% @queryy.each do |t| %>
+    <% @top10 += 1 %>
             <tr>
-                <th scope="col" class="text-center">1</th><!-- Posicion -->
-                <th scope="col" class="text-center"><%= t[1] %></th><!-- Rut -->
-                <th scope="col" class="text-center"><%= t[2] %></th><!-- Nombre de proveedor -->
-                <th scope="col" class="text-center"><%= t[0] %></th><!-- Cantidad de audiencias -->
-                <th scope="col" class="text-center"><%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th><!-- Monto adjudicados -->
-                <th scope="col" class="text-center"><%= link_to 'detalle' , controller: 'buscador', action: 'activo', rut: t[1] %></th><!-- Rut -->
+                <th scope="col" class="text-center"><%= @top10  %></th><!-- Posicion -->
+                <th scope="col" class="text-center"><%= t[0] %></th><!-- Rut -->
+                <th scope="col" class="text-center"><%= t[1] %></th><!-- Nombre de proveedor -->
+                <th scope="col" class="text-center"><%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th><!-- Monto adjudicados -->
+                <th scope="col" class="text-center"><%= t[3] %></th><!-- Cantidad de audiencias -->
+                <th scope="col" class="text-center"><%= link_to 'detalle' , controller: 'buscador', action: 'activo', rut: t[0] %></th>
             </tr>
         <% end %> 
  
@@ -139,27 +141,27 @@
     <thead>
         <tr>
         <th scope="col" class="text-center">Posición de organización</th>
-        <th scope="col">Rut</th>
-        <th scope="col">Nombre proveedor</th>
-        <th scope="col">Cantidad de audiencias</th>
-        <th scope="col">Cantidad de contratos adjudicados </th>
-        <th scope="col">Monto total </th>
+        <th scope="col" class="text-center">Cantidad audiencias</th>
+        <th scope="col" class="text-center">Organismo</th>
+        <th scope="col" class="text-center">Sujeto pasivo</th>
+        <th scope="col" class="text-center">Representado </th>
+        <th scope="col" class="text-center">Licitaciones </th>
         </tr>
     </thead>
     <tbody>
-        <%
-=begin%>
- <% @test.each do |t| %>
+    
+<% @top10 = 0 %>     
+ <% @top_compradores_estado.each do |t| %>
+ <% @top10 += 1 %>
             <tr>
-                <th>1</th>
-                <th><%= t[0] %></th>
-                <th><%= t[1] %></th>
-                <th><%= t[2] %></th>
-                <th><%= t[3] %></th> 
+                <th scope="col" class="text-center"><%= @top10  %></th>
+                <th scope="col" class="text-center"><%= t[0] %></th>
+                <th scope="col" class="text-center"><%= t[1] %></th>
+                <th scope="col" class="text-center"><%= t[2] %></th>
+                <th scope="col" class="text-center"> Representado </th> 
+                <th scope="col" class="text-center"> Licitaciones </th> 
             </tr>
         <% end %> 
-<%
-=end%>
     </tbody>
     </table>
 </section>
