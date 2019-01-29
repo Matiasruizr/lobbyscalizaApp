@@ -55,7 +55,7 @@
     </thead>
     <tbody>     
             <% @top10 = 0 %>
-            <% @top10_lobbysta_proveedor.each do |t| %>
+            <% @top10lobbista.each do |t| %>
             <% @top10 += 1 %>
             <tr>
                 <th><%= @top10  %></th>
@@ -86,7 +86,7 @@
         </tr>
     </thead>
     <tbody>
-        <% @topproveedoresdelestado.each do |t| %>
+        <% @top10lobbista.each do |t| %>
             <tr>
                 <th>1</th>
                 <th><%= t[0] %></th>
@@ -116,7 +116,7 @@
     <tbody>
         
 
- <% @queryy.each do |t| %>
+ <% @top10lobbista.each do |t| %>
             <tr>
                 <th scope="col" class="text-center">1</th><!-- Posicion -->
                 <th scope="col" class="text-center"><%= t[1] %></th><!-- Rut -->
