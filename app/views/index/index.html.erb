@@ -55,7 +55,7 @@
     </thead>
     <tbody>     
             <% @top10 = 0 %>
-            <% @top10lobbista.each do |t| %>
+            <% @top10_lobbysta_proveedor.each do |t| %>
             <% @top10 += 1 %>
             <tr>
                 <th><%= @top10  %></th>
@@ -86,7 +86,7 @@
         </tr>
     </thead>
     <tbody>
-        <% @top10lobbista.each do |t| %>
+        <% @topproveedoresdelestado.each do |t| %>
             <tr>
                 <th>1</th>
                 <th><%= t[0] %></th>
@@ -146,10 +146,8 @@
         <th scope="col">Monto total </th>
         </tr>
     </thead>
-    <tbody>
-        <%
-=begin%>
- <% @test.each do |t| %>
+    <tbody> 
+    <% @top_compradores_estado.each do |t| %>
             <tr>
                 <th>1</th>
                 <th><%= t[0] %></th>
@@ -158,8 +156,6 @@
                 <th><%= t[3] %></th> 
             </tr>
         <% end %> 
-<%
-=end%>
     </tbody>
     </table>
 </section>
