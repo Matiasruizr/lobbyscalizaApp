@@ -1,19 +1,25 @@
 
 
 <section class="container top-nav">
-    <h1>Encuentra información de sujeto activo</h1>
-
+<section id="element">
+    <h1>Encuentra información de sujeto activo o pasivo</h1>
+    <br/>
     <form action="<%= buscador_activo_path %>" method = 'get' class="form-inline row">
-        Sujeto activo  <%= radio_button_tag  'tipo', 'activo', params[:tipo] %>
-        Sujeto pasivo  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo] %>
-        <%= text_field_tag :rut, params[:rut] %>
-
-        Consultar desde:<%= date_field :desde, params[:desde], :value => '2014-01-01' %>
-        Hasta <%= date_field :hasta, params[:hasta], :value => Time.now.strftime('%Y-%m-%d') %>
-
-       
-        <button type="submit" class="btn btn-primary col-lg-6">Buscar</button>
+        <div class="col-12">
+        Sujeto &nbsp;&nbsp;<input type="checkbox" value="activo" id="check1" name="tipo" checked data-toggle="toggle" data-on="Activo" data-off="Pasivo" data-onstyle="primary" data-offstyle="info" data-style="quick">
+         <%# Sujeto activo  <%= radio_button_tag  'tipo', 'activo', params[:tipo], :checked => true %>  
+         <%# Sujeto pasivo  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo] %>  
+        </div>
+            <input class="form-control mr-sm col-9 center" name="rut" type="search" placeholder="Buscar sujeto activo o pasivo" aria-label="Search">
+            <button class="btn btn-primary my-2 my-sm" type="submit"><i class="fas fa-search"></i></button>
+        <div class="col-12">
+            Desde   &nbsp;&nbsp; <%# date_field :desde, params[:desde], :value => '2014-01-01' %>
+            <input class="form-control" type="date" name="desde" value="2014-01-01"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Hasta  &nbsp;&nbsp;  <%# date_field :hasta, params[:hasta], :value => Time.now.strftime('%Y-%m-%d') %>
+            <input class="form-control" type="date" name="hasta" value="Time.now.strftime('%Y-%m-%d')">
+        </div>
     </form>
+</section>
 
     <% if @busquedalobbysta  %>
         <h1 class="text-center">Organizmo: <%= @busquedalobbysta.first[0] %></h1>
