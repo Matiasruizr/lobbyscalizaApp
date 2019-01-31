@@ -47,7 +47,7 @@
  <% @audiencias.each do |t| %>
             <tr>
                 <th class="text-center"><%= t[0] %> <%= t[1] %></th>
-                <th class="text-center"><%= if t[2] == 0 then 'no' else 'si' end %></th>
+                <th class="text-center"><%= t[2] %></th>
                 <th class="text-center"> Cantidad pendiente <%=  t[3] %></th>
                 <th><%= link_to 'detalle', controller: 'audiencia', action: 'detalle',  id: t[4] %> </th>
             </tr> 
