@@ -21,7 +21,7 @@ class BuscadorController < ApplicationController
     elsif 
       params[:tipo] == 'activo'
       @busquedalobbysta = ActiveRecord::Base.connection.execute("select adjudicacion_nombre_proveedor , adjudicacion_rut_proveedor, FORMAT(sum(adjudicacion_monto_unitario * adjudicacion_antidad),0) from licitacion_item where adjudicacion_rut_proveedor = #{@rut};  ");
-      @audiencias = ActiveRecord::Base.connection.execute("select nombres, apellidos, 
+      @audiencias1 = ActiveRecord::Base.connection.execute("select nombres, apellidos, 
                                                           case
                                                           when remunerado = 1 then 'Si'
                                                           when remunerado = 0 then 'No'

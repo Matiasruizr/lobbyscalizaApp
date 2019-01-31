@@ -25,9 +25,6 @@
         <h1 class="text-center">Organismo: <%= @busquedalobbysta.first[0] %></h1>
         <h1 class="text-center">RUT: <%= @busquedalobbysta.first[1] %> </h1>
         <h1 class="text-center">Monto: $<%= @busquedalobbysta.first[2] %>  </h1>
-        <h3> <%= params[:desde] %></h3>
-        <h3>  <%= params[:hasta] %></h3>
-        <h3>  <%= params[:tipo] %></h3>
     <% else %>
         <h1 class="text-center">Busca un sujeto activo o pasivo en el buscador de arriba</h1>
     <% end %>
@@ -43,8 +40,8 @@
         </tr>
     </thead>
     <tbody>
-<% if @audiencias  %>
- <% @audiencias.each do |t| %>
+<% if @audiencias1  %>
+ <% @audiencias1.each do |t| %>
             <tr>
                 <th class="text-center"><%= t[0] %> <%= t[1] %></th>
                 <th class="text-center"><%= t[2] %></th>
