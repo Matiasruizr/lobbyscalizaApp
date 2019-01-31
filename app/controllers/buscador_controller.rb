@@ -21,7 +21,11 @@ class BuscadorController < ApplicationController
     elsif 
       params[:tipo] == 'activo'
       @busquedalobbysta = ActiveRecord::Base.connection.execute("select representa_nombre, representa_rut from asistente where representa_rut = #{@rut};  ");
-      @audiencias = ActiveRecord::Base.connection.execute("select nombres, apellidos, remunerado, count(asistente.id), cargo_activo.id  
+      @audiencias = ActiveRecord::Base.connection.execute("select nombres, apellidos, 
+                                                          case
+                                                          when remunerado = 1 then 'Si'
+                                                          when remunerado = 0 then 'No'
+                                                          end, count(asistente.id), cargo_activo.id  
                                                           from asistente 
                                                           join cargo_activo on asistente.cargo_activo_id = cargo_activo.id
                                                           where representa_rut = #{@rut}
