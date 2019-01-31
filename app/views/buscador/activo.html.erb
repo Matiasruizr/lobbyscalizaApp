@@ -24,7 +24,7 @@
     <% if @busquedalobbysta  %>
         <h1 class="text-center">Organismo: <%= @busquedalobbysta.first[0] %></h1>
         <h1 class="text-center">RUT: <%= @busquedalobbysta.first[1] %> </h1>
-        <h1 class="text-center">Monto:  </h1>
+        <h1 class="text-center">Monto: $<%= @busquedalobbysta.first[2] %>  </h1>
         <h3> <%= params[:desde] %></h3>
         <h3>  <%= params[:hasta] %></h3>
         <h3>  <%= params[:tipo] %></h3>
