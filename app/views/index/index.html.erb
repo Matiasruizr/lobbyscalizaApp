@@ -78,10 +78,10 @@
     <thead>
         <tr>
       <th scope="col" class="text-center">Posición de organización</th>
-        <th scope="col">Rut</th>
-        <th scope="col">Nombre proveedor</th>
-        <th scope="col">Cantidad de audiencias</th>
-        <th scope="col">Monto total </th>
+        <th scope="col" class="text-center">Rut</th>
+        <th scope="col" class="text-center">Nombre proveedor</th>
+        <th scope="col" class="text-center">Cantidad de contratos adjudicados</th>
+        <th scope="col" class="text-center">Monto total </th>
         </tr>
     </thead>
     <tbody>
@@ -92,7 +92,7 @@
                 <th scope="col" class="text-center"> <%= @top10  %></th>
                 <th scope="col" class="text-center"><%= t[0] %></th>
                 <th scope="col" class="text-center"><%= t[1] %></th>
-                <th scope="col" class="text-center"><%= audiencias(t[0]).first[0] %></th> <!-- Cantidad de audiencias -->
+                <th scope="col" class="text-center"><%= t[3] %></th> <!-- Cantidad de adjudicaciones -->
                 <th scope="col" class="text-center">$<%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th> <!-- Monto total -->
             </tr>
         <% end %>
@@ -110,7 +110,7 @@
         <th scope="col" class="text-center">Rut</th>
         <th scope="col" class="text-center">Nombre comprador</th>
         <th scope="col" class="text-center">Monto</th>
-        <th scope="col" class="text-center">Cantidad de audiencias </th>
+        <th scope="col" class="text-center">Cantidad de contratos adjudicados </th>
         <th scope="col" class="text-center">Detalle</th>
         </tr>
     </thead>
@@ -124,7 +124,7 @@
                 <th scope="col" class="text-center"><%= t[0] %></th><!-- Rut -->
                 <th scope="col" class="text-center"><%= t[1] %></th><!-- Nombre de cOMPRADORES -->
                 <th scope="col" class="text-center">$<%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th><!-- Monto adjudicados -->
-                <th scope="col" class="text-center"><%= audiencias(t[0]).first[0] %></th><!-- Cantidad de audiencias -->
+                <th scope="col" class="text-center"><%= t[3] %></th><!-- Cantidad de contratos -->
                 <th scope="col" class="text-center"><%= link_to 'detalle' , controller: 'buscador', action: 'activo', rut: t[0] %></th>
             </tr>
         <% end %> 
@@ -143,7 +143,7 @@
         <th scope="col" class="text-center">Posición de organización</th>
         <th scope="col" class="text-center">Cantidad audiencias</th>
         <th scope="col" class="text-center">Organismo</th>
-        <th scope="col" class="text-center">Pasivo</th>
+        <th scope="col" class="text-center">Privado </th>
         <th scope="col" class="text-center">Audiencias</th>
         <th scope="col" class="text-center">Licitaciones </th>
         </tr>
