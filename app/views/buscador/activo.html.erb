@@ -1,18 +1,19 @@
 
 
 <section class="container top-nav">
-    <h1>Encuentra información de sujeto activo</h1>
+    <h1>Encuentra información de sujeto activo o pasivo</h1>
 
     <form action="<%= buscador_activo_path %>" method = 'get' class="form-inline row">
-        Sujeto activo  <%= radio_button_tag  'tipo', 'activo', params[:tipo] %>
-        Sujeto pasivo  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo] %>
-        <%= text_field_tag :rut, params[:rut] %>
-
-        Consultar desde:<%= date_field :desde, params[:desde], :value => '2014-01-01' %>
-        Hasta <%= date_field :hasta, params[:hasta], :value => Time.now.strftime('%Y-%m-%d') %>
-
-       
-        <button type="submit" class="btn btn-primary col-lg-6">Buscar</button>
+        
+            Sujeto activo  <%= radio_button_tag  'tipo', 'activo', params[:tipo]%>
+            Sujeto pasivo  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo]%>
+            <%# text_field_tag :rut, params[:rut] %>
+            
+            Consultar desde:<%= date_field :desde, params[:desde], :value => '2014-01-01'%>
+            Hasta <%= date_field :hasta, params[:hasta], :value => Time.now.strftime('%Y-%m-%d')%>
+        
+            <input class="form-control mr-sm-1 col-6" name="rut"  type="search" placeholder="Busca proveedores o compradores por rut o nombre " aria-label="Search">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search">Buscar</i></button>
     </form>
 
     <% if @busquedalobbysta  %>
@@ -53,7 +54,7 @@
     <table class="table">
     <thead>
         <tr>
-            <th scope="col" class="text-center"> Sujecto   </th>
+            <th scope="col" class="text-center"> Sujeto   </th>
             <th scope="col">Descripción</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Detalle</th>
