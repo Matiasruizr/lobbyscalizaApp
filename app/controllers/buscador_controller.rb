@@ -16,8 +16,11 @@ class BuscadorController < ApplicationController
 
 
     if params[:tipo] == 'pasivo'
-      # @busquedalobbysta = ActiveRecord::Base.connection.execute("select * from tmp_top10licitadores where tmp_top10licitadores.adjudicacion_rut_proveedor = '#{params[:rut]}'")
-   
+       @busquedalobbysta = ActiveRecord::Base.connection.execute("select tipo, count(codigo_externo)  from licitacion_detalle where comprador_rut_unidad = #{@rut};")
+       @licitaciones_otorgadas = ActiveRecord::Base.connection.execute("select tipo, count(codigo_externo)  
+                                                                        from licitacion_detalle where comprador_rut_unidad = #{@rut}
+                                                                        group by tipo
+                                                                        order by count(codigo_externo);")
     elsif 
       params[:tipo] == 'activo'
       @busquedalobbysta = ActiveRecord::Base.connection.execute("select adjudicacion_nombre_proveedor , adjudicacion_rut_proveedor, FORMAT(sum(adjudicacion_monto_unitario * adjudicacion_antidad),0) from licitacion_item where adjudicacion_rut_proveedor = #{@rut};  ");
@@ -32,7 +35,7 @@ class BuscadorController < ApplicationController
                                                           group by representa_rut;")
 
 
-     @licitaciones_que_participo =  ActiveRecord::Base.connection.execute("
+      @licitaciones_que_participo =  ActiveRecord::Base.connection.execute("
                                                                           select  tipo, count(id) as 'cantidad' from licitacion_item
                                                                           join licitacion_detalle_licitacion_item  as inter
                                                                           on licitacion_item.id = inter.licitacion_item_id
