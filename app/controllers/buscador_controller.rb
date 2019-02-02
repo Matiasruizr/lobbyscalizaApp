@@ -2,13 +2,10 @@ class BuscadorController < ApplicationController
   def activo
     # 
     if params[:desde]
-      @desde = "'"+params[:desde]+"'"
+      @desde = "'"+params[:desde][0]+"'"
     end
     if params[:hasta]
-      @desde = "'"+params[:desde]+"'"
-    end
-    if params[:hasta]
-      @hasta = "'"+params[:hasta]+"'"
+      @hasta = "'"+params[:hasta][0]+"'"
     end
     if params[:rut]
       @rut = "'"+params[:rut]+"'"
@@ -23,8 +20,12 @@ class BuscadorController < ApplicationController
    
     elsif 
       params[:tipo] == 'activo'
-      @busquedalobbysta = ActiveRecord::Base.connection.execute("select representa_nombre, representa_rut from asistente where representa_rut = #{@rut};  ");
-      @audiencias = ActiveRecord::Base.connection.execute("select nombres, apellidos, remunerado, count(asistente.id), cargo_activo.id  
+      @busquedalobbysta = ActiveRecord::Base.connection.execute("select adjudicacion_nombre_proveedor , adjudicacion_rut_proveedor, FORMAT(sum(adjudicacion_monto_unitario * adjudicacion_antidad),0) from licitacion_item where adjudicacion_rut_proveedor = #{@rut};  ");
+      @audiencias1 = ActiveRecord::Base.connection.execute("select nombres, apellidos, 
+                                                          case
+                                                          when remunerado = 1 then 'Si'
+                                                          when remunerado = 0 then 'No'
+                                                          end, count(asistente.id), cargo_activo.id  
                                                           from asistente 
                                                           join cargo_activo on asistente.cargo_activo_id = cargo_activo.id
                                                           where representa_rut = #{@rut}
