@@ -1,21 +1,6 @@
 
 
 <section class="container top-nav">
-<<<<<<< HEAD
-    <h1>Encuentra información de sujeto activo o pasivo</h1>
-
-    <form action="<%= buscador_activo_path %>" method = 'get' class="form-inline row">
-        
-            Sujeto activo  <%= radio_button_tag  'tipo', 'activo', params[:tipo]%>
-            Sujeto pasivo  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo]%>
-            <%# text_field_tag :rut, params[:rut] %>
-            
-            Consultar desde:<%= date_field :desde, params[:desde], :value => '2014-01-01'%>
-            Hasta <%= date_field :hasta, params[:hasta], :value => Time.now.strftime('%Y-%m-%d')%>
-        
-            <input class="form-control mr-sm-1 col-6" name="rut"  type="search" placeholder="Busca proveedores o compradores por rut o nombre " aria-label="Search">
-            <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fas fa-search">Buscar</i></button>
-=======
 <section id="element">
     <h1>Encuentra información de sujeto activo o pasivo</h1>
     <br/>
@@ -31,9 +16,8 @@
             Desde   &nbsp;&nbsp; <%# date_field :desde, params[:desde], :value => '2014-01-01' %>
             <input class="form-control" type="date" name="desde" value="2014-01-01"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Hasta  &nbsp;&nbsp;  <%# date_field :hasta, params[:hasta], :value => Time.now.strftime('%Y-%m-%d') %>
-            <input class="form-control" type="date" name="hasta" value="Time.now.strftime('%Y-%m-%d')">
+            <input class="form-control" type="date" name="hasta" value="<%= Time.now.strftime('%Y-%m-%d') %>">
         </div>
->>>>>>> 22feeedffbeb3cd25d54e587af9a210c7b197e16
     </form>
 </section>
 
@@ -72,26 +56,25 @@
     <table class="table">
     <thead>
         <tr>
-            <th scope="col" class="text-center"> Sujeto   </th>
+            <th scope="col" class="text-center"> TIPO   </th>
             <th scope="col">Descripción</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Detalle</th>
         </tr>
     </thead>
     <tbody>
-        <%
-=begin%>
- <% @busquedalobbysta.each do |t| %>
+    <% @licitaciones_que_participo.each do |t| %>
             <tr>
-                <th>1</th>
-                <th><%= t[0] %></th>
+                <th><%= t[0] %></th><!-- Tipo -->
+                <th><%= descripcionDeTipo(t[0]) %></th><!-- Descripcion -->
                 <th><%= t[1] %></th>
-                <th><%= t[2] %></th>
-                <th><%= t[3] %></th> 
+                <th>
+                    <%=  link_to controller: 'licitacion', action: 'licitacion', rut: @busquedalobbysta.first[1], tipo: t[0], target: '_blank' do %>
+                        <i class='fas fa-search'></i> 
+                    <% end %>
+                </th> 
             </tr>
         <% end %> 
-<%
-=end%>
     </tbody>
     </table>
 </section>

@@ -10,5 +10,7 @@ class AudienciaController < ApplicationController
                                                           join audiencia_detalle_materia as adm on  ad.id = adm.audiencia_detalle_id 
                                                           join audiencia_materia as am on adm.audiencia_materia_id = am.id
                                                           where ca.id = #{@id};")
+
+        
   end
 end

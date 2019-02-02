@@ -3,7 +3,7 @@ class IndexController < ApplicationController
 
 
   def index
-      @top10_lobbysta_proveedor = ActiveRecord::Base.connection.execute("select * from top_10_lobbista;")
+      # @top10_lobbysta_proveedor = ActiveRecord::Base.connection.execute("select * from top_10_lobbista;")
 
        #Top 10 Compradores
        @topproveedoresdelestado = ActiveRecord::Base.connection.execute("select * from top_10_proveedores;")
