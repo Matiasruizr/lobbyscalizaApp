@@ -16,14 +16,28 @@ class BuscadorController < ApplicationController
 
 
     if params[:tipo] == 'pasivo'
-       @busquedalobbysta = ActiveRecord::Base.connection.execute("select tipo, count(codigo_externo)  from licitacion_detalle where comprador_rut_unidad = #{@rut};")
+       @busquedalobbysta = ActiveRecord::Base.connection.execute("select comprador_nombre_usuario, comprador_rut_usuario, comprador_cargo_usuario, count(codigo_externo)
+                                                                  from licitacion_detalle
+                                                                  where comprador_rut_unidad = #{@rut}
+                                                                  group by  comprador_rut_usuario
+                                                                  order by count(codigo_externo) desc")
+
        @licitaciones_otorgadas = ActiveRecord::Base.connection.execute("select tipo, count(codigo_externo)  
                                                                         from licitacion_detalle where comprador_rut_unidad = #{@rut}
                                                                         group by tipo
                                                                         order by count(codigo_externo);")
+      @datos = ActiveRecord::Base.connection.execute("select comprador_rut_unidad, comprador_nombre_organismo
+                                                    from licitacion_detalle
+                                                    where comprador_rut_unidad = #{@rut}
+                                                    group by  comprador_rut_unidad;")
     elsif 
       params[:tipo] == 'activo'
       @busquedalobbysta = ActiveRecord::Base.connection.execute("select adjudicacion_nombre_proveedor , adjudicacion_rut_proveedor, FORMAT(sum(adjudicacion_monto_unitario * adjudicacion_antidad),0) from licitacion_item where adjudicacion_rut_proveedor = #{@rut};  ");
+      @cantidad_audiencias = ActiveRecord::Base.connection.execute("select count(asistente.id)
+                                                                    from asistente
+                                                                    join cargo_activo on asistente.cargo_activo_id = cargo_activo.id
+                                                                    where representa_rut = #{@rut}
+                                                                    group by representa_rut;")
       @audiencias1 = ActiveRecord::Base.connection.execute("select nombres, apellidos, 
                                                           case
                                                           when remunerado = 1 then 'Si'

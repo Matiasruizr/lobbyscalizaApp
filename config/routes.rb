@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'licitacion/licitacion'
   get 'audiencia/detalle'
+  get 'audiencia/detalleaudiencia'
   get 'buscador/activo'
   get 'index/index'
 

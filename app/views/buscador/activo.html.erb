@@ -28,6 +28,8 @@
         <h1 class="text-center">Monto: $<%= @busquedalobbysta.first[2].to_s.gsub(",",".") %>  </h1>
         <% else %>
         <h1>Sujeto pasivo</h1>
+         <h1 class="text-center">Organismo: <%= @datos.first[1] %></h1>
+        <h1 class="text-center">RUT: <%= @datos.first[0] %> </h1>
         <% end %>
     <% else %>
         <h1 class="text-center">Busca un sujeto activo o pasivo en el buscador de arriba</h1>
@@ -39,7 +41,7 @@
                 <tr>
                     <th scope="col" class="text-center">Sujeto activo</th>
                     <th scope="col">Remunerado</th>
-                    <th scope="col">Cantidad de audiencias</th>
+                    <th scope="col">Cantidad de audiencias <%= @cantidad_audiencias %></th>
                     <th scope="col">Detalle</th>
                 </tr>
             </thead>
@@ -50,8 +52,8 @@
                                 <th class="text-center"><%= t[0] %> <%= t[1] %></th>
                                 <th class="text-center"><%= t[2] %></th>
                                 <th class="text-center"> Cantidad pendiente <%=  t[3] %></th>
-                                <th> 
-                                    <%=  link_to controller: 'audiencia', action: 'detalle',  id: t[4], target: '_blank', class: 'text-center' do %>
+                                <th class="text-center"> 
+                                    <%=  link_to controller: 'audiencia', action: 'detalle',  id: t[4], target: '_blank' do %>
                                         <i class='fas fa-search'></i> 
                                     <% end %>
                                 </th>
@@ -73,11 +75,11 @@
             <tbody>
             <% @licitaciones_que_participo.each do |t| %>
                     <tr>
-                        <th><%= t[0] %></th><!-- Tipo -->
-                        <th><%= descripcionDeTipo(t[0]) %></th><!-- Descripcion -->
-                        <th><%= t[1] %></th>
-                        <th>
-                            <%=  link_to controller: 'licitacion', action: 'licitacion', rut: @busquedalobbysta.first[1], tipo: t[0], target: '_blank', class: 'text-center'do %>
+                        <th class="text-center"><%= t[0] %></th><!-- Tipo -->
+                        <th class="text-center"><%= descripcionDeTipo(t[0]) %></th><!-- Descripcion -->
+                        <th class="text-center"><%= t[1] %></th>
+                        <th class="text-center">
+                            <%=  link_to controller: 'licitacion', action: 'licitacion', rut: @busquedalobbysta.first[1], tipo: t[0], target: '_blank' do %>
                                 <i class='fas fa-search'></i> 
                             <% end %>
                         </th> 
@@ -91,19 +93,34 @@
             <thead>
                 <tr>
                     <th scope="col" class="text-center">Sujeto pasivo</th>
+                    <th scope="col" class="text-center">Rut</th>
                     <th scope="col">Cargo</th>
                     <th scope="col">Cantidad de audiencias</th>
-                    <th scope="col">Detalle</th>
+                    <%
+=begin%>
+ <th scope="col">Detalle</th> 
+<%
+=end%>
                 </tr>
             </thead>
             <tbody>
                 <% if @busquedalobbysta  %>
                     <% @busquedalobbysta.each do |t| %>
                             <tr>
-                                <th class="text-center"><%= t[0] %> <%= t[1] %></th>
-                                <th class="text-center"><%= t[2] %></th>
-                                <th class="text-center"> Cantidad pendiente <%=  t[3] %></th>
-                                <th><%= link_to 'detalle', controller: 'audiencia', action: 'detalle',  id: t[4] %> </th>
+                                <th class="text-center"><%= t[0] %> </th>
+                                <th class="text-center"><%= t[1] %> </th>
+                                <th class="text-center"> <%=  t[2] %></th>
+                                <th class="text-center"> <%=  t[3] %></th>
+                               
+                                <%
+=begin%>
+ <th class="text-center">
+                                    <%=  link_to controller: 'audiencia', action: 'detalleaudiencia', id: t[1] , target: '_blank' do %>
+                                        <i class='fas fa-search'></i> 
+                                    <% end %>
+                                </th>  
+<%
+=end%>
                             </tr> 
                         <% end %> 
                 <% end %>
@@ -122,12 +139,12 @@
             <tbody>
             <% @licitaciones_otorgadas.each do |t| %>
                     <tr>
-                        <th><%= t[0] %></th><!-- Tipo -->
-                        <th><%= descripcionDeTipo(t[0]) %></th><!-- Descripcion -->
-                        <th><%= t[1] %></th>
+                        <th class="text-center"><%= t[0] %></th><!-- Tipo -->
+                        <th class="text-center"><%= descripcionDeTipo(t[0]) %></th><!-- Descripcion -->
+                        <th class="text-center"><%= t[1] %></th>
                         <% if @busquedalobbysta %>
-                            <th>
-                                <%=  link_to controller: 'licitacion', action: 'licitacion', rut: @busquedalobbysta.first[1], tipo: t[0], target: '_blank' do %>
+                            <th class="text-center">
+                                <%=  link_to controller: 'licitacion', action: 'licitacion', rut: @datos.first[0], tipo: t[0], target: '_blank' do %>
                                     <i class='fas fa-search'></i> 
                                 <% end %>
                             </th> 
