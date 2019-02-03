@@ -25,7 +25,7 @@
         <% if params[:tipo] == 'activo'%>
         <h1 class="text-center">Organismo: <%= @busquedalobbysta.first[0] %></h1>
         <h1 class="text-center">RUT: <%= @busquedalobbysta.first[1] %> </h1>
-        <h1 class="text-center">Monto: $<%= @busquedalobbysta.first[2] %>  </h1>
+        <h1 class="text-center">Monto: $<%= @busquedalobbysta.first[2].to_s.gsub(",",".") %>  </h1>
         <% else %>
         <h1>Sujeto pasivo</h1>
         <% end %>
@@ -50,7 +50,11 @@
                                 <th class="text-center"><%= t[0] %> <%= t[1] %></th>
                                 <th class="text-center"><%= t[2] %></th>
                                 <th class="text-center"> Cantidad pendiente <%=  t[3] %></th>
-                                <th><%= link_to 'detalle', controller: 'audiencia', action: 'detalle',  id: t[4] %> </th>
+                                <th> 
+                                    <%=  link_to controller: 'audiencia', action: 'detalle',  id: t[4], target: '_blank', class: 'text-center' do %>
+                                        <i class='fas fa-search'></i> 
+                                    <% end %>
+                                </th>
                             </tr> 
                         <% end %> 
                 <% end %>
@@ -73,7 +77,7 @@
                         <th><%= descripcionDeTipo(t[0]) %></th><!-- Descripcion -->
                         <th><%= t[1] %></th>
                         <th>
-                            <%=  link_to controller: 'licitacion', action: 'licitacion', rut: @busquedalobbysta.first[1], tipo: t[0], target: '_blank' do %>
+                            <%=  link_to controller: 'licitacion', action: 'licitacion', rut: @busquedalobbysta.first[1], tipo: t[0], target: '_blank', class: 'text-center'do %>
                                 <i class='fas fa-search'></i> 
                             <% end %>
                         </th> 
