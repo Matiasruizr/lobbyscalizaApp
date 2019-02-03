@@ -10,7 +10,7 @@
          <%# Sujeto activo  <%= radio_button_tag  'tipo', 'activo', params[:tipo], :checked => true %>  
          <%# Sujeto pasivo  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo] %>  
         </div>
-            <input class="form-control mr-sm col-9 center" name="rut" type="search" placeholder="Buscar sujeto activo o pasivo" aria-label="Search">
+            <input class="form-control mr-sm col-9 center" name="rut" type="text" id="lengua" placeholder="Buscar sujeto activo o pasivo" aria-label="Search">
             <button class="btn btn-primary my-2 my-sm" type="submit"><i class="fas fa-search"></i></button>
         <div class="col-12">
             Desde   &nbsp;&nbsp; <%# date_field :desde, params[:desde], :value => '2014-01-01' %>
@@ -160,3 +160,36 @@
     <% end %>
 </section>
 
+<!-- jquery-magicsearch-master -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+
+  var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#lengua" ).autocomplete({
+      source: availableTags
+    });
+    </script>
