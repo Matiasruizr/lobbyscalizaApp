@@ -41,11 +41,11 @@
 </section>
 
 <section class="container">
-    <h2>TOP 10 LOBBISTA - PROVEEDOR</h2>
-    <table class="table">
+    <h2>TOP 10 LOBBISTA - PROVEEDOR</h2>Posición de organización
+    <table class="table" id="top_lobbysta_proveedor">
     <thead>
         <tr>
-        <th scope="col" class="text-center">Posición de organización</th>
+        <th scope="col" class="text-center">Posición</th>
         <th scope="col" class="text-center">Rut</th>
         <th scope="col" class="text-center">Nombre proveedor</th>
         <th scope="col" class="text-center">Cantidad de audiencias</th>
@@ -59,12 +59,12 @@
             <% @top10_lobbysta_proveedor.each do |t| %>
             <% @top10 += 1 %>
             <tr>
-                <th scope="col" class="text-center"><%= @top10  %></th>
-                <th scope="col" class="text-center"><%= t[0] %></th> <!-- Rut -->                
-                <th scope="col" class="text-center"><%= t[1] %></th> <!-- Nombre -->
-                <th scope="col" class="text-center"><%= audiencias(t[0]).first[0] %></th> <!-- Cantidad audiencias -->
-                <th scope="col" class="text-center"><%=t[2]%></th><!-- Cantidad Contratos -->
-                <th scope="col" class="text-center">$<%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.')    %> <!-- Monto --></th> 
+                <td scope="col" class="text-center"><%= @top10  %></td>
+                <td scope="col" class="text-center"><%= t[0] %></td> <!-- Rut -->                
+                <td scope="col" class="text-center"><%= t[1] %></td> <!-- Nombre -->
+                <td scope="col" class="text-center"><%= audiencias(t[0]).first[0] %></td> <!-- Cantidad audiencias -->
+                <td scope="col" class="text-center"><%=t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td><!-- Cantidad Contratos -->
+                <td scope="col" class="text-center">$<%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.')    %> </td> 
             
             </tr>
             <% end %> 
@@ -76,7 +76,7 @@
 
 <section class="container">
     <h2>TOP 10 PROVEEDORES DEL ESTADO</h2>
-    <table class="table">
+    <table class="table" id="top_proveedores_estado">
     <thead>
         <tr>
       <th scope="col" class="text-center">Posición de organización</th>
@@ -92,16 +92,16 @@
         <% @topproveedoresdelestado.each do |t| %>
         <% @top10 += 1 %>
             <tr>
-                <th scope="col" class="text-center"> <%= @top10  %></th>
-                <th scope="col" class="text-center"><%= t[0] %></th>
-                <th scope="col" class="text-center"><%= t[1] %></th>
-                <th scope="col" class="text-center"><%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th> <!-- Cantidad de adjudicaciones -->
-                <th scope="col" class="text-center">$<%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th> <!-- Monto total -->
-                <th scope="col" class="text-center">
-                    <%=  link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'activo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do%>
+                <td scope="col" class="text-center"> <%= @top10  %></td>
+                <td scope="col" class="text-center"><%= t[0] %></td>
+                <td scope="col" class="text-center"><%= t[1] %></td>
+                <td scope="col" class="text-center"><%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td> <!-- Cantidad de adjudicaciones -->
+                <td scope="col" class="text-center">$<%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td> <!-- Monto total -->
+                <td scope="col" class="text-center">
+                    <%=  link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'activo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
                         <i class='fas fa-search'></i> 
                     <% end %>
-                </th>
+                </td>
             </tr>
         <% end %> 
     </tbody>
@@ -111,7 +111,7 @@
 
 <section class="container">
     <h2>TOP 10 COMPRADORES DEL ESTADO </h2>
-    <table class="table">
+    <table class="table" id="top10compradoresdelestado">
     <thead>
         <tr>
         <th scope="col" class="text-center">Posición de organización</th>
@@ -128,16 +128,16 @@
     <% @queryy.each do |t| %>
     <% @top10 += 1 %>
             <tr>
-                <th scope="col" class="text-center"><%= @top10  %></th><!-- Posicion -->
-                <th scope="col" class="text-center"><%= t[0] %></th><!-- Rut -->
-                <th scope="col" class="text-center"><%= t[1] %></th><!-- Nombre de cOMPRADORES -->
-                <th scope="col" class="text-center">$<%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th><!-- Monto adjudicados -->
-                <th scope="col" class="text-center"><%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th><!-- Cantidad de contratos -->
-                <th scope="col" class="text-center">
+                <td scope="col" class="text-center"><%= @top10  %></td><!-- Posicion -->
+                <td scope="col" class="text-center"><%= t[0] %></td><!-- Rut -->
+                <td scope="col" class="text-center"><%= t[1] %></td><!-- Nombre de cOMPRADORES -->
+                <td scope="col" class="text-center">$<%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td><!-- Monto adjudicados -->
+                <td scope="col" class="text-center"><%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td><!-- Cantidad de contratos -->
+                <td scope="col" class="text-center">
                     <%=  link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'pasivo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
                         <i class='fas fa-search'></i> 
                     <% end %>
-                </th>
+                </td>
             </tr>
         <% end %> 
  
@@ -149,7 +149,7 @@
 
 <section class="container">
     <h2>TOP 10 ORGANISMOS DEL ESTADO CON MAYOR NUMERO DE AUDIENCIAS OTORGADAS A PROVEEDORES</h2>
-    <table class="table">
+    <table class="table" id="top_10_orgamnizmos">
     <thead>
         <tr>
         <th scope="col" class="text-center">Posición de organización</th>
@@ -166,12 +166,12 @@
  <% @top_compradores_estado.each do |t| %>
  <% @top10 += 1 %>
             <tr>
-                <th scope="col" class="text-center"><%= @top10  %></th>
-                <th scope="col" class="text-center"><%= t[0].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></th>
-                <th scope="col" class="text-center"><%= t[1] %></th>
-                <th scope="col" class="text-center"><%= t[2] %></th>
-                <th scope="col" class="text-center"><%= t[4] %></th> 
-                <th scope="col" class="text-center"> <%= t[6] %> </th> 
+                <td scope="col" class="text-center"><%= @top10  %></td>
+                <td scope="col" class="text-center"><%= t[0].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td>
+                <td scope="col" class="text-center"><%= t[1] %></td>
+                <td scope="col" class="text-center"><%= t[2] %></td>
+                <td scope="col" class="text-center"><%= t[4] %></td> 
+                <td scope="col" class="text-center"> <%= t[6] %> </td> 
             </tr>
         <% end %> 
     </tbody>
