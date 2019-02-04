@@ -169,7 +169,7 @@
     //https://stackoverrun.com/es/q/718908 formato
 
   var data = [
-      //Pasivos
+      // Pasivos
       {"person": {"id": "00.000.000-0" ,"given_name": "DCCP-Operaciones-Prueba Comprador"}},
       {"person": {"id": "10.229.815-2" ,"given_name": "Ilustre Municipalidad de Peralillo"}},
       {"person": {"id": "10.330.215-k" ,"given_name": "MUNICIPALIDAD DE PUERTO NATALES"}},
@@ -1921,22 +1921,22 @@
       //Activos
       
     ];
-    // $( "#lengua" ).autocomplete({
-    //   source: availableTags
-    // });
+    $( "#lengua" ).autocomplete({
+      source: data
+    });
 
-    $("#lengua").autocomplete(data, { 
-     // formatting of choices in drop down 
-     formatItem: function(item) { 
-     return item.person.given_name; 
-     }, 
-     // format of choice in input field 
-     formatResult: function(item) { 
-     return item.person.given_name + " (" + item.person.id + ")"; 
-     } 
+    // $("#lengua").autocomplete(data, { 
+    //  // formatting of choices in drop down 
+    //  formatItem: function(item) { 
+    //  return item.person.given_name; 
+    //  }, 
+    //  // format of choice in input field 
+    //  formatResult: function(item) { 
+    //  return item.person.given_name + " (" + item.person.id + ")"; 
+    //  } 
 
-     // when choice is made, update value of hidden field with the id 
-    }).result(function(event, data, formatted) { 
-     $("#person_id").val(data.person.id); 
-    }); 
+    //  // when choice is made, update value of hidden field with the id 
+    // }).result(function(event, data, formatted) { 
+    //  $("#person_id").val(data.person.id); 
+    // }); 
     </script>
