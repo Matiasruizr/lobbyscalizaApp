@@ -21,13 +21,13 @@ $(document).ready(function(){
         
 
 
-    $("#check1").click(function(){
-        if (document.getElementById('check1').checked==true){
-        document.getElementById('check1').value="activo";
-        }else{
-        document.getElementById('check1').value="pasivo";
-        }
-    }); 
+    // $("#check1").click(function(){
+    //     if (document.getElementById('check1').is(":checked")){
+    //     document.getElementById('check1').value="activo";
+    //     }else{
+    //     document.getElementById('check1').value="pasivo";
+    //     }
+    // }); 
         // Smoth scroll
    
     $('a[href*="#"]')
