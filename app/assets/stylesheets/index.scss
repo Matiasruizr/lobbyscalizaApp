@@ -9,15 +9,21 @@ body{
     padding-bottom: 200px;
 }
 nav{    
-    background: rgba(197, 197, 197, 0.88);
+    background: rgba(197, 197, 197, 0.92);
     padding: 10px 25px;
     top: 0;
     width: 100%;
     position: fixed;
     z-index: 100;
+    @media(max-width:960px){
+        background: rgba(197, 197, 197, 1);
+    }
     img{
         max-width: 140px;
         float: left;
+        @media(max-width:960px){
+            max-width: 90px;
+        }
     }
     .links{
         float: right;
@@ -27,6 +33,10 @@ nav{
             font-size: 16px;
             font-weight: 300;
             margin-right: 20px;
+            @media(max-width:960px){
+                font-size: 14px;
+                margin-right: 14px;
+            }
             &:hover{
                 color: #1074BC;
             }
@@ -52,18 +62,27 @@ section{
         font-size: 30px;
         color: #212121;
         margin: 15px 0;
+        @media(max-width:960px){
+            font-size: 23px;
+        }
     }
     h2{
         font-size: 24px;
         text-align: left;
         color: #212121;
         margin: 25px 0;
+        @media(max-width:960px){
+            font-size: 20px;
+        }
     }
     p{
         font-size: 17px;
         color: #212121;
         font-weight: 300;
         margin-bottom: 40px;
+        @media(max-width:960px){
+            font-size: 14px;
+        }
     }
 }
 table{
@@ -86,7 +105,9 @@ table{
         color: #212121;
         text-align: justify; 
         font-weight: 400;
-        
+        @media(max-width:960px){
+            font-size: 13px;
+        }
     }
 }
 
@@ -98,6 +119,9 @@ footer{
     position: absolute;
     box-sizing: border-box;
     bottom: 0;
+    @media(max-width:960px){
+        position: inherit;
+    }
     ul{
         li{
             margin: 10px 0;
@@ -109,6 +133,9 @@ footer{
                     text-decoration: none;
                     color: #FFFFFF;
                 }
+                @media(max-width:960px){
+                    font-size: 14px;
+                }
             }
        
         }
@@ -116,8 +143,10 @@ footer{
     img{
         width: 60%;
         margin: 0;
-
-    }
+        @media(max-width:960px){
+            width: 40%;
+        }
+    } 
 }
 
 
