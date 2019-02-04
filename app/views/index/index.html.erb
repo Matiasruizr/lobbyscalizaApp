@@ -1,3 +1,4 @@
+<div class="inicio_page">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <%
@@ -53,7 +54,7 @@
 </section>
 
 <section class="container">
-    <h2>TOP 10 LOBBISTA - PROVEEDOR</h2>Posición de organización
+    <h2>TOP 10 LOBBISTA - PROVEEDOR</h2>
     <table class="table" id="top_lobbysta_proveedor">
     <thead>
         <tr>
@@ -111,9 +112,11 @@
                 <td scope="col" class="text-center">$<%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td> <!-- Monto total -->
                 <td scope="col" class="text-center">
                     <%=  link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'activo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
-                        <i class='fas fa-search'></i> 
+                    <i class='fas fa-search'></i> 
                     <% end %>
                 </td>
+                 
+               
             </tr>
         <% end %> 
     </tbody>
@@ -189,3 +192,5 @@
     </tbody>
     </table>
 </section>
+
+</div>

@@ -37,7 +37,7 @@
     <% end %>
     <% if params[:tipo] == 'activo' %>
         <h2>N° AUDIENCIAS QUE PARTICIPO</h2>
-        <table class="table">
+        <table class="table" id="audiencias_participo">
             <thead>
                 <tr>
                     <th scope="col" class="text-center">Sujeto activo</th>
@@ -64,7 +64,7 @@
             </tbody>
         </table>
       <h2>LICITACIONES ADJUDICADAS</h2>
-        <table class="table">
+        <table class="table" id="licitaciones_adjudicadas">
             <thead>
                 <tr>
                     <th scope="col" class="text-center"> TIPO   </th>
@@ -90,7 +90,7 @@
         </table>
     <% elsif params[:tipo] == 'pasivo' %>
         <h2>Sujetos pasivos</h2>
-        <table class="table">
+        <table class="table" id="sujetos_pasivos_busquedas">
             <thead>
                 <tr>
                     <th scope="col" class="text-center">Sujeto pasivo</th>
@@ -128,7 +128,7 @@
             </tbody>
         </table>
       <h2>LICITACIONES</h2>
-        <table class="table">
+        <table class="table" id="licitaciones_otorgadas">
             <thead>
                 <tr>
                     <th scope="col" class="text-center"> TIPO   </th>

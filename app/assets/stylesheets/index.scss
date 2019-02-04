@@ -196,3 +196,18 @@ footer{
 #car{
     text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }
+
+
+// PArche
+.inicio_page{
+    .dataTables_length{
+        display: none!important;
+    }
+    
+    .dataTables_info{
+        display: none!important;
+    }
+    .top_lobbysta_proveedor_filter{
+        display: none!important;
+    }
+}
