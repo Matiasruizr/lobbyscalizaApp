@@ -53,6 +53,6 @@ test:
 #
 production:
   <<: *default
-  database: lobbyscalizav2_production
-  username: lobbyscalizav2
-  password: <%= ENV['LOBBYSCALIZAV2_DATABASE_PASSWORD'] %>
+  database: multitudes
+  username: multitudes_user@multitudes
+  password: UDKbXY@ty2HNR6kv
