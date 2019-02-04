@@ -56,3 +56,5 @@ production:
   database: multitudes
   username: multitudes_user@multitudes
   password: UDKbXY@ty2HNR6kv
+  wait_timeout: 800000000000000
+ 
