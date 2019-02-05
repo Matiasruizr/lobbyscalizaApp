@@ -30,8 +30,7 @@
         <h1 class="text-center">RUT: <%= @busquedalobbysta.first[1] %> </h1>
         <h1 class="text-center">Monto: $<%= @busquedalobbysta.first[2].to_s.gsub(",",".") %>  </h1>
         <% else %>
-        <h1>Sujeto pasivo</h1>
-         <h1 class="text-center">Organismo: <%= @datos.first[1] %></h1>
+        <h1 class="text-center">Organismo: <%= @datos.first[1] %></h1>
         <h1 class="text-center">RUT: <%= @datos.first[0] %> </h1>
         <% end %>
     <% else %>
