@@ -68,11 +68,5 @@ $(document).ready(function(){
         
     // Fin Smoth scroll
 
-    $("#test123").click(function(){
-        var str = $("input[name='text123']").val()
-        if (str.length>12){
-            var n = str.substring(str.indexOf(",") + 2);
-            document.getElementById('person_id').value=n; 
-        };
-        });
+
 });
