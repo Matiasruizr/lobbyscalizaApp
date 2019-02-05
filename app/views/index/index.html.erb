@@ -65,7 +65,11 @@
             <% @top10 += 1 %>
             <tr>
                 <td scope="col" class="text-center"><%= @top10  %></td>
-                <td scope="col" class="text-center"><%= t[0] %></td> <!-- Rut -->                
+                <td scope="col" class="text-center">
+                    <%= link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'activo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
+                        <%=  t[0] %> 
+                    <% end %>              
+                </td> <!-- Rut -->
                 <td scope="col" class="text-center"><%= t[1] %></td> <!-- Nombre -->
                 <td scope="col" class="text-center"><%= audiencias(t[0]).first[0] %></td> <!-- Cantidad audiencias -->
                 <td scope="col" class="text-center"><%=t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td><!-- Cantidad Contratos -->
@@ -98,7 +102,11 @@
         <% @top10 += 1 %>
             <tr>
                 <td scope="col" class="text-center"> <%= @top10  %></td>
-                <td scope="col" class="text-center"><%= t[0] %></td>
+                  <td scope="col" class="text-center">
+                    <%= link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'activo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
+                        <%=  t[0] %> 
+                    <% end %>              
+                </td> <!-- Rut -->
                 <td scope="col" class="text-center"><%= t[1] %></td>
                 <td scope="col" class="text-center"><%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td> <!-- Cantidad de adjudicaciones -->
                 <td scope="col" class="text-center">$<%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td> <!-- Monto total -->
@@ -136,7 +144,11 @@
     <% @top10 += 1 %>
             <tr>
                 <td scope="col" class="text-center"><%= @top10  %></td><!-- Posicion -->
-                <td scope="col" class="text-center"><%= t[0] %></td><!-- Rut -->
+                <td scope="col" class="text-center">
+                     <%=  link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'pasivo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
+                       <%= t[0] %>
+                    <% end %>
+                </td><!-- Rut -->
                 <td scope="col" class="text-center"><%= t[1] %></td><!-- Nombre de cOMPRADORES -->
                 <td scope="col" class="text-center">$<%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td><!-- Monto adjudicados -->
                 <td scope="col" class="text-center"><%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td><!-- Cantidad de contratos -->

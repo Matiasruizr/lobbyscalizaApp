@@ -14,6 +14,9 @@
             </tr>
         </thead>
         <tbody>
+            <% if @licitacion_detalle.size > 1 %>
+                <%=  %>
+            <% end  %>
             <% @licitacion_detalle.each do |l| %>
                 <tr>
                     <td scope="col" class="text-center">  <%= l[0] %>  </td><!-- Fecha publicación -->
