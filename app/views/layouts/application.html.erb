@@ -12,7 +12,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <%
+=begin%>
+ <link href="https://unpkg.com/tabulator-tables@4.1.5/dist/css/tabulator.min.css" rel="stylesheet"> 
+<%
+=end%>
+       <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
   </head>
 
   <body>
@@ -66,7 +72,32 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-    
+     <%
+=begin%>
+ <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.1.5/dist/js/tabulator.min.js"></script> 
+<%
+=end%>
+
+  <script  type="text/javascript"  src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> 
+  <script>
+  $('#top_lobbysta_proveedor').DataTable({  paging: false,  });
+  $('#top_proveedores_estado').DataTable({  paging: false });
+  $('#top10compradoresdelestado').DataTable({  paging: false });
+  $('#top_10_orgamnizmos').DataTable({  paging: false });
+
+
+    $('#audiencias_participo').DataTable();
+    $('#licitaciones_adjudicadas').DataTable();
+    $('#sujetos_pasivos_busquedas').DataTable();
+    $('#licitaciones_otorgadas').DataTable();
+
+  
+  // licitaciones_adjudicadas
+  // sujetos_pasivos_busquedas
+  // licitaciones_otorgadas
+
+  </script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     <script src="/static/js/main.js"></script>
   </body>
 </html>

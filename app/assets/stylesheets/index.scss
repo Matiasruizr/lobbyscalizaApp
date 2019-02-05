@@ -85,6 +85,38 @@ section{
         }
     }
 }
+
+
+.tabulator {
+    background: none!important;
+    border:none!important;
+    -webkit-box-shadow: 3px 3px 10px 0px rgba(125,125,125,1);
+    -moz-box-shadow: 3px 3px 10px 0px rgba(125,125,125,1);
+    box-shadow: 3px 3px 10px 0px rgba(125,125,125,1);
+
+    .tabulator-header .tabulator-col {
+        text-align: center!important;
+        overflow: hidden;
+        border: none!important;
+       
+        .tabulator-col-content{
+            background: #4938C1;
+            color: white;
+       
+            font-weight: 300;
+            border:none;
+        }
+    } 
+
+
+}
+
+.tabulator-row .tabulator-cell{
+    border: none!important;
+    height: 40px!important;
+    padding: 7px;
+    text-align: center;
+}
 table{
     -webkit-box-shadow: 3px 3px 10px 0px rgba(125,125,125,1);
     -moz-box-shadow: 3px 3px 10px 0px rgba(125,125,125,1);
@@ -163,4 +195,19 @@ footer{
 
 #car{
     text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+
+// PArche
+.inicio_page{
+    .dataTables_length{
+        display: none!important;
+    }
+    
+    .dataTables_info{
+        display: none!important;
+    }
+    .top_lobbysta_proveedor_filter{
+        display: none!important;
+    }
 }
