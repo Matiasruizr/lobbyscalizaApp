@@ -189,11 +189,15 @@
                 <td scope="col" class="text-center"><%= t[1] %></td>
                 <td scope="col" class="text-center"><%= t[2] %></td>
                 <td scope="col" class="text-center">
-                    <%= link_to controller: 'licitacion', action: 'licitacion', rut: t[5], target: '_blank' do %>
+                    
                          <%= t[4] %> 
-                    <% end %>      
+
                 </td> 
-                <td scope="col" class="text-center"> <%= t[6] %> </td> 
+                <td scope="col" class="text-center">
+                    <%= link_to controller: 'licitacion', action: 'licitacion', rut: t[5], target: '_blank' do %>
+                        <%= t[6] %> 
+                    <% end %>   
+                 </td> 
             
             </tr>
         <% end %> 
