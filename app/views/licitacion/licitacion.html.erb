@@ -1,8 +1,12 @@
 
 
 <section class="container top-nav">
-    <h1>Detalle de Licitaciones Adjudicadas de tipo <%= params[:tipo] %></h1>
-    <table class="table">
+    <% if params[:tipo] %>
+        <h1>Detalle de Licitaciones Adjudicadas de tipo <%= params[:tipo] %></h1>
+    <% else %>
+         <h1>Detalle de Licitaciones Adjudicadas a sujeto con rut  <%= params[:rut] %></h1>
+    <% end %>
+    <table class="table" id="detalle_licitaciones_adjudicadas">
         <thead>
             <tr>
                 <th scope="col" class="text-center">Fecha</th>
@@ -15,21 +19,27 @@
         </thead>
         <tbody>
             <% if @licitacion_detalle.size > 1 %>
-                <%=  %>
-            <% end  %>
-            <% @licitacion_detalle.each do |l| %>
-                <tr>
-                    <td scope="col" class="text-center">  <%= l[0] %>  </td><!-- Fecha publicación -->
-                    <td scope="col" class="text-center"><%= l[1] %>  </td> <!-- Código -->
-                    <td scope="col" class="text-center">  <%= l[2] %></td> <!-- Región -->
-                    <td scope="col" class="text-center">   <%= l[5] %></td><!-- Toma Razón -->
-                    
-                    <td scope="col" class="text-center">   <%= l[3] %> - <%= l[4] %> </td><!-- Proevedor -->
-                    <td scope="col" class="text-center">
-                        <a href="<%= l[6] %>" target="_blank"> <i class='fas fa-search'></i> </a>
-                    </td>
+              
+           
+                <% @licitacion_detalle.each do |l| %>
+                    <tr>
+                        <td scope="col" class="text-center">  <%= l[0] %>  </td><!-- Fecha publicación -->
+                        <td scope="col" class="text-center"><%= l[1] %>  </td> <!-- Código -->
+                        <td scope="col" class="text-center">  <%= l[2] %></td> <!-- Región -->
+                        <td scope="col" class="text-center">   <%= l[5] %></td><!-- Toma Razón -->
+                        
+                        <td scope="col" class="text-center">   <%= l[3] %> - <%= l[4] %> </td><!-- Proevedor -->
+                        <td scope="col" class="text-center">
+                            <a href="<%= l[6] %>" target="_blank"> <i class='fas fa-search'></i> </a>
+                        </td>
+                    </tr>
+                <% end %>
+            <% else %>
+               <tr class="text-center">
+                        <td scope="col" class="text-center">   No existe este detalle en la APi de Chilecompra</td><!-- Fecha publicación -->
                 </tr>
-            <% end %>
+                
+            <% end  %>
         </tbody>
     </table>
     

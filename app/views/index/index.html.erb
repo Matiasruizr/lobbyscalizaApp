@@ -165,16 +165,17 @@
 
 
 <section class="container">
-    <h2>TOP 10 ORGANISMOS DEL ESTADO CON MAYOR NUMERO DE AUDIENCIAS OTORGADAS A PROVEEDORES</h2>
+    <h2>TOP 10 ORGANISMOS DEL ESTADO CON MAYOR NÚMERO DE AUDIENCIAS OTORGADAS A PROVEEDORES</h2>
     <table class="table" id="top_10_orgamnizmos">
     <thead>
         <tr>
         <th scope="col" class="text-center">Posición de organización</th>
-        <th scope="col" class="text-center">Cantidad audiencias</th>
+        <th scope="col" class="text-center">Número total de audiencias</th>
         <th scope="col" class="text-center">Organismo</th>
         <th scope="col" class="text-center">Proveedor / Sujeto activo  </th>
         <th scope="col" class="text-center">Audiencias</th>
         <th scope="col" class="text-center">Licitaciones </th>
+         <th scope="col" class="text-center">Rut </th>
         </tr>
     </thead>
     <tbody>
@@ -187,8 +188,13 @@
                 <td scope="col" class="text-center"><%= t[0].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td>
                 <td scope="col" class="text-center"><%= t[1] %></td>
                 <td scope="col" class="text-center"><%= t[2] %></td>
-                <td scope="col" class="text-center"><%= t[4] %></td> 
+                <td scope="col" class="text-center">
+                    <%= link_to controller: 'licitacion', action: 'licitacion', rut: t[5], target: '_blank' do %>
+                         <%= t[4] %> 
+                    <% end %>      
+                </td> 
                 <td scope="col" class="text-center"> <%= t[6] %> </td> 
+            
             </tr>
         <% end %> 
     </tbody>

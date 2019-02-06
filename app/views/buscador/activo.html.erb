@@ -2,13 +2,13 @@
 
 <section class="container top-nav">
 <section id="element">
-    <h1>Encuentra información de sujeto activo o pasivo</h1>
+    <h1>Encuentra información de proveedores o compradores</h1>
     <br/>
     <form action="<%= buscador_activo_path %>" method = 'get' class="form-inline row">
         <div class="col-12">
         <%# Sujeto &nbsp;&nbsp;<input type="checkbox" id="check1" name="tipo" checked data-toggle="toggle" data-on="Activo" data-off="Pasivo" data-onstyle="primary" data-offstyle="info" data-style="quick"> %>
-        <input type="radio" class="btn btn-primary" name="tipo" value="activo">Activo
-        <input type="radio" class="btn btn-secondary" name="tipo" value="pasivo"> Pasivo
+        <input type="radio" class="btn btn-primary" name="tipo" value="activo">Proveedor
+        <input type="radio" class="btn btn-secondary" name="tipo" value="pasivo"> Comprador
          <%# Sujeto activo  <%= radio_button_tag  'tipo', 'activo', params[:tipo], :checked => true %>  
          <%# Sujeto pasivo  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo] %>  
         </div>
@@ -34,7 +34,7 @@
         <h1 class="text-center">RUT: <%= @datos.first[0] %> </h1>
         <% end %>
     <% else %>
-        <h1 class="text-center">Busca un sujeto activo o pasivo en el buscador de arriba</h1>
+        <h1 class="text-center">Busca compradores o proveedores en el buscador de arriba</h1>
     <% end %>
     <% if params[:tipo] == 'activo' %>
         <h2>N° AUDIENCIAS QUE PARTICIPO</h2>
