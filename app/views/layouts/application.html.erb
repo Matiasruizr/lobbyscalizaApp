@@ -94,14 +94,14 @@
     $('#licitaciones_otorgadas').DataTable();
     $('#detalle').DataTable();
     $('#detalle_licitaciones_adjudicadas').DataTable();
-    $("#test123").click(function(){
-      var str = $("input[name='text123']").val();
-      
-        if (str.length>12){
-            var n = str.substring(str.indexOf(",") + 2);
-            document.getElementById('person_id').value=n; 
-        };
-      });
+
+      $("#test123").click(function(){
+            var str = $("input[name='text123']").val()
+            if (str.length>12){
+                var n = str.substring(str.indexOf(",") + 2);
+                document.getElementById('person_id').value=n; 
+            };
+            });
   // licitaciones_adjudicadas
   // sujetos_pasivos_busquedas
   // licitaciones_otorgadas

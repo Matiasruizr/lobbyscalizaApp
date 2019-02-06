@@ -64,9 +64,8 @@ $(document).ready(function(){
                 });
             }
             }
-        }); 
+        }); // Fin Smoth scroll
+
+
         
-    // Fin Smoth scroll
-
-
 });
