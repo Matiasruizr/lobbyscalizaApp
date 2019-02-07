@@ -2,6 +2,7 @@ class AudienciaController < ApplicationController
   def detalle 
     @id = "'"+params[:id]+"'"
     @rut = params[:rut]
+    @org = params[:nombre]
 
 
 
@@ -21,7 +22,7 @@ class AudienciaController < ApplicationController
                             join audiencia_materia as am on adm.audiencia_materia_id = am.id
                             join audiencia_cabecera as auca on auca.id = ad.id
                             join sujeto_pasivo_detalle spd on ad.sujeto_pasivo_id = spd.id
-                            where representa_rut = '#{@rut}';")
+                            where representa_rut = '#{@rut}' and spd.institucion_nombre = '#{@org}';")
     else 
       @audiencia_detalle =  ActiveRecord::Base.connection.execute( "select asistente.nombres, asistente.apellidos, am.nombre, representa_nombre,
                                                                     auca.fecha_termino,
