@@ -1,8 +1,8 @@
 
 
 <section class="container top-nav">
-    <h1>Detalle de Audiencias de sujeto pasivo Rut: <%= params[:id] %></h1>
-    <table class="table">
+    <h1>Detalle de Audiencias de sujeto pasivo Rut: <%= params[:rut] %></h1>
+    <table class="table" id="detalles_de_las_audiencias">
 
         <thead>
             <tr>
@@ -18,7 +18,7 @@
         <tbody>
             <% @audiencia_detalle.each do |a| %>
                 <tr>
-                    <%= a %>
+                    
                     <td scope="col" class="text-center">  <%= a[0] %>  <%= a[1] %> </td><!-- Sujeto activo -->
                     <td scope="col" class="text-center"> <%= a[4]  %></td><!-- Fecha -->
                     <td scope="col" class="text-center"> <%= a[5]  %> </td>

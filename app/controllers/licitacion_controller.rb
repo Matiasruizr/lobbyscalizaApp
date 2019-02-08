@@ -47,7 +47,7 @@ class LicitacionController < ApplicationController
         group by licitacion_detalle.codigo_externo;")
 
       else
-        @org = params[:nombre]
+        @org = params[:org]
         @licitacion_detalle =  ActiveRecord::Base.connection.execute( "
         select fecha_publicacion,
         licitacion_detalle.codigo_externo, comprador_region_unidad, comprador_nombre_organismo,
@@ -56,7 +56,8 @@ class LicitacionController < ApplicationController
         join licitacion_detalle_licitacion_item  as inter
         on licitacion_item.id = inter.licitacion_item_id
         join licitacion_detalle on inter.codigo_externo = licitacion_detalle.codigo_externo
-        where adjudicacion_rut_proveedor = '#{@rut}' and comprador_nombre_organismo = '#{@org}'
+        where adjudicacion_rut_proveedor = '#{@rut}' 
+        and comprador_nombre_organismo = '#{@org}'
         group by licitacion_detalle.codigo_externo;")
 
       end

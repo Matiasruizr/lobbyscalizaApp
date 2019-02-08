@@ -110,7 +110,8 @@
                                 <th class="text-center"> <%=  t[2] %></th>
                                 <th class="text-center"> <%=  t[3] %></th>                               
                                 <th class="text-center">
-                                    <%=  link_to controller: 'audiencia', action: 'detalleaudiencia', id: t[1] , target: '_blank' do %>
+                                    <!-- Error, esta filtrando mal -->
+                                    <%=  link_to controller: 'audiencia', action: 'detalleaudiencia', rut: t[1] , target: '_blank' do %>
                                         <i class='fas fa-search'></i> 
                                     <% end %>
                                 </th>  
