@@ -31,7 +31,7 @@ class LicitacionController < ApplicationController
         where comprador_rut_unidad = '#{@rut}' and comprador_nombre_organismo = '#{@org}';")
 
       end
-    if else  @sujeto == 'activo'
+    elsif  @sujeto == 'activo'
       #activo
       if @tipo
         @licitacion_detalle =  ActiveRecord::Base.connection.execute( " 
