@@ -30,8 +30,7 @@ class BuscadorController < ApplicationController
                                                     from licitacion_detalle
                                                     where comprador_rut_unidad = #{@rut}
                                                     group by  comprador_rut_unidad;")
-    elsif 
-      params[:tipo] == 'activo'
+    elsif  params[:tipo] == 'activo'
       @busquedalobbysta = ActiveRecord::Base.connection.execute("select adjudicacion_nombre_proveedor, adjudicacion_rut_proveedor, total_monto from busqueda_lobbysta where adjudicacion_rut_proveedor = #{@rut};  ");
       @cantidad_audiencias = ActiveRecord::Base.connection.execute("select cantidad
                                                                     from cantidad_de_audiencias

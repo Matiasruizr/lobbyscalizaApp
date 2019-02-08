@@ -81,7 +81,7 @@
                         <th class="text-center"><%= descripcionDeTipo(t[0]) %></th><!-- Descripcion -->
                         <th class="text-center"><%= t[1] %></th>
                         <th class="text-center">
-                            <%=  link_to controller: 'licitacion', action: 'licitacion', rut: @busquedalobbysta.first[1], tipo: t[0], target: '_blank' do %>
+                            <%=  link_to controller: 'licitacion', action: 'licitacion', rut: @busquedalobbysta.first[1], tipo: t[0], sujeto: 'activo', target: '_blank' do %>
                                 <i class='fas fa-search'></i> 
                             <% end %>
                         </th> 
@@ -98,11 +98,7 @@
                     <th scope="col" class="text-center">Rut</th>
                     <th scope="col">Cargo</th>
                     <th scope="col">Cantidad de audiencias</th>
-                    <%
-=begin%>
- <th scope="col">Detalle</th> 
-<%
-=end%>
+                    <th scope="col">Detalle</th> 
                 </tr>
             </thead>
             <tbody>
@@ -112,17 +108,14 @@
                                 <th class="text-center"><%= t[0] %> </th>
                                 <th class="text-center"><%= t[1] %> </th>
                                 <th class="text-center"> <%=  t[2] %></th>
-                                <th class="text-center"> <%=  t[3] %></th>
-                               
-                                <%
-=begin%>
- <th class="text-center">
-                                    <%=  link_to controller: 'audiencia', action: 'detalleaudiencia', id: t[1] , target: '_blank' do %>
+                                <th class="text-center"> <%=  t[3] %></th>                               
+                                <th class="text-center">
+                                    <!-- Error, esta filtrando mal -->
+                                    <%=  link_to controller: 'audiencia', action: 'detalleaudiencia', rut: t[1] , target: '_blank' do %>
                                         <i class='fas fa-search'></i> 
                                     <% end %>
                                 </th>  
-<%
-=end%>
+
                             </tr> 
                         <% end %> 
                 <% end %>
@@ -146,7 +139,7 @@
                         <th class="text-center"><%= t[1] %></th>
                         <% if @busquedalobbysta %>
                             <th class="text-center">
-                                <%=  link_to controller: 'licitacion', action: 'licitacion', rut: @datos.first[0], tipo: t[0], target: '_blank' do %>
+                                <%=  link_to controller: 'licitacion', action: 'licitacion', rut: @datos.first[0], tipo: t[0], target: '_blank', sujeto: 'pasivo' do %>
                                     <i class='fas fa-search'></i> 
                                 <% end %>
                             </th> 

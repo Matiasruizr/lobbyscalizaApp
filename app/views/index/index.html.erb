@@ -131,7 +131,7 @@
         <th scope="col" class="text-center">Rut</th>
         <th scope="col" class="text-center">Nombre comprador</th>
         <th scope="col" class="text-center">Monto</th>
-        <th scope="col" class="text-center">Cantidad de contratos adjudicados </th>
+        <th scope="col" class="text-center">Cantidad de contratos </th>
         <th scope="col" class="text-center">Detalle</th>
         </tr>
     </thead>
@@ -147,7 +147,7 @@
                        <%= t[0] %>
                     <% end %>
                 </td><!-- Rut -->
-                <td scope="col" class="text-center"><%= t[1] %></td><!-- Nombre de cOMPRADORES -->
+                <td scope="col" class="text-center"><%= t[1] %></td><!-- Nombre de compradores -->
                 <td scope="col" class="text-center">$<%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td><!-- Monto adjudicados -->
                 <td scope="col" class="text-center"><%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td><!-- Cantidad de contratos -->
                 <td scope="col" class="text-center">
@@ -189,12 +189,12 @@
                 <td scope="col" class="text-center"><%= t[1] %></td>
                 <td scope="col" class="text-center"><%= t[2] %></td>
                 <td scope="col" class="text-center">
-                    <%= link_to controller: 'audiencia', action: 'detalle', rut: t[5], nombre: t[1], target: '_blank', id: 0 do %>
+                    <%= link_to controller: 'audiencia', action: 'detalle', rut: t[5], nombre:t[1], target: '_blank', id: 0, ruta: 'index' do %>
                         <%= t[4] %> 
-                    <% end %>  
+                    <% end %>   
                 </td> 
                 <td scope="col" class="text-center">
-                    <%= link_to controller: 'licitacion', action: 'licitacion', rut: t[5], nombre: t[1], target: '_blank' do %>
+                    <%= link_to controller: 'licitacion', action: 'licitacion', rut: t[5], sujeto:'activo', org: t[1], target: '_blank' do %>
                         <%= t[6] %> 
                     <% end %>   
                  </td> 
