@@ -6,9 +6,9 @@ class LicitacionController < ApplicationController
    
 
     if @tipo
-      @licitacion_detalle =  ActiveRecord::Base.connection.execute( "select fecha_publicacion,
+      @licitacion_detalle =  ActiveRecord::Base.connection.execute( " select fecha_publicacion,
       licitacion_detalle.codigo_externo, comprador_region_unidad, adjudicacion_nombre_proveedor,
-      comprador_rut_unidad, comprador_nombre_usuario,  adjudicacion_url_acta
+      adjudicacion_rut_proveedor, comprador_nombre_usuario,  adjudicacion_url_acta, comprador_rut_unidad
       from licitacion_item
       join licitacion_detalle_licitacion_item  as inter
       on licitacion_item.id = inter.licitacion_item_id
@@ -19,9 +19,9 @@ class LicitacionController < ApplicationController
 
     else
       @org = params[:nombre]
-      @licitacion_detalle =  ActiveRecord::Base.connection.execute( "select fecha_publicacion, 
-      licitacion_detalle.codigo_externo, comprador_region_unidad, comprador_nombre_unidad, 
-      comprador_rut_unidad, comprador_nombre_usuario, adjudicacion_url_acta
+      @licitacion_detalle =  ActiveRecord::Base.connection.execute( "select fecha_publicacion,
+      licitacion_detalle.codigo_externo, comprador_region_unidad, adjudicacion_nombre_proveedor,
+      adjudicacion_rut_proveedor, comprador_nombre_usuario,  adjudicacion_url_acta, comprador_rut_unidad
       from licitacion_item
       join licitacion_detalle_licitacion_item  as inter
       on licitacion_item.id = inter.licitacion_item_id
