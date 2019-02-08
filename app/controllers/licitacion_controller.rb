@@ -13,9 +13,11 @@ class LicitacionController < ApplicationController
       join licitacion_detalle_licitacion_item  as inter
       on licitacion_item.id = inter.licitacion_item_id
       join licitacion_detalle on inter.codigo_externo = licitacion_detalle.codigo_externo
-      where adjudicacion_rut_proveedor = '#{@rut}'
+      where comprador_rut_unidad = '#{@rut}'
       and tipo = '#{@tipo}'
       group by licitacion_detalle.codigo_externo;")
+
+      #61.607.502-0
     else
       @comprador = 
       @licitacion_detalle =  ActiveRecord::Base.connection.execute( "select fecha_publicacion, 
@@ -25,7 +27,7 @@ class LicitacionController < ApplicationController
       join licitacion_detalle_licitacion_item  as inter
       on licitacion_item.id = inter.licitacion_item_id
       join licitacion_detalle on inter.codigo_externo = licitacion_detalle.codigo_externo
-      where adjudicacion_rut_proveedor = '#{@rut}' and comprador_nombre_organismo = '#{@org}';")
+      where comprador_rut_unidad = '#{@rut}' and comprador_nombre_organismo = '#{@org}';")
 
     end
   end

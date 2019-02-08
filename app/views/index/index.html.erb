@@ -131,7 +131,7 @@
         <th scope="col" class="text-center">Rut</th>
         <th scope="col" class="text-center">Nombre comprador</th>
         <th scope="col" class="text-center">Monto</th>
-        <th scope="col" class="text-center">Cantidad de contratos adjudicados </th>
+        <th scope="col" class="text-center">Cantidad de contratos </th>
         <th scope="col" class="text-center">Detalle</th>
         </tr>
     </thead>
@@ -189,12 +189,12 @@
                 <td scope="col" class="text-center"><%= t[1] %></td>
                 <td scope="col" class="text-center"><%= t[2] %></td>
                 <td scope="col" class="text-center">
-                    <%= link_to controller: 'audiencia', action: 'detalle', rut: t[5], nombre: t[1], target: '_blank', id: 0 do %>
+                    <%= link_to controller: 'audiencia', action: 'detalle', rut: t[5], target: '_blank', id: 0 do %>
                         <%= t[4] %> 
                     <% end %>  
                 </td> 
                 <td scope="col" class="text-center">
-                    <%= link_to controller: 'licitacion', action: 'licitacion', rut: t[5], nombre: t[1], target: '_blank' do %>
+                    <%= link_to controller: 'licitacion', action: 'licitacion', rut: t[5], comprador:  ,target: '_blank' do %>
                         <%= t[6] %> 
                     <% end %>   
                  </td> 
