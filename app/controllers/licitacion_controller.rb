@@ -6,6 +6,9 @@ class LicitacionController < ApplicationController
    
     # Sujeto pasivo... Audiencias otorgadas por (Rut)
     #pasivo
+
+   
+
     if  @sujeto == 'pasivo'
       if @tipo
         @licitacion_detalle =  ActiveRecord::Base.connection.execute( " select fecha_publicacion,
