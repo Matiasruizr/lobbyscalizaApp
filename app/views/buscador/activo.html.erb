@@ -98,11 +98,7 @@
                     <th scope="col" class="text-center">Rut</th>
                     <th scope="col">Cargo</th>
                     <th scope="col">Cantidad de audiencias</th>
-                    <%
-=begin%>
- <th scope="col">Detalle</th> 
-<%
-=end%>
+                    <th scope="col">Detalle</th> 
                 </tr>
             </thead>
             <tbody>
@@ -112,17 +108,13 @@
                                 <th class="text-center"><%= t[0] %> </th>
                                 <th class="text-center"><%= t[1] %> </th>
                                 <th class="text-center"> <%=  t[2] %></th>
-                                <th class="text-center"> <%=  t[3] %></th>
-                               
-                                <%
-=begin%>
- <th class="text-center">
+                                <th class="text-center"> <%=  t[3] %></th>                               
+                                <th class="text-center">
                                     <%=  link_to controller: 'audiencia', action: 'detalleaudiencia', id: t[1] , target: '_blank' do %>
                                         <i class='fas fa-search'></i> 
                                     <% end %>
                                 </th>  
-<%
-=end%>
+
                             </tr> 
                         <% end %> 
                 <% end %>

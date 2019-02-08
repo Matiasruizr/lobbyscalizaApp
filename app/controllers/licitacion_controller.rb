@@ -57,7 +57,7 @@ class LicitacionController < ApplicationController
         on licitacion_item.id = inter.licitacion_item_id
         join licitacion_detalle on inter.codigo_externo = licitacion_detalle.codigo_externo
         where adjudicacion_rut_proveedor = '#{@rut}' and comprador_nombre_organismo = '#{@org}'
-        group by licitacion_detalle.codigo_externo;"
+        group by licitacion_detalle.codigo_externo;")
 
       end
     end
