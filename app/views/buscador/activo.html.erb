@@ -81,7 +81,7 @@
                         <th class="text-center"><%= descripcionDeTipo(t[0]) %></th><!-- Descripcion -->
                         <th class="text-center"><%= t[1] %></th>
                         <th class="text-center">
-                            <%=  link_to controller: 'licitacion', action: 'licitacion', rut: @busquedalobbysta.first[1], tipo: t[0], target: '_blank' do %>
+                            <%=  link_to controller: 'licitacion', action: 'licitacion', rut: @busquedalobbysta.first[1], tipo: t[0], sujeto: 'activo', target: '_blank' do %>
                                 <i class='fas fa-search'></i> 
                             <% end %>
                         </th> 
@@ -146,7 +146,7 @@
                         <th class="text-center"><%= t[1] %></th>
                         <% if @busquedalobbysta %>
                             <th class="text-center">
-                                <%=  link_to controller: 'licitacion', action: 'licitacion', rut: @datos.first[0], tipo: t[0], target: '_blank' do %>
+                                <%=  link_to controller: 'licitacion', action: 'licitacion', rut: @datos.first[0], tipo: t[0], target: '_blank', sujeto: 'pasivo' do %>
                                     <i class='fas fa-search'></i> 
                                 <% end %>
                             </th> 

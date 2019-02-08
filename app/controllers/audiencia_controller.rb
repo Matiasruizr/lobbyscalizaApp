@@ -4,6 +4,7 @@ class AudienciaController < ApplicationController
     @rut = params[:rut]
     @org = params[:nombre]
 
+    
 
 
     if @rut
