@@ -16,20 +16,23 @@ class BuscadorController < ApplicationController
 
 
     if params[:tipo] == 'pasivo'
-       @busquedalobbysta = ActiveRecord::Base.connection.execute("select comprador_nombre_usuario, comprador_rut_usuario, comprador_cargo_usuario, count(codigo_externo)
-                                                                  from licitacion_detalle
-                                                                  where comprador_rut_unidad = #{@rut}
-                                                                  group by  comprador_rut_usuario
-                                                                  order by count(codigo_externo) desc")
+      @datos = ActiveRecord::Base.connection.execute("select comprador_rut_unidad, comprador_nombre_organismo
+      from licitacion_detalle
+      where comprador_rut_unidad = #{@rut}
+      group by  comprador_rut_unidad;")
+       @busquedalobbysta = ActiveRecord::Base.connection.execute("select CONCAT(spd.nombres,' ',spd.apellidos) as nombre, spd.cargo , count(audiencia_detalle.id) as numero_audiencias,
+                                                                institucion_nombre, spd.id
+                                                                from audiencia_detalle
+                                                                join sujeto_pasivo_detalle spd on audiencia_detalle.sujeto_pasivo_id = spd.id
+                                                                join institucion_detalle id on id.codigo = spd.institucion_codigo
+                                                                where institucion_nombre like '%#{@datos.first[1]}%'
+                                                                group by spd.id;")
 
        @licitaciones_otorgadas = ActiveRecord::Base.connection.execute("select tipo, count(codigo_externo)  
                                                                         from licitacion_detalle where comprador_rut_unidad = #{@rut}
                                                                         group by tipo
                                                                         order by count(codigo_externo);")
-      @datos = ActiveRecord::Base.connection.execute("select comprador_rut_unidad, comprador_nombre_organismo
-                                                    from licitacion_detalle
-                                                    where comprador_rut_unidad = #{@rut}
-                                                    group by  comprador_rut_unidad;")
+    
     elsif  params[:tipo] == 'activo'
       @busquedalobbysta = ActiveRecord::Base.connection.execute("select adjudicacion_nombre_proveedor, adjudicacion_rut_proveedor, total_monto from busqueda_lobbysta where adjudicacion_rut_proveedor = #{@rut};  ");
       @cantidad_audiencias = ActiveRecord::Base.connection.execute("select cantidad

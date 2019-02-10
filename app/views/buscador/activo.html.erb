@@ -7,10 +7,14 @@
     <form action="<%= buscador_activo_path %>" method = 'get' class="form-inline row">
         <div class="col-12">
         <%# Sujeto &nbsp;&nbsp;<input type="checkbox" id="check1" name="tipo" checked data-toggle="toggle" data-on="Activo" data-off="Pasivo" data-onstyle="primary" data-offstyle="info" data-style="quick"> %>
-        <input type="radio" name="tipo" value="activo">Proveedor
-        <input type="radio" name="tipo" value="pasivo"> Comprador
-         <%# Sujeto activo  <%= radio_button_tag  'tipo', 'activo', params[:tipo], :checked => true %>  
-         <%# Sujeto pasivo  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo] %>  
+        <%
+=begin%>
+ <input type="radio" name="tipo" value="activo">Proveedor
+        <input type="radio" name="tipo" value="pasivo"> Comprador 
+<%
+=end%>
+           Proveedor  <%= radio_button_tag  'tipo', 'activo', params[:tipo], :checked => true %>  
+           Comprador  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo] %>
         </div>
             <input name="text123" class="form-control mr-sm col-9 center" type="text" id="autocomplete" placeholder="Buscar sujeto activo o pasivo" aria-label="Search">
             <input type="hidden" id="person_id" name="rut"/>
@@ -95,7 +99,6 @@
             <thead>
                 <tr>
                     <th scope="col" class="text-center">Sujeto pasivo</th>
-                    <th scope="col" class="text-center">Rut</th>
                     <th scope="col">Cargo</th>
                     <th scope="col">Cantidad de audiencias</th>
                     <th scope="col">Detalle</th> 
@@ -108,10 +111,9 @@
                                 <th class="text-center"><%= t[0] %> </th>
                                 <th class="text-center"><%= t[1] %> </th>
                                 <th class="text-center"> <%=  t[2] %></th>
-                                <th class="text-center"> <%=  t[3] %></th>                               
                                 <th class="text-center">
                                     <!-- Error, esta filtrando mal -->
-                                    <%=  link_to controller: 'audiencia', action: 'detalleaudiencia', rut: t[1] , target: '_blank' do %>
+                                    <%=  link_to controller: 'audiencia', action: 'detalleaudiencia', sujeto_id: t[4] , nombre_organizmo: @datos.first[1]  do %>
                                         <i class='fas fa-search'></i> 
                                     <% end %>
                                 </th>  
