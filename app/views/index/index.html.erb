@@ -88,7 +88,7 @@
     <table class="table" id="top_proveedores_estado">
     <thead>
         <tr>
-      <th scope="col" class="text-center">Posición de organización</th>
+      <th scope="col" class="text-center">Posición</th>
         <th scope="col" class="text-center">Rut</th>
         <th scope="col" class="text-center">Nombre proveedor</th>
         <th scope="col" class="text-center">Cantidad de contratos adjudicados</th>
@@ -127,7 +127,7 @@
     <table class="table" id="top10compradoresdelestado">
     <thead>
         <tr>
-        <th scope="col" class="text-center">Posición de organización</th>
+        <th scope="col" class="text-center">Posición</th>
         <th scope="col" class="text-center">Rut</th>
         <th scope="col" class="text-center">Nombre comprador</th>
         <th scope="col" class="text-center">Monto</th>
@@ -169,7 +169,7 @@
     <table class="table" id="top_10_orgamnizmos">
     <thead>
         <tr>
-        <th scope="col" class="text-center">Posición de organización</th>
+        <th scope="col" class="text-center">Posición</th>
         <th scope="col" class="text-center">Número total de audiencias</th>
         <th scope="col" class="text-center">Organismo</th>
         <th scope="col" class="text-center">Proveedor / Sujeto activo  </th>
@@ -184,18 +184,18 @@
  <% @top_compradores_estado.each do |t| %>
  <% @top10 += 1 %>
             <tr>
-                <td scope="col" class="text-center"><%= @top10  %></td>
-                <td scope="col" class="text-center"><%= t[0].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td>
-                <td scope="col" class="text-center"><%= t[1] %></td>
-                <td scope="col" class="text-center"><%= t[2] %></td>
-                <td scope="col" class="text-center">
+                <td scope="col" class="text-center"><%= @top10  %></td> <!-- Posición-->
+                <td scope="col" class="text-center"><%= t[0].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td><!-- Total Audiencias-->
+                <td scope="col" class="text-center"><%= t[1] %></td><!-- Organismo-->
+                <td scope="col" class="text-center"><%= t[2] %></td><!-- Proveedor-->
+                <td scope="col" class="text-center"><!-- Audiencias-->
                     <%= link_to controller: 'audiencia', action: 'detalle', rut: t[5], nombre:t[1], target: '_blank', id: 0, ruta: 'index' do %>
                         <%= t[4] %>
                     <% end %>
                 </td>
-                <td scope="col" class="text-center">
+                <td scope="col" class="text-center"><!-- Licitaciones -->
                     <%= link_to controller: 'licitacion', action: 'licitacion', rut: t[5], sujeto:'activo', org: t[1], target: '_blank' do %>
-                        <%= t[6] %>
+                        <%= contratosorg(t[5],t[1]).first[0] %>
                     <% end %>
                  </td>
 
