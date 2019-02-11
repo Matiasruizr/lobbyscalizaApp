@@ -1,31 +1,39 @@
 
 
 <section class="container top-nav">
-    <h1>Detalle de Audiencias de sujeto pasivo Rut: <%= params[:rut] %></h1>
+    <h1>Detalle de Audiencias de sujeto pasivo <%= @audiencia_detalle.first[6] %></h1>
     <table class="table" id="detalles_de_las_audiencias">
 
         <thead>
             <tr>
                 <th scope="col" class="text-center">Sujeto Pasivo</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Tema</th>
-                <th scope="col">Materias</th>
-                <th scope="col" class="text-center">Sujeto activo</th>
                 <th scope="col" class="text-center">Cargo</th>
                 <th scope="col" class="text-center">Organismo</th>
+                <th scope="col" class="text-center">Sujeto activo</th>
+                <th scope="col" class="text-center">Empresa</th>
+                <th scope="col" class="text-center">Rut</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Lugar</th>
+                <th scope="col">Tema</th>
+                <th scope="col">Materias</th>
+             
             </tr>
         </thead>
         <tbody>
             <% @audiencia_detalle.each do |a| %>
                 <tr>
                     
-                    <td scope="col" class="text-center">  <%= a[0] %>  <%= a[1] %> </td><!-- Sujeto activo -->
+                    <td scope="col" class="text-center"> <%= a[6] %></td><!-- Sujeto Pasivo -->
+                    <td scope="col" class="text-center"> <%= a[7] %> </td><!-- Cargo -->
+                    <td scope="col" class="text-center"> <%= a[9] %> </td><!-- Sujeto -->
+                    <td scope="col" class="text-center"> <%= a[0] %>  <%= a[1] %> </td><!-- Sujeto activo -->
+                    <td scope="col" class="text-center"> <%= a[3] %></td>  <!-- Empresa -->
+                    <td scope="col" class="text-center"> <%= a[11]  %></td><!-- Rut -->
                     <td scope="col" class="text-center"> <%= a[4]  %></td><!-- Fecha -->
-                    <td scope="col" class="text-center"> <%= a[5]  %> </td>
-                    <td scope="col" class="text-center">   <%= a[2] %></td><!-- Materias -->
-                    <td scope="col" class="text-center">   <%= a[6] %></td><!-- Sujeto Pasivo -->
-                    <td scope="col" class="text-center"> <%= a[7] %> </td>
-                    <td scope="col" class="text-center">  <%= a[9] %></td>  <!-- Organizmo -->
+                    <td scope="col" class="text-center"> <%= a[10]  %></td><!-- Lugar -->
+                    <td scope="col" class="text-center"> <%= a[5]  %> </td> <!-- Tema -->
+                    <td scope="col" class="text-center"> <%= a[2] %></td><!-- Materias -->
+                    
 
                 </tr>
             <% end %>

@@ -66,8 +66,8 @@ class AudienciaController < ApplicationController
   end
 
   def detalleaudiencia
-    @id = params[:id]
-
+    @sujeto_id = params[:sujeto_id]
+    @nombre_organizmo = params[:nombre_organizmo]
 
     @audiencia_detalle =  ActiveRecord::Base.connection.execute( "
     select asistente.nombres, asistente.apellidos, am.nombre, representa_nombre,
@@ -76,7 +76,9 @@ class AudienciaController < ApplicationController
     CONCAT(spd.nombres,' ',spd.apellidos) as 'sujeto pasivo',
     spd.cargo,
     spd.id,
-    spd.institucion_nombre
+    i.nombre,
+    lugar,
+    representa_rut
     from asistente
     join cargo_activo as ca on asistente.cargo_activo_id = ca.id
     join audiencia_detalle_asistente as jds on asistente.id = jds.asistente_id
@@ -85,7 +87,10 @@ class AudienciaController < ApplicationController
     join audiencia_materia as am on adm.audiencia_materia_id = am.id
     join audiencia_cabecera as auca on auca.id = ad.id
     join sujeto_pasivo_detalle spd on ad.sujeto_pasivo_id = spd.id
-    where asistente.representa_rut = '#{@id}';
+    join institucion_detalle i on spd.institucion_codigo = i.codigo
+    where i.nombre like '%#{@nombre_organizmo}%'
+    and spd.id = #{@sujeto_id}
+    group by audiencia_materia_id;
     ")
 
   end
