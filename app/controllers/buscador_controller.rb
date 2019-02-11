@@ -45,13 +45,15 @@ class BuscadorController < ApplicationController
 
 
       @licitaciones_que_participo =  ActiveRecord::Base.connection.execute("
-                                                                          select  tipo, count(id) as 'cantidad' from licitacion_item
-                                                                          join licitacion_detalle_licitacion_item  as inter
-                                                                          on licitacion_item.id = inter.licitacion_item_id
-                                                                          join licitacion_detalle on inter.codigo_externo = licitacion_detalle.codigo_externo
-                                                                          where adjudicacion_rut_proveedor = #{@rut}
-                                                                          group by  licitacion_detalle.tipo
-                                                                          order by count(id) desc;  
+        select tipo, sum(case when canted>0 THEN 1 ELSE 0 END) from (select tipo, count(*) as canted
+      from licitacion_item
+      join licitacion_detalle_licitacion_item  as inter
+      on licitacion_item.id = inter.licitacion_item_id
+      join licitacion_detalle on inter.codigo_externo = licitacion_detalle.codigo_externo
+      where adjudicacion_rut_proveedor = #{@rut}
+      group by licitacion_detalle.codigo_externo)src
+      group by tipo
+      order by tipo desc;
      ")
     end
     
