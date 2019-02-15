@@ -190,7 +190,7 @@
                 <td scope="col" class="text-center"><%= t[2] %></td><!-- Proveedor-->
                 <td scope="col" class="text-center"><!-- Audiencias-->
                     <%= link_to controller: 'audiencia', action: 'detalle', rut: t[5], nombre:t[1], target: '_blank', id: 0, ruta: 'index' do %>
-                        <%= t[4] %>
+                        <%= audienciasorg(t[5],t[1]).first[0] %>
                     <% end %>
                 </td>
                 <td scope="col" class="text-center"><!-- Licitaciones -->
