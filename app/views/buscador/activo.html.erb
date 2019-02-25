@@ -56,7 +56,7 @@
                 <% @audiencias1.each do |t| %>
                             <tr>
                                 <th class="text-center"><%= t[0] %> <%= t[1] %></th>
-                                <th class="text-center"><%= t[2] %></th>
+                                <th class="text-center"><%= if t[2] == 'no' then 'Gestor de interés' else 'Lobbysta ' end %></th>
                                 <th class="text-center"> <%=  t[3] %></th>
                                 <th class="text-center"> 
                                     <%=  link_to controller: 'audiencia', action: 'detalle',  id: t[4], target: '_blank' do %>
@@ -64,6 +64,7 @@
                                     <% end %>
                                 </th>
                             </tr> 
+                        
                         <% end %> 
                 <% end %>
             </tbody>
@@ -154,6 +155,40 @@
             </tbody>
         </table>
 
+        <%
+=begin%>
+  Proveedor	Zona	Numero de Contratos	Numero de Audiencias
+Sodimac	Santiago	9	0
+Calzados beba	Santiago	11	7
+Dr Simmi	Santiago	21	4
+
+<%
+=end%>
+      <%
+=begin%>
+ <h2>Historia entre sujeto: (this.sujeto) con distintos compradores</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center"> Proveedor</th>
+                    <th scope="col">Zona</th>
+                    <th scope="col">Numero de Contratos</th>
+                    <th scope="col">Numero de Audiencias</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% @licitaciones_otorgadas.each do |t| %>
+                    <tr>
+                        <th class="text-center">Sodimac</th><!-- Tipo -->
+                        <th class="text-center">Santiago</th><!-- Descripcion -->
+                        <th class="text-center">9</th>
+                        <th class="text-center">0</th>     
+                    </tr>
+                <% end %> 
+            </tbody>
+        </table> 
+<%
+=end%>
     <% end %>
 </section>
 

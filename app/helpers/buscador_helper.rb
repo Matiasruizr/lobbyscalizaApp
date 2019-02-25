@@ -7,6 +7,10 @@ module BuscadorHelper
         return	'Licitación Pública Entre 100 y 1000 UTM (LE)'
         when 'LP'
         return 'Licitación Pública Mayor 1000 UTM (LP)'
+        when 'LQ'
+        return 'Licitación Pública igual o superior a 2.000 UTM e inferior a 5.000 UTM'
+        when 'LR'
+        return 'Licitación Pública igual o superior a 5.000 UTM'
         when 'LS'
         return 'Licitación Pública Servicios personales especializados (LS)'
         when 'A1'
@@ -47,6 +51,10 @@ module BuscadorHelper
         return 'Orden de Compra sin Resolución (CA)'
         when 'SE'
         return 'Orden de Compra proveniente de adquisición sin emisión automática de OC (SE)'
+        when 'H2'
+        return  'Licitación Privada igual o superior a 2000 UTM e inferior a 5000 UTM'
+        when 'I2'
+        return 'Licitación Privada Mayor a 5000 UTM'
         else
         return 'Licitación'
         end

@@ -4,7 +4,7 @@
     <% if @rut %>
          <h1>Detalle de Audiencias para <%= @rut %></h1>
     <% else %>
-        <h1>Detalle de Audiencia ID: <%= params[:id] %></h1>
+        <h1>Detalle de Audiencias de sujeto activo: <%= @audiencia_detalle.first[0]+' '+@audiencia_detalle.first[1] %></h1>
     <% end %>
     <table class="table" id="detalle">
 

@@ -22,13 +22,13 @@
               
            
                 <% @licitacion_detalle.each do |l| %>
-                    <tr>
-                        <td scope="col" class="text-center">  <%= l[0] %>  </td><!-- Fecha publicación -->
-                        <td scope="col" class="text-center"><%= l[1] %>  </td> <!-- Código -->
-                        <td scope="col" class="text-center">  <%= l[2] %></td> <!-- Región -->
-                        <td scope="col" class="text-center">   <%= l[5] %></td><!-- Toma Razón -->
+                    <tr>    
+                        <td scope="col" class="text-center"> <%= l[0] %>  </td><!-- Fecha publicación -->
+                        <td scope="col" class="text-center"> <%= l[1] %>  </td> <!-- Código -->
+                        <td scope="col" class="text-center"> <%= l[2] %></td> <!-- Región -->
+                        <td scope="col" class="text-center"> <%= l[5] %></td><!-- Toma Razón -->
                         
-                        <td scope="col" class="text-center">   <%= l[3] %> - <%= l[4] %> </td><!-- Proevedor -->
+                        <td scope="col" class="text-center"> <%= link_to l[3], controller: 'buscador', action:'activo', tipo:'pasivo', rut: l[4] %> </td><!-- Proevedor -->
                         <td scope="col" class="text-center">
                             <a href="<%= l[6] %>" target="_blank"> <i class='fas fa-search'></i> </a>
                         </td>
