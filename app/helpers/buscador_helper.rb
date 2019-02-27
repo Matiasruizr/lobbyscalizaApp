@@ -60,7 +60,7 @@ module BuscadorHelper
         end
     end
     def historial11(rut,org)
-        @historial11 = ActiveRecord::Base.connection.execute("select * #count(*)	
+        @historial11 = ActiveRecord::Base.connection.execute("select count(*)	
         from asistente
         join cargo_activo as ca on asistente.cargo_activo_id = ca.id
         join audiencia_detalle_asistente as jds on asistente.id = jds.asistente_id

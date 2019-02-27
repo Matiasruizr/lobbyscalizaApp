@@ -110,7 +110,7 @@
                         <th class="text-center"><%= t[0] %></th><!-- Nombre -->
                         <th class="text-center"><%= t[1] %></th><!-- Zona -->
                         <th class="text-center"><%= t[2] %></th><!-- Contratos -->
-                        <th class="text-center"><%= historial11(t[3],t[0])%></th><!-- Audiencias -->
+                        <th class="text-center"><%= historial11(@busquedalobbysta.first[1],t[0]).first[0] %></th><!-- Audiencias -->
                     </tr>
                 <% end %> 
             </tbody>
@@ -1975,6 +1975,7 @@ Dr Simmi	Santiago	21	4
        "PASIVOS - Universidad de la Frontera, 87.912.900-1",
 
       //Activos
+      /**/
 "ACTIVO - SERVICIOS GENERALES KONG LTDA SERVIKONG LTDA, 1-799.730-0",
 "ACTIVO - EMPRESA PRUEBA DCCP - PRUEBA TIENDA - 1, 00.000.000-0",
 "ACTIVO - YouNoodle Inc, 01-0973674",
