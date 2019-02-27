@@ -55,6 +55,14 @@ class BuscadorController < ApplicationController
       group by tipo
       order by tipo desc;
      ")
+
+     @historial1 = ActiveRecord::Base.connection.execute("select comprador_nombre_organismo, comprador_comuna_unidad, count(licitacion_detalle.codigo_externo), comprador_rut_unidad
+     from licitacion_item
+     join licitacion_detalle_licitacion_item  as inter
+     on licitacion_item.id = inter.licitacion_item_id
+     join licitacion_detalle on inter.codigo_externo = licitacion_detalle.codigo_externo
+     where adjudicacion_rut_proveedor = #{@rut}
+     group by licitacion_detalle.codigo_externo;")
     end
     
     
