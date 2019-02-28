@@ -175,6 +175,27 @@
                 <% end %> 
             </tbody>
         </table>
+        <h2>Historia con distintos Proveedores:</h2>
+        <table class="table" id="historia_proveedores">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center"> Proveedor</th>
+                    <th scope="col">Zona</th>
+                    <th scope="col">Número de Contratos</th>
+                    <th scope="col">Número de Audiencias</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% @historial2.each do |t| %>
+                    <tr>
+                        <th class="text-center"><%= t[0] %></th><!-- Nombre -->
+                        <th class="text-center"><%= t[1] %></th><!-- Zona -->
+                        <th class="text-center"><%= t[2] %></th><!-- Contratos -->
+                        <th class="text-center"><%= historial11(t[3],@datos.first[1]).first[0] %></th><!-- Audiencias -->
+                    </tr>
+                <% end %> 
+            </tbody>
+        </table>
 
         <%
 =begin%>

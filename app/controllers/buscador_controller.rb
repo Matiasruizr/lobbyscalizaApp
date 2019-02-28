@@ -32,6 +32,15 @@ class BuscadorController < ApplicationController
                                                                         from licitacion_detalle where comprador_rut_unidad = #{@rut}
                                                                         group by tipo
                                                                         order by count(codigo_externo);")
+      @historial2 = ActiveRecord::Base.connection.execute("select adjudicacion_nombre_proveedor, comprador_comuna_unidad, count(licitacion_detalle.codigo_externo) as cant, adjudicacion_rut_proveedor
+      from licitacion_item
+      join licitacion_detalle_licitacion_item  as inter
+      on licitacion_item.id = inter.licitacion_item_id
+      join licitacion_detalle on inter.codigo_externo = licitacion_detalle.codigo_externo
+      where comprador_rut_unidad = #{@rut}
+      group by adjudicacion_rut_proveedor
+      order by cant desc
+      LIMIT 100;")
     
     elsif  params[:tipo] == 'activo'
       @busquedalobbysta = ActiveRecord::Base.connection.execute("select adjudicacion_nombre_proveedor, adjudicacion_rut_proveedor, total_monto from busqueda_lobbysta where adjudicacion_rut_proveedor = #{@rut};  ");
@@ -56,13 +65,14 @@ class BuscadorController < ApplicationController
       order by tipo desc;
      ")
 
-     @historial1 = ActiveRecord::Base.connection.execute("select comprador_nombre_organismo, comprador_comuna_unidad, count(licitacion_detalle.codigo_externo), comprador_rut_unidad
+     @historial1 = ActiveRecord::Base.connection.execute("select comprador_nombre_organismo, comprador_comuna_unidad, count(licitacion_detalle.codigo_externo) as cant, comprador_rut_unidad
      from licitacion_item
      join licitacion_detalle_licitacion_item  as inter
      on licitacion_item.id = inter.licitacion_item_id
      join licitacion_detalle on inter.codigo_externo = licitacion_detalle.codigo_externo
      where adjudicacion_rut_proveedor = #{@rut}
      group by comprador_nombre_organismo
+     order by cant desc
      LIMIT 100;")
     end
     
