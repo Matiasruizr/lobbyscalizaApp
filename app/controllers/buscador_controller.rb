@@ -47,10 +47,15 @@ class BuscadorController < ApplicationController
       @cantidad_audiencias = ActiveRecord::Base.connection.execute("select cantidad
                                                                     from cantidad_de_audiencias
                                                                     where representa_rut = #{@rut} ;")
-      @audiencias1 = ActiveRecord::Base.connection.execute("select nombres, apellidos, 
-                                                          remunerado , audiencias, id  
-                                                          from audiencias1 
-                                                          where representa_rut = #{@rut};")
+      @audiencias1 = ActiveRecord::Base.connection.execute("Select nombres, apellidos, 
+        case
+        when remunerado = 1 then 'si' 
+        when remunerado =0 then 'No' end,
+        count(asistente.id), cargo_activo.id from asistente
+        join cargo_activo on asistente.cargo_activo_id=cargo_activo.id
+        where representa_rut = #{@rut}
+        group by nombres, apellidos
+        ;")
 
 
       @licitaciones_que_participo =  ActiveRecord::Base.connection.execute("
