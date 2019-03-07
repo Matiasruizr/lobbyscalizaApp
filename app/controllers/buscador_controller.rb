@@ -32,7 +32,7 @@ class BuscadorController < ApplicationController
                                                                         from licitacion_detalle where comprador_rut_unidad = #{@rut}
                                                                         group by tipo
                                                                         order by count(codigo_externo);")
-      @historial2 = ActiveRecord::Base.connection.execute("select adjudicacion_nombre_proveedor, comprador_comuna_unidad, count(licitacion_detalle.codigo_externo) as cant, adjudicacion_rut_proveedor
+      @historial2 = ActiveRecord::Base.connection.execute("select IFNULL(adjudicacion_nombre_proveedor,'Otros Proveedores'), comprador_comuna_unidad, count(licitacion_detalle.codigo_externo) as cant, adjudicacion_rut_proveedor
       from licitacion_item
       join licitacion_detalle_licitacion_item  as inter
       on licitacion_item.id = inter.licitacion_item_id
