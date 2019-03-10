@@ -13,6 +13,6 @@ class IndexController < ApplicationController
        @queryy =  ActiveRecord::Base.connection.execute("select * from top_10_compradores;")
    
        # Top 10 licitaciones -> Top 10 compradores del estado
-       @top_compradores_estado = 	ActiveRecord::Base.connection.execute("select * from top_10_organismos;")
+       @top_compradores_estado = 	ActiveRecord::Base.connection.execute("select * from top_10_organismos order by `count(aud.id)` desc;")
   end 
 end

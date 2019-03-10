@@ -185,7 +185,7 @@
  <% @top10 += 1 %>
             <tr>
                 <td scope="col" class="text-center"><%= @top10  %></td> <!-- Posición-->
-                <td scope="col" class="text-center"><%= t[0].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td><!-- Total Audiencias-->
+                <td scope="col" class="text-center"><%= t[0] %><%# audienciast4(t[1]).first[0] %></td><!-- Total Audiencias-->
                 <td scope="col" class="text-center"><%= t[1] %></td><!-- Organismo-->
                 <td scope="col" class="text-center"><%= link_to t[2], controller: 'buscador', action:'activo', tipo:'activo', rut: t[5] %></td><!-- Proveedor-->
                 <td scope="col" class="text-center"><!-- Audiencias-->

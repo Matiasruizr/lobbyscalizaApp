@@ -32,16 +32,30 @@ class BuscadorController < ApplicationController
                                                                         from licitacion_detalle where comprador_rut_unidad = #{@rut}
                                                                         group by tipo
                                                                         order by count(codigo_externo);")
+      @historial2 = ActiveRecord::Base.connection.execute("select IFNULL(adjudicacion_nombre_proveedor,'Otros Proveedores'), comprador_comuna_unidad, count(licitacion_detalle.codigo_externo) as cant, adjudicacion_rut_proveedor
+      from licitacion_item
+      join licitacion_detalle_licitacion_item  as inter
+      on licitacion_item.id = inter.licitacion_item_id
+      join licitacion_detalle on inter.codigo_externo = licitacion_detalle.codigo_externo
+      where comprador_rut_unidad = #{@rut}
+      group by adjudicacion_rut_proveedor
+      order by cant desc
+      LIMIT 100;")
     
     elsif  params[:tipo] == 'activo'
       @busquedalobbysta = ActiveRecord::Base.connection.execute("select adjudicacion_nombre_proveedor, adjudicacion_rut_proveedor, total_monto from busqueda_lobbysta where adjudicacion_rut_proveedor = #{@rut};  ");
       @cantidad_audiencias = ActiveRecord::Base.connection.execute("select cantidad
                                                                     from cantidad_de_audiencias
                                                                     where representa_rut = #{@rut} ;")
-      @audiencias1 = ActiveRecord::Base.connection.execute("select nombres, apellidos, 
-                                                          remunerado , audiencias, id  
-                                                          from audiencias1 
-                                                          where representa_rut = #{@rut};")
+      @audiencias1 = ActiveRecord::Base.connection.execute("Select nombres, apellidos, 
+        case
+        when remunerado = 1 then 'si' 
+        when remunerado =0 then 'No' end,
+        count(asistente.id), cargo_activo.id from asistente
+        join cargo_activo on asistente.cargo_activo_id=cargo_activo.id
+        where representa_rut = #{@rut}
+        group by nombres, apellidos
+        ;")
 
 
       @licitaciones_que_participo =  ActiveRecord::Base.connection.execute("
@@ -55,6 +69,16 @@ class BuscadorController < ApplicationController
       group by tipo
       order by tipo desc;
      ")
+
+     @historial1 = ActiveRecord::Base.connection.execute("select comprador_nombre_organismo, comprador_comuna_unidad, count(licitacion_detalle.codigo_externo) as cant, comprador_rut_unidad
+     from licitacion_item
+     join licitacion_detalle_licitacion_item  as inter
+     on licitacion_item.id = inter.licitacion_item_id
+     join licitacion_detalle on inter.codigo_externo = licitacion_detalle.codigo_externo
+     where adjudicacion_rut_proveedor = #{@rut}
+     group by comprador_nombre_organismo
+     order by cant desc
+     LIMIT 100;")
     end
     
     
