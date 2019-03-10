@@ -88,8 +88,21 @@
   <script>
   $('#top_lobbysta_proveedor').DataTable({  paging: false,  });
   $('#top_proveedores_estado').DataTable({  paging: false });
-  $('#top10compradoresdelestado').DataTable({  paging: false });
-  $('#top_10_orgamnizmos').DataTable({  paging: false });
+  $('#top10compradoresdelestado').DataTable({  
+    paging: false,
+    dom: 'Bfrtip',
+    buttons: [
+      'copy', 'csv', 'excel', 'pdf', 'print'
+    ]
+
+  });
+  $('#top_10_orgamnizmos').DataTable({  
+    paging: false,
+    dom: 'Bfrtip',
+    buttons: [
+      'copy', 'csv', 'excel', 'pdf', 'print'
+    ]
+  });
 
 
     $('#audiencias_participo').DataTable();
