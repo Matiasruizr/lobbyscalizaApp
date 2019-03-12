@@ -48,7 +48,7 @@
 
 <section class="container">
     <h2>TOP 10 LOBBISTA - PROVEEDOR</h2>
-    <button id="top_lobbysta_proveedor_btn">JSON</button>
+    <button id="top_lobbysta_proveedor_btn" class="boton_json">JSON</button>
     <table class="table" id="top_lobbysta_proveedor">
     <thead>
         <tr>
@@ -88,6 +88,7 @@
 
  <section class="container">
     <h2>TOP 10 PROVEEDORES DEL ESTADO</h2>
+    <button id="top_proveedores_estado_btn" class="boton_json">JSON</button>
     <table class="table" id="top_proveedores_estado">
     <thead>
         <tr>
@@ -128,6 +129,7 @@
 
  <section class="container">
     <h2>TOP 10 COMPRADORES DEL ESTADO </h2>
+    <button id="top10compradoresdelestado_btn" class="boton_json">JSON</button>
     <table class="table" id="top10compradoresdelestado">
     <thead>
         <tr>
@@ -171,46 +173,46 @@
 
 <section class="container">
     <h2>TOP 10 ORGANISMOS DEL ESTADO CON MAYOR NÚMERO DE AUDIENCIAS OTORGADAS A PROVEEDORES</h2>
-
- <table class="table" id="top_10_orgamnizmos">
-    <thead>
-        <tr>
-        <th scope="col" class="text-center">Posición</th>
-        <th scope="col" class="text-center">Número total de audiencias</th>
-        <th scope="col" class="text-center">Organismo</th>
-        <th scope="col" class="text-center">Proveedor / Sujeto activo  </th>
-        <th scope="col" class="text-center">Audiencias</th>
-        <th scope="col" class="text-center">Licitaciones </th>
-
-        </tr>
-    </thead>
-    <tbody>
-
-<% @top10 = 0 %>
- <% @top_compradores_estado.each do |t| %>
- <% @top10 += 1 %>
+    <button id="top_10_orgamnizmos_btn" class="boton_json">JSON</button>
+    <table class="table" id="top_10_orgamnizmos">
+        <thead>
             <tr>
-                <td scope="col" class="text-center"><%= @top10  %></td> <!-- Posición-->
-                <td scope="col" class="text-center"><%= t[0] %><%# audienciast4(t[1]).first[0] %></td><!-- Total Audiencias-->
-                <td scope="col" class="text-center"><%= t[1] %></td><!-- Organismo-->
-                <td scope="col" class="text-center"><%= link_to t[2], controller: 'buscador', action:'activo', tipo:'activo', rut: t[5] %></td><!-- Proveedor-->
-                <td scope="col" class="text-center"><!-- Audiencias-->
-                    <%= link_to controller: 'audiencia', action: 'detalle', rut: t[5], nombre:t[1], target: '_blank', id: 0, ruta: 'index' do %>
-                        <%= audienciasorg(t[5],t[1]).first[0] %>
-                    <% end %>
-                </td>
-                <td scope="col" class="text-center"><!-- Licitaciones -->
-
-                    <%= link_to controller: 'licitacion', action: 'licitacion', rut: t[5], sujeto:'activo', org: t[1], target: '_blank' do %>
-                        <%= contratosorg(t[5],t[1]).first[0] %>
-                    <% end %>
-                 </td>
+            <th scope="col" class="text-center">Posición</th>
+            <th scope="col" class="text-center">Número total de audiencias</th>
+            <th scope="col" class="text-center">Organismo</th>
+            <th scope="col" class="text-center">Proveedor / Sujeto activo  </th>
+            <th scope="col" class="text-center">Audiencias</th>
+            <th scope="col" class="text-center">Licitaciones </th>
 
             </tr>
-              
-        <% end %>
-    </tbody>
-</table> 
+        </thead>
+        <tbody>
+
+    <% @top10 = 0 %>
+    <% @top_compradores_estado.each do |t| %>
+    <% @top10 += 1 %>
+                <tr>
+                    <td scope="col" class="text-center"><%= @top10  %></td> <!-- Posición-->
+                    <td scope="col" class="text-center"><%= t[0] %><%# audienciast4(t[1]).first[0] %></td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center"><%= t[1] %></td><!-- Organismo-->
+                    <td scope="col" class="text-center"><%= link_to t[2], controller: 'buscador', action:'activo', tipo:'activo', rut: t[5] %></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <%= link_to controller: 'audiencia', action: 'detalle', rut: t[5], nombre:t[1], target: '_blank', id: 0, ruta: 'index' do %>
+                            <%= audienciasorg(t[5],t[1]).first[0] %>
+                        <% end %>
+                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <%= link_to controller: 'licitacion', action: 'licitacion', rut: t[5], sujeto:'activo', org: t[1], target: '_blank' do %>
+                            <%= contratosorg(t[5],t[1]).first[0] %>
+                        <% end %>
+                    </td>
+
+                </tr>
+                
+            <% end %>
+        </tbody>
+    </table> 
 
 </section>
 
