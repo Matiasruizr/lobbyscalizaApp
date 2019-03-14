@@ -95,7 +95,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.18/b-1.5.6/b-colvis-1.5.6/b-html5-1.5.6/datatables.min.js"></script>
-
+<script type="text/javascript" src="https://datatables.net/plug-ins/i18n/Spanish"></script>
 <script>
 
   function tablaAJson(tabla){
@@ -194,30 +194,57 @@ var historial_compradores = tablaAJson('#historial_compradores');
       ]
     });
     
+var historial_proveedores = tablaAJson('#historial_proveedores');
+  $( "#historial_proveedores_btn" ).click(function() {
+    download('historial_proveedores.json',  historial_proveedores );
+  });
+
+
     $('#historial_proveedores').DataTable({
       dom: 'Bfrtip',
       buttons: [
         'csv', 'excel', 'pdf'
       ]
     });
+
+
+     var licitaciones_adjudicadas = tablaAJson('#licitaciones_adjudicadas');
+    $( "#licitaciones_adjudicadas_btn" ).click(function() {
+      download('licitaciones_adjudicadas.json',  licitaciones_adjudicadas );
+    });
+    
     $('#licitaciones_adjudicadas').DataTable({
       dom: 'Bfrtip',
       buttons: [
         'csv', 'excel', 'pdf'
       ]
     });
+
+    var sujetos_pasivos_busquedas = tablaAJson('#sujetos_pasivos_busquedas');
+    $( "#sujetos_pasivos_busquedas_btn" ).click(function() {
+      download('sujetos_pasivos_busquedas.json',  sujetos_pasivos_busquedas );
+    });
+
     $('#sujetos_pasivos_busquedas').DataTable({
       dom: 'Bfrtip',
       buttons: [
         'csv', 'excel', 'pdf'
       ]
     });
+
+var licitaciones_otorgadas = tablaAJson('#licitaciones_otorgadas');
+  $( "#licitaciones_otorgadas_btn" ).click(function() {
+    download('licitaciones_otorgadas.json',  licitaciones_otorgadas );
+  });
+
     $('#licitaciones_otorgadas').DataTable({
       dom: 'Bfrtip',
       buttons: [
         'csv', 'excel', 'pdf'
       ]
     });
+
+
     $('#detalle').DataTable({
       dom: 'Bfrtip',
       buttons: [
@@ -230,6 +257,10 @@ var historial_compradores = tablaAJson('#historial_compradores');
         'csv', 'excel', 'pdf'
       ]
     });
+
+
+
+
     $('#detalles_de_las_audiencias').DataTable({
       dom: 'Bfrtip',
       buttons: [
