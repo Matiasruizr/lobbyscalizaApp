@@ -212,7 +212,7 @@ var historial_proveedores = tablaAJson('#historial_proveedores');
     $( "#licitaciones_adjudicadas_btn" ).click(function() {
       download('licitaciones_adjudicadas.json',  licitaciones_adjudicadas );
     });
-    
+
     $('#licitaciones_adjudicadas').DataTable({
       dom: 'Bfrtip',
       buttons: [
@@ -280,6 +280,18 @@ var licitaciones_otorgadas = tablaAJson('#licitaciones_otorgadas');
   // licitaciones_otorgadas
 
   </script>
+  <style>
+  section{
+    position: relative;
+  }
+  .boton_json{
+    position: absolute;
+    left: 220px;
+    top: 57px;
+  }
+
+
+  </style>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
      <script src="/static/js/main.js"></script>
   </body>
