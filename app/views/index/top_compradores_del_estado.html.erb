@@ -1,0 +1,41 @@
+ <section class="container">
+    <h2>TOP 10 COMPRADORES DEL ESTADO </h2>
+    <button id="top10compradoresdelestado_btn" class="boton_json">JSON</button>
+    <table class="table" id="top10compradoresdelestado">
+    <thead>
+        <tr>
+        <th scope="col" class="text-center">Posición</th>
+        <th scope="col" class="text-center">Rut</th>
+        <th scope="col" class="text-center">Nombre comprador</th>
+        <th scope="col" class="text-center">Monto</th>
+        <th scope="col" class="text-center">Cantidad de contratos </th>
+        <th scope="col" class="text-center">Detalle</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    <% @top10 = 0 %>
+    <% @queryy.each do |t| %>
+    <% @top10 += 1 %>
+            <tr>
+                <td scope="col" class="text-center"><%= @top10  %></td><!-- Posicion -->
+                <td scope="col" class="text-center">
+                     <%=  link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'pasivo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
+                       <%= t[0] %>
+                    <% end %>
+                </td><!-- Rut -->
+                <td scope="col" class="text-center"><%= t[1] %></td><!-- Nombre de compradores -->
+                <td scope="col" class="text-center">$<%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td><!-- Monto adjudicados -->
+                <td scope="col" class="text-center"><%= t[3] %></td><!-- Cantidad de contratos -->
+                <td scope="col" class="text-center">
+                    <%=  link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'pasivo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
+                        <i class='fas fa-search'></i>
+                    <% end %>
+                </td>
+            </tr>
+        <% end %>
+
+    </tbody>
+    </table>
+</section>
+ 

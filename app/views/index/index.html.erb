@@ -1,4 +1,4 @@
-<div class="inicio_page">
+
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
   <div class="carousel-inner">
@@ -36,185 +36,23 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<div class="row">
+    <div class="col-lg-12">
+        <%= link_to 'Top 10 Compradores del estado', controller: 'index', action:'top_compradores_del_estado' %>
+    </div> 
+    <div class="col-lg-6">
+        <%= link_to 'Top 10 Compradores del estado', controller: 'index', action:'top_compradores_del_estado' %>
+        
+        <%= link_to 'Top 10 organismos con mas audiencias', controller: 'index', action:'top_organismos_con_mas_audiencias' %>
 
-<section class="container" id="queeslobbyscaliza">
-    <h1>Qué es Lobbyscaliza</h1>
-    <p>Lobbyscaliza es una plataforma ideada por Fundación Multitudes dispuesta al servicio de la comunidad, construida sobre datos provistos por organismos públicos del Estado de Chile relativos a Lobby y Compras Públicas. La principal finalidad de esta herramienta es entregar un insumo que promueva la investigación y fiscalización, las que pueden provenir indistintamente de la sociedad civil, academia, organismos fiscalizadores, entre otros.</p>
-
-    <h1>¿Cuál es su uso?</h1>
-    <p>Es una plataforma de uso transversal, que presta sus servicios a todo aquel que tenga la necesidad de observar relaciones entre Lobby y Compras realizadas en el Estado de Chile. Mediante el uso de buscadores podrás encontrar información individualizada sobre las audiencias por Ley de Lobby que han mantenido tanto proveedores como organismos compradores del Estado, que hayan sido transadas mediante el sistema de Mercado Público.</p>
-</section>
-
-
-<section class="container">
-    <h2>TOP 10 LOBBISTA - PROVEEDOR</h2>
-    <button id="top_lobbysta_proveedor_btn" class="boton_json">JSON</button>
-    <table class="table" id="top_lobbysta_proveedor">
-    <thead>
-        <tr>
-        <th scope="col" class="text-center">Posición</th>
-        <th scope="col" class="text-center">Rut</th>
-        <th scope="col" class="text-center">Nombre proveedor</th>
-        <th scope="col" class="text-center">Cantidad de audiencias</th>
-        <th scope="col" class="text-center">Cantidad de contratos adjudicados </th>
-        <th scope="col" class="text-center">Monto total </th>
-        </tr>
-    </thead>
-    <tbody>
-
- <% @top10 = 0 %>
-            <% @top10_lobbysta_proveedor.each do |t| %>
-            <% @top10 += 1 %>
-            <tr>
-                <td scope="col" class="text-center"><%= @top10  %></td>
-                <td scope="col" class="text-center">
-                    <%= link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'activo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
-                        <%=  t[0] %>
-                    <% end %>
-                </td> <!-- Rut -->
-                <td scope="col" class="text-center"><%= t[1] %></td> <!-- Nombre -->
-                <td scope="col" class="text-center"><%= audiencias(t[0]).first[0] %></td> <!-- Cantidad audiencias -->
-                <td scope="col" class="text-center"><%= t[2] %></td><!-- Cantidad Contratos -->
-                <td scope="col" class="text-center">$<%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.')    %> </td>
-
-            </tr>
-            <% end %>
-
-    </tbody>
-    </table>
-</section>
+        <%= link_to 'Top 10 lobbysta proveedor', controller: 'index', action:'top_lobbysta_proveedor' %>
+    </div>
+     <div class="col-lg-6">
+        <%= link_to 'Top 10 proveedores del estado', controller: 'index', action:'top_proveedores_del_estado' %>
+    </div>
 
 
 
- <section class="container">
-    <h2>TOP 10 PROVEEDORES DEL ESTADO</h2>
-    <button id="top_proveedores_estado_btn" class="boton_json">JSON</button>
-    <table class="table" id="top_proveedores_estado">
-    <thead>
-        <tr>
-      <th scope="col" class="text-center">Posición</th>
-        <th scope="col" class="text-center">Rut</th>
-        <th scope="col" class="text-center">Nombre proveedor</th>
-        <th scope="col" class="text-center">Cantidad de contratos adjudicados</th>
-        <th scope="col" class="text-center">Monto total </th>
-        <th scope="col" class="text-center">Detalle </th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @top10 = 0 %>
-        <% @topproveedoresdelestado.each do |t| %>
-        <% @top10 += 1 %>
-            <tr>
-                <td scope="col" class="text-center"> <%= @top10  %></td>
-                  <td scope="col" class="text-center">
-                    <%= link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'activo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
-                        <%=  t[0] %>
-                    <% end %>
-                </td> <!-- Rut -->
-                <td scope="col" class="text-center"><%= t[1] %></td>
-                <td scope="col" class="text-center"><%= t[3] %></td> <!-- Cantidad de adjudicaciones -->
-                <td scope="col" class="text-center">$<%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td> <!-- Monto total -->
-                <td scope="col" class="text-center">
-                    <%= link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'activo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
-                        <i class='fas fa-search'></i>
-                    <% end %>
-                </td>
-            </tr>
-        <% end %>
-    </tbody>
-    </table>
-</section> 
-
-
-
- <section class="container">
-    <h2>TOP 10 COMPRADORES DEL ESTADO </h2>
-    <button id="top10compradoresdelestado_btn" class="boton_json">JSON</button>
-    <table class="table" id="top10compradoresdelestado">
-    <thead>
-        <tr>
-        <th scope="col" class="text-center">Posición</th>
-        <th scope="col" class="text-center">Rut</th>
-        <th scope="col" class="text-center">Nombre comprador</th>
-        <th scope="col" class="text-center">Monto</th>
-        <th scope="col" class="text-center">Cantidad de contratos </th>
-        <th scope="col" class="text-center">Detalle</th>
-        </tr>
-    </thead>
-    <tbody>
-
-    <% @top10 = 0 %>
-    <% @queryy.each do |t| %>
-    <% @top10 += 1 %>
-            <tr>
-                <td scope="col" class="text-center"><%= @top10  %></td><!-- Posicion -->
-                <td scope="col" class="text-center">
-                     <%=  link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'pasivo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
-                       <%= t[0] %>
-                    <% end %>
-                </td><!-- Rut -->
-                <td scope="col" class="text-center"><%= t[1] %></td><!-- Nombre de compradores -->
-                <td scope="col" class="text-center">$<%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td><!-- Monto adjudicados -->
-                <td scope="col" class="text-center"><%= t[3] %></td><!-- Cantidad de contratos -->
-                <td scope="col" class="text-center">
-                    <%=  link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'pasivo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
-                        <i class='fas fa-search'></i>
-                    <% end %>
-                </td>
-            </tr>
-        <% end %>
-
-    </tbody>
-    </table>
-</section>
- 
-
-
-
-<section class="container">
-    <h2>TOP 10 ORGANISMOS DEL ESTADO CON MAYOR NÚMERO DE AUDIENCIAS OTORGADAS A PROVEEDORES</h2>
- 
-    <table class="table" id="top_10_orgamnizmos">
-       <button id="top_10_orgamnizmos_btn" class="boton_json">JSON</button>
-        <thead>
-            <tr>
-            <th scope="col" class="text-center">Posición</th>
-            <th scope="col" class="text-center">Número total de audiencias</th>
-            <th scope="col" class="text-center">Organismo</th>
-            <th scope="col" class="text-center">Proveedor / Sujeto activo  </th>
-            <th scope="col" class="text-center">Audiencias</th>
-            <th scope="col" class="text-center">Licitaciones </th>
-
-            </tr>
-        </thead>
-        <tbody>
-
-    <% @top10 = 0 %>
-    <% @top_compradores_estado.each do |t| %>
-    <% @top10 += 1 %>
-                <tr>
-                    <td scope="col" class="text-center"><%= @top10  %></td> <!-- Posición-->
-                    <td scope="col" class="text-center"><%= t[0] %><%# audienciast4(t[1]).first[0] %></td><!-- Total Audiencias-->
-                    <td scope="col" class="text-center"><%= t[1] %></td><!-- Organismo-->
-                    <td scope="col" class="text-center"><%= link_to t[2], controller: 'buscador', action:'activo', tipo:'activo', rut: t[5] %></td><!-- Proveedor-->
-                    <td scope="col" class="text-center"><!-- Audiencias-->
-                        <%= link_to controller: 'audiencia', action: 'detalle', rut: t[5], nombre:t[1], target: '_blank', id: 0, ruta: 'index' do %>
-                            <%= audienciasorg(t[5],t[1]).first[0] %>
-                        <% end %>
-                    </td>
-                    <td scope="col" class="text-center"><!-- Licitaciones -->
-
-                        <%= link_to controller: 'licitacion', action: 'licitacion', rut: t[5], sujeto:'activo', org: t[1], target: '_blank' do %>
-                            <%= contratosorg(t[5],t[1]).first[0] %>
-                        <% end %>
-                    </td>
-
-                </tr>
-                
-            <% end %>
-        </tbody>
-    </table> 
-
-</section>
+   
 
 </div>

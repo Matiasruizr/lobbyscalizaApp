@@ -1,0 +1,37 @@
+<section class="container">
+    <h2>TOP 10 LOBBISTA - PROVEEDOR</h2>
+    <button id="top_lobbysta_proveedor_btn" class="boton_json">JSON</button>
+    <table class="table" id="top_lobbysta_proveedor">
+    <thead>
+        <tr>
+        <th scope="col" class="text-center">Posición</th>
+        <th scope="col" class="text-center">Rut</th>
+        <th scope="col" class="text-center">Nombre proveedor</th>
+        <th scope="col" class="text-center">Cantidad de audiencias</th>
+        <th scope="col" class="text-center">Cantidad de contratos adjudicados </th>
+        <th scope="col" class="text-center">Monto total </th>
+        </tr>
+    </thead>
+    <tbody>
+
+ <% @top10 = 0 %>
+            <% @top10_lobbysta_proveedor.each do |t| %>
+            <% @top10 += 1 %>
+            <tr>
+                <td scope="col" class="text-center"><%= @top10  %></td>
+                <td scope="col" class="text-center">
+                    <%= link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'activo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
+                        <%=  t[0] %>
+                    <% end %>
+                </td> <!-- Rut -->
+                <td scope="col" class="text-center"><%= t[1] %></td> <!-- Nombre -->
+                <td scope="col" class="text-center"><%= audiencias(t[0]).first[0] %></td> <!-- Cantidad audiencias -->
+                <td scope="col" class="text-center"><%= t[2] %></td><!-- Cantidad Contratos -->
+                <td scope="col" class="text-center">$<%= t[3].to_s.gsub(/\d(?=(...)+$)/, '\0.')    %> </td>
+
+            </tr>
+            <% end %>
+
+    </tbody>
+    </table>
+</section>
