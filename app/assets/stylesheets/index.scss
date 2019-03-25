@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Sintony:400,700&subset=latin-ext');
 
 body{
     font-family: 'Roboto', sans-serif!important;
@@ -86,6 +87,296 @@ section{
         }
     }
 }
+
+.row{
+    padding: 0;
+    margin: 0;
+    .col-lg-12{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1%;
+    }
+    .col-lg-6{
+        padding: 0;
+        margin: 0;
+        
+
+    }
+}
+
+
+
+.info_box{
+    width: 99%;
+    height: 360px;
+    overflow: hidden;
+    margin-bottom: 2%;
+
+    h2{
+        width: 100%;
+        font-family: 'Sintony', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: transparent;
+        margin: 0 auto;
+        margin-top: 90px;
+        position: absolute;
+        z-index: 1;
+        color: white;
+        font-size: 28px;
+    }
+
+    p{
+        width: 100%;
+        font-family: 'Sintony', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: transparent;
+        margin: 0 auto;
+        margin-top: 145px;
+        position: absolute;
+        z-index: 1;
+        color: white;
+        font-size: 24px;
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .degradado_grande{
+        width: 99%;
+        height: 100%;
+        position: absolute;
+        background: linear-gradient(135deg, rgba(98,39,116,1) 0%, rgba(197,51,100,0.25) 100%);
+    }
+    .degradado_izquierda{
+        width: 99%;
+        height: 360px;
+        position: absolute;
+        background: linear-gradient(135deg, rgba(98,39,116,1) 0%, rgba(197,51,100,0.25) 100%);
+    }
+
+    .degradado_derecha{
+        width: 99%;
+        height: 360px;
+        position: absolute;
+        background: linear-gradient(135deg, rgba(98,39,116,1) 0%, rgba(197,51,100,0.25) 100%);
+    }
+    
+    a{
+        width: 20%;
+        font-family: 'Sintony', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: transparent;
+        margin: 0 auto;
+        margin-top: 235px;
+        position: absolute;
+        z-index: 1;
+        color: white;
+        font-size: 22px;
+        
+        border: solid 2px white;
+            border-radius:10px;
+            margin-left: 40%;
+            padding: 1px 3px;
+
+            -webkit-transition: all 400ms ease-in-out;
+            -moz-transition: all 400ms ease-in-out;
+            -ms-transition: all 400ms ease-in-out;
+            -o-transition: all 400ms ease-in-out;
+            transition: all 400ms ease-in-out;
+            
+        }
+        a:hover{
+            background: white;
+            color: #622774;
+            text-decoration: none;
+
+            -webkit-transition: all 400ms ease-in-out;
+        -moz-transition: all 400ms ease-in-out;
+        -ms-transition: all 400ms ease-in-out;
+        -o-transition: all 400ms ease-in-out;
+        transition: all 400ms ease-in-out;
+        }
+}
+
+.info_box_right{
+    width: 99%;
+    height: 1108px;
+    overflow: hidden;
+    margin-left: 1%;
+
+    h2{
+        width: 100%;
+        font-family: 'Sintony', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: transparent;
+        margin: 0 auto;
+        margin-top: 410px;
+        position: absolute;
+        z-index: 1;
+        color: white;
+        font-size: 28px;
+    }
+
+    p{
+        width: 100%;
+        font-family: 'Sintony', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: transparent;
+        margin: 0 auto;
+        margin-top: 465px;
+        position: absolute;
+        z-index: 1;
+        color: white;
+        font-size: 24px;
+    }
+
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+    .degradado_derecha{
+        width: 99%;
+        height: 1108px;
+        position: absolute;
+        background: linear-gradient(135deg, rgba(98,39,116,1) 0%, rgba(197,51,100,0.25) 100%);
+        
+    }
+    
+    a{
+        width: 20%;
+        font-family: 'Sintony', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        background-color: transparent;
+        margin: 0 auto;
+        margin-top: 550px;
+        position: absolute;
+        z-index: 1;
+        color: white;
+        font-size: 22px;
+        
+        border: solid 2px white;
+            border-radius:10px;
+            margin-left: 40%;
+            padding: 1px 3px;
+
+            -webkit-transition: all 400ms ease-in-out;
+            -moz-transition: all 400ms ease-in-out;
+            -ms-transition: all 400ms ease-in-out;
+            -o-transition: all 400ms ease-in-out;
+            transition: all 400ms ease-in-out;
+            
+        }
+        a:hover{
+            background: white;
+            color: #622774;
+            text-decoration: none;
+
+            -webkit-transition: all 400ms ease-in-out;
+        -moz-transition: all 400ms ease-in-out;
+        -ms-transition: all 400ms ease-in-out;
+        -o-transition: all 400ms ease-in-out;
+        transition: all 400ms ease-in-out;
+        }
+}
+
+    .info_box_grande{
+        width: 100%;
+        height: 360px;
+        overflow: hidden;
+
+        h2{
+            width: 100%;
+            font-family: 'Sintony', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: transparent;
+            margin: 0 auto;
+            margin-top: 110px;
+            position: absolute;
+            z-index: 1;
+            color: white;
+            font-size: 28px;
+        }
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        .degradado_grande{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(135deg, rgba(98,39,116,1) 0%, rgba(197,51,100,0.25) 100%);
+        }
+        
+        
+        a{
+            width: 10%;
+            font-family: 'Sintony', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: transparent;
+            margin: 0 auto;
+            margin-top: 195px;
+            position: absolute;
+            z-index: 1;
+            color: white;
+            font-size: 20px;
+
+            border: solid 2px white;
+            border-radius:10px;
+            margin-left: 40%;
+            padding: 1px 3px;
+
+            -webkit-transition: all 400ms ease-in-out;
+            -moz-transition: all 400ms ease-in-out;
+            -ms-transition: all 400ms ease-in-out;
+            -o-transition: all 400ms ease-in-out;
+            transition: all 400ms ease-in-out;
+            
+        }
+        a:hover{
+            background: white;
+            color: #622774;
+            text-decoration: none;
+
+            -webkit-transition: all 400ms ease-in-out;
+        -moz-transition: all 400ms ease-in-out;
+        -ms-transition: all 400ms ease-in-out;
+        -o-transition: all 400ms ease-in-out;
+        transition: all 400ms ease-in-out;
+        }
+    }
+
+
+
+
+
+
 
 
 .tabulator {
