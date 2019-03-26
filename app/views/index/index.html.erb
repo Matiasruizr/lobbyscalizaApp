@@ -3,22 +3,26 @@
 
   <div class="carousel-inner">
     <div class="filtro-negro"></div>
-    <div class="carousel-item active">
+    <div class="carousel-item active banner-1">
       <img class="d-block w-100" src="/static/img/banner-1.png" alt="First slide">
         <div class="carousel-caption d-none d-md-block">
-            <h3 id="car">Esta es la 1ra plataforma de cruce de datos de Lobby y Compras</h3>
+            <h3 id="car" class="texto-banner-1">Esta es la 1ra plataforma de cruce de datos de Lobby y Compras</h3>
+            <%= link_to '¿Qué es lobbyscaliza?', index_quees_path  %>
         </div>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item banner-2">
       <img class="d-block w-100" src="/static/img/banner-2.png" alt="Second slide">
         <div class="carousel-caption d-none d-md-block">
-            <h3 id="car">¿Quieres saber si el Lobby impacta las Compras Públicas?</h3>
+            <h3 id="car"class="texto-banner-2">¿Quieres saber si el Lobby impacta las Compras Públicas?</h3>
+            <%= link_to 'Revisa acá', controller: 'buscador', action:'activo', :class =>'boton-banner-2' %>
         </div>
+        
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item banner-3">
       <img class="d-block w-100" src="/static/img/banner-3.png" alt="Third slide">
         <div class="carousel-caption d-none d-md-block">
-            <h3 id="car">¿Con quienes se reunieron los principales compradores del Estado?</h3>
+            <h3 id="car"class="texto-banner-3">¿Con quienes se reunieron los principales compradores del Estado?</h3>
+            <%= link_to 'Ver más', controller: 'index', action:'top_compradores_del_estado' %>
         </div>
     </div>
       
