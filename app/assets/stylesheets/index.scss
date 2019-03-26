@@ -723,6 +723,38 @@ footer{
 .top-nav{
     margin-top: 120px;
     padding: 5%;
+
+    h1{
+        color: #FFFFFF;
+    }
+    .dataTables_paginate{
+
+        color: #FFFFFF !important;
+
+        a{
+            color: #FFFFFF !important;
+        }
+
+        
+        span{
+            color: #FFFFFF;
+            background: transparent;
+            border: none;
+            border-radius: 10px;
+
+            .current{
+                color: #FFFFFF;
+                background-color: transparent;
+                background: transparent;
+                border: solid 2px #fff;
+                border-radius: 10px;
+            }
+        }
+    }
+    
+        
+    
+        
 }
 
 #element{
@@ -731,7 +763,7 @@ footer{
     margin-left: 15%;
     padding: 15% 0;
     color: #FFFFFF;
-
+    
     .col-12{
         margin-top: 3%;
     }
