@@ -144,7 +144,7 @@ section{
         position: absolute;
         z-index: 1;
         color: white;
-        font-size: 28px;
+        font-size: 24px;
     }
 
     p{
@@ -159,7 +159,7 @@ section{
         position: absolute;
         z-index: 1;
         color: white;
-        font-size: 24px;
+        font-size: 20px;
     }
 
     img{
@@ -169,12 +169,7 @@ section{
         object-position: center center;
     }
 
-    .degradado_grande{
-        width: 99%;
-        height: 100%;
-        position: absolute;
-        background: linear-gradient(135deg, rgba(98,39,116,1) 0%, rgba(197,51,100,0.25) 100%);
-    }
+    
     .degradado_izquierda{
         width: 99%;
         height: 360px;
@@ -182,12 +177,7 @@ section{
         background: linear-gradient(135deg, rgba(98,39,116,1) 0%, rgba(197,51,100,0.25) 100%);
     }
 
-    .degradado_derecha{
-        width: 99%;
-        height: 360px;
-        position: absolute;
-        background: linear-gradient(135deg, rgba(98,39,116,1) 0%, rgba(197,51,100,0.25) 100%);
-    }
+    
     
     a{
         width: 20%;
@@ -201,7 +191,7 @@ section{
         position: absolute;
         z-index: 1;
         color: white;
-        font-size: 22px;
+        font-size: 14px;
         
         border: solid 2px white;
             border-radius:10px;
@@ -247,7 +237,7 @@ section{
         position: absolute;
         z-index: 1;
         color: white;
-        font-size: 28px;
+        font-size: 24px;
     }
 
     p{
@@ -262,7 +252,7 @@ section{
         position: absolute;
         z-index: 1;
         color: white;
-        font-size: 24px;
+        font-size: 20px;
     }
 
 
@@ -292,7 +282,7 @@ section{
         position: absolute;
         z-index: 1;
         color: white;
-        font-size: 22px;
+        font-size: 14px;
         
         border: solid 2px white;
             border-radius:10px;
@@ -336,7 +326,7 @@ section{
             position: absolute;
             z-index: 1;
             color: white;
-            font-size: 28px;
+            font-size: 24px;
         }
         
         img{
@@ -366,11 +356,11 @@ section{
             position: absolute;
             z-index: 1;
             color: white;
-            font-size: 20px;
+            font-size: 14px;
 
             border: solid 2px white;
             border-radius:10px;
-            margin-left: 40%;
+            margin-left: 45%;
             padding: 1px 3px;
 
             -webkit-transition: all 400ms ease-in-out;
@@ -412,7 +402,7 @@ section{
         }
         .dt-buttons{
             width: 40%;
-            
+            margin-bottom:1%;
             .dt-button{
                 cursor: pointer;
                 background: transparent;
@@ -425,9 +415,21 @@ section{
                 border: none;
                 border-radius: 5px;
 
+                -webkit-transition: all 400ms ease-in-out;
+        -moz-transition: all 400ms ease-in-out;
+        -ms-transition: all 400ms ease-in-out;
+        -o-transition: all 400ms ease-in-out;
+        transition: all 400ms ease-in-out;
+
                 &:hover{
                     background: #ffffff;
                     color: #622774;
+
+                    -webkit-transition: all 400ms ease-in-out;
+        -moz-transition: all 400ms ease-in-out;
+        -ms-transition: all 400ms ease-in-out;
+        -o-transition: all 400ms ease-in-out;
+        transition: all 400ms ease-in-out;
                 }
             }
         }
@@ -436,16 +438,29 @@ section{
             cursor: pointer;
             background: transparent;
             margin: 0;
-            margin-top: 1%;
+            margin-top: 15px;
+            margin-left: 2%;
             padding: 7px 10px;
             border: none;
             color: #ffffff;
             z-index: 1;
             border-radius: 5px;
 
+            -webkit-transition: all 400ms ease-in-out;
+        -moz-transition: all 400ms ease-in-out;
+        -ms-transition: all 400ms ease-in-out;
+        -o-transition: all 400ms ease-in-out;
+        transition: all 400ms ease-in-out;
+
             &:hover{
                 background: #FFFFFF;
                 color: #622774;
+
+                -webkit-transition: all 400ms ease-in-out;
+        -moz-transition: all 400ms ease-in-out;
+        -ms-transition: all 400ms ease-in-out;
+        -o-transition: all 400ms ease-in-out;
+        transition: all 400ms ease-in-out;
             }
         }
 
@@ -550,6 +565,120 @@ table{
     }
 }
 
+.container{
+    font-family: 'Sintony', sans-serif;
+    
+        .contenedor_arriba{
+            width: 100%;
+            height: 460px;
+            float: left;
+            margin: 3% 0;
+            background-image: linear-gradient(to right bottom, #622774, #7f2674, #992771, #b02b6c, #c53364);
+            overflow: hidden;
+            border-radius: 10px;
+            .text_arriba{
+                width: 45%;
+                float: left;
+                margin: 0 auto;
+                margin-left: 2.5%;
+                margin-top: 7%;
+                
+
+                h1{
+                    color: #FFFFFF;
+                    font-weight: bold;
+
+                }
+
+                p{
+                    color: #FFFFFF;
+
+                }
+
+            }
+            .degradado_grande{
+                width:100%;
+                height: 100%;
+                position: absolute;
+                background: linear-gradient(135deg, rgba(98,39,116,1) 0%, rgba(197,51,100,0.25) 100%);
+            }
+            .img_arriba{
+                width: 50%;
+                float: left;
+                margin: 0 auto;
+                margin-left: 2.5%;
+                img{
+                    width: 120%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center center;
+
+                }
+            }
+        }
+        
+
+
+        .contenedor_abajo{
+            width: 100%;
+            height: 460px;
+            float: left;
+            overflow: hidden;
+            margin: 3% 0;
+            background-image: linear-gradient(to right bottom, #622774, #7f2674, #992771, #b02b6c, #c53364);
+            border-radius: 10px;
+            .text_abajo{
+                width: 45%;
+                float: left;
+                margin: 0 auto;
+                margin-left: 2.5%;
+                margin-top: 7%;
+                
+
+                h1{
+                    color: #FFFFFF;
+                    font-weight: bold;
+
+                }
+
+                p{
+                    color: #FFFFFF;
+
+                }
+
+            }
+            .degradado_grande{
+                width:100%;
+                height: 100%;
+                position: absolute;
+                background: linear-gradient(135deg, rgba(98,39,116,1) 0%, rgba(197,51,100,0.25) 100%);
+            }
+            .img_abajo{
+                width: 50%;
+                float: left;
+                margin: 0 auto;
+                overflow: hidden;
+                img{
+                    width: 130%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center center;
+
+                }
+            }
+        }
+
+}
+
+
+
+
+
+
+
+
+
+
 footer{
     background: #212121;
     padding: 20px 0!important;
@@ -593,11 +722,66 @@ footer{
 
 .top-nav{
     margin-top: 120px;
+    padding: 5%;
 }
 
 #element{
     width: 100%;
-    margin: 12%;
+    margin: 0 auto;
+    margin-left: 15%;
+    padding: 15% 0;
+    color: #FFFFFF;
+
+    .col-12{
+        margin-top: 3%;
+    }
+
+    .btn{
+       padding: 1% 2%;
+        background: #FFFFFF;
+        color: #622774;
+        border: none;
+
+        -webkit-transition: all 400ms ease-in-out;
+    -moz-transition: all 400ms ease-in-out;
+    -ms-transition: all 400ms ease-in-out;
+    -o-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+
+        &:hover{
+            background: #622774;
+            color: #ffffff;
+
+            -webkit-transition: all 400ms ease-in-out;
+    -moz-transition: all 400ms ease-in-out;
+    -ms-transition: all 400ms ease-in-out;
+    -o-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+        }
+
+
+    }
+
+    ::placeholder{
+        color: #aeaeae;
+    }
+    input{
+        background: transparent;
+        color: #FFFFFF;
+        border: solid 2px #FFFFFF;
+        border-radius: 10px;
+        margin-left: 1%;
+        margin-right: 3%;
+
+        #text{
+            color: #FFFFFF;
+        }
+    }
+
+    h1{
+        color: #FFFFFF;
+        font-weight: bold;
+    }
 }
 
 #car{
