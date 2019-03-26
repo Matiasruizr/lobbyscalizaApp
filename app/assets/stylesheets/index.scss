@@ -391,6 +391,7 @@ section{
     .container{
         margin-top:10%;
         padding: 0;
+        padding-bottom:3%; 
         border-radius:10px;
         background: linear-gradient(72deg, rgba(98,39,116,1) 0%, rgba(197,51,100,1) 100%);
 
@@ -717,37 +718,63 @@ footer{
     } 
 }
 
+.dataTables_wrapper{
+    .dataTables_paginate{
+        background: #FFFFFF;
+        border-radius: 10px;
+        margin-right: 3%;
+        margin-top: 2%;
+        padding: 0.5% 2% !important;
+        
+        .paginate_button{
+            color: #FFFFFF;
+            a{
+            color: #FFFFFF !important;
+            }
 
+        }
+
+        .current{
+            color: none;
+        }
+        
+    }
+}
 
 
 .top-nav{
     margin-top: 120px;
     padding: 5%;
 
+    .dt-buttons{
+        .boton_json{
+            margin-top:-9%;
+            margin-left:6%;
+        }
+    }
+    
+
     h1{
         color: #FFFFFF;
     }
     .dataTables_paginate{
 
-        color: #FFFFFF !important;
+        color: #FFFFFF;
 
         a{
-            color: #FFFFFF !important;
+            color: #FFFFFF;
         }
 
         
         span{
-            color: #FFFFFF;
+            color: #FFFFFF !important;
             background: transparent;
             border: none;
             border-radius: 10px;
-
-            .current{
+            
+            .paginate_button{
                 color: #FFFFFF;
-                background-color: transparent;
                 background: transparent;
-                border: solid 2px #fff;
-                border-radius: 10px;
             }
         }
     }

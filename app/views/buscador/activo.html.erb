@@ -42,8 +42,8 @@
     <% end %>
     <% if params[:tipo] == 'activo' %>
         <h2>N° AUDIENCIAS QUE PARTICIPO</h2>
-        <button id="audiencias_participo_btn" class="boton_json">JSON</button>
         <table class="table" id="audiencias_participo">
+        <div class="dt-buttons">  <button id="audiencias_participo_btn" class="boton_json">JSON</button></div>
             <thead>
                 <tr>
                     <th scope="col" class="text-center">Sujeto activo</th>
@@ -71,8 +71,8 @@
             </tbody>
         </table>
         <h2>LICITACIONES ADJUDICADAS</h2>
-        <button id="licitaciones_adjudicadas_btn" class="boton_json">JSON</button>
         <table class="table" id="licitaciones_adjudicadas">
+        <div class="dt-buttons"><button id="licitaciones_adjudicadas_btn" class="boton_json">JSON</button></div>
             <thead>
                 <tr>
                     <th scope="col" class="text-center"> TIPO   </th>
@@ -97,8 +97,8 @@
             </tbody>
         </table>
         <h2>Historia con distintos compradores:</h2>
-        <button id="historial_compradores_btn" class="boton_json">JSON</button>
         <table class="table" id="historial_compradores">
+        <div class="dt-buttons"><button id="historial_compradores_btn" class="boton_json">JSON</button></div>
             <thead>
                 <tr>
                     <th scope="col" class="text-center"> Comprador</th>
@@ -120,8 +120,8 @@
         </table>
     <% elsif params[:tipo] == 'pasivo' %>
         <h2>Sujetos pasivos</h2>
-        <button id="sujetos_pasivos_busquedas_btn" class="boton_json">JSON</button>
         <table class="table" id="sujetos_pasivos_busquedas">
+        <div class="dt-buttons"><button id="sujetos_pasivos_busquedas_btn" class="boton_json">JSON</button></div>
             <thead>
                 <tr>
                     <th scope="col" class="text-center">Sujeto pasivo</th>
@@ -150,8 +150,8 @@
             </tbody>
         </table>
       <h2>LICITACIONES</h2>
-      <button id="licitaciones_otorgadas_btn" class="boton_json">JSON</button>
         <table class="table" id="licitaciones_otorgadas">
+        <div class="dt-buttons"><button id="licitaciones_otorgadas_btn" class="boton_json">JSON</button></div>
             <thead>
                 <tr>
                     <th scope="col" class="text-center"> TIPO   </th>
@@ -181,8 +181,8 @@
             </tbody>
         </table>
         <h2>Historia con distintos Proveedores:</h2>
-         <button id="historial_proveedores_btn" class="boton_json">JSON</button>
         <table class="table" id="historial_proveedores">
+        <div class="dt-buttons"><button id="historial_proveedores_btn" class="boton_json">JSON</button></div>
             <thead>
                 <tr>
                     <th scope="col" class="text-center"> Proveedor</th>
