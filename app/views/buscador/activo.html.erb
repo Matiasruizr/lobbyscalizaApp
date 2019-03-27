@@ -259,7 +259,11 @@ Dr Simmi	Santiago	21	4
 
 
 <!-- jquery-magicsearch-master -->
-
+<script
+			  src="https://code.jquery.com/jquery-2.0.2.min.js"
+			  integrity="sha256-TZWGoHXwgqBP1AF4SZxHIBKzUdtMGk0hCQegiR99itk="
+			  crossorigin="anonymous"></script>
+               <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
     <script>
 
     //https://stackoverrun.com/es/q/718908 formato
@@ -67363,6 +67367,30 @@ Dr Simmi	Santiago	21	4
 "ACTIVO - Universidad Politécnica de Valencia, Q4618002B"
 ]; 
 
+    $( "#autocomplete" ).autocomplete({
+        source: data,
+        minLength: 2
+    });
+    
+    $( "#autocompletepasivos" ).autocomplete({
+        source: pasivos,
+        minLength: 2
+    });
+      
+    $("#tipo_pasivo").change(function() {
+        if(this.checked) {
+            $('#autocompletepasivos').show();
+            $('#autocomplete').hide();
+        }
+    });
+
+    
+    $("#tipo_activo").change(function() {
+        if(this.checked) {
+            $('#autocompletepasivos').hide();
+            $('#autocomplete').show();
+        }
+    });
 
     // if ( $('#tipo_activo').checked ){
     //     console.log('activo')
