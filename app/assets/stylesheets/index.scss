@@ -110,6 +110,9 @@ nav{
                 margin-left: 25%;
                 font-size: 34px;
                 
+                @media(max-width:1350px){
+                    font-size: 24px;
+                }
 
             }
             a{
@@ -124,6 +127,12 @@ nav{
                 border: 2px solid #ffffff;
                 border-radius: 15px;
                 z-index: 5;
+
+                @media(max-width:1350px){
+                    margin-left: -43.5%;
+                    margin-top: 11%;
+                }
+               
 
                 -webkit-transition: all 400ms ease-in-out;
                 -moz-transition: all 400ms ease-in-out;
@@ -159,6 +168,9 @@ nav{
                 margin-left: -5%;
                 font-size: 34px;
 
+                @media(max-width:1350px){
+                    font-size: 24px;
+                }
                 
             }
 
@@ -174,6 +186,11 @@ nav{
                 border: 2px solid #ffffff;
                 border-radius: 15px;
                 z-index: 5;
+
+                @media(max-width:1350px){
+                    margin-left: -59%;
+                    margin-top: 11%;
+                }
 
                 -webkit-transition: all 400ms ease-in-out;
                 -moz-transition: all 400ms ease-in-out;
@@ -207,6 +224,10 @@ nav{
                 margin-left: 32%;
                 font-size: 34px;
 
+                @media(max-width:1350px){
+                    font-size: 24px;
+                }
+
                 
             }
             a{
@@ -221,6 +242,11 @@ nav{
                 border: 2px solid #ffffff;
                 border-radius: 15px;
                 z-index: 5;
+
+                @media(max-width:1350px){
+                    margin-left: -42%;
+                    margin-top: 11%;
+                }
 
                 -webkit-transition: all 400ms ease-in-out;
                 -moz-transition: all 400ms ease-in-out;
