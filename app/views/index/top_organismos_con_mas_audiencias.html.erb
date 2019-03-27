@@ -1,45 +1,864 @@
 <section class="container">
     <h2>TOP 10 ORGANISMOS DEL ESTADO CON MAYOR NÚMERO DE AUDIENCIAS OTORGADAS A PROVEEDORES</h2>
  
-    <table class="table" id="top_10_orgamnizmos">
-       <button id="top_10_orgamnizmos_btn" class="boton_json">JSON</button>
+    <table class="table dataTable no-footer" id="top_10_orgamnizmos" role="grid" aria-describedby="top_10_orgamnizmos_info">
+       
         <thead>
-            <tr>
-            <th scope="col" class="text-center">Posición</th>
-            <th scope="col" class="text-center">Número total de audiencias</th>
-            <th scope="col" class="text-center">Organismo</th>
-            <th scope="col" class="text-center">Proveedor / Sujeto activo  </th>
-            <th scope="col" class="text-center">Audiencias</th>
-            <th scope="col" class="text-center">Licitaciones </th>
-
-            </tr>
+            <tr role="row"><th scope="col" class="text-center sorting_asc" tabindex="0" aria-controls="top_10_orgamnizmos" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Posición: activate to sort column descending" style="width: 59px;">Posición</th><th scope="col" class="text-center sorting" tabindex="0" aria-controls="top_10_orgamnizmos" rowspan="1" colspan="1" aria-label="Número total de audiencias: activate to sort column ascending" style="width: 118px;">Número total de audiencias</th><th scope="col" class="text-center sorting" tabindex="0" aria-controls="top_10_orgamnizmos" rowspan="1" colspan="1" aria-label="Organismo: activate to sort column ascending" style="width: 251px;">Organismo</th><th scope="col" class="text-center sorting" tabindex="0" aria-controls="top_10_orgamnizmos" rowspan="1" colspan="1" aria-label="Proveedor / Sujeto activo  : activate to sort column ascending" style="width: 337px;">Proveedor / Sujeto activo  </th><th scope="col" class="text-center sorting" tabindex="0" aria-controls="top_10_orgamnizmos" rowspan="1" colspan="1" aria-label="Audiencias: activate to sort column ascending" style="width: 77px;">Audiencias</th><th scope="col" class="text-center sorting" tabindex="0" aria-controls="top_10_orgamnizmos" rowspan="1" colspan="1" aria-label="Licitaciones : activate to sort column ascending" style="width: 82px;">Licitaciones </th></tr>
         </thead>
         <tbody>
 
-    <% @top10 = 0 %>
-    <% @top_compradores_estado.each do |t| %>
-    <% @top10 += 1 %>
-                <tr>
-                    <td scope="col" class="text-center"><%= @top10  %></td> <!-- Posición-->
-                    <td scope="col" class="text-center"><%= t[0] %><%# audienciast4(t[1]).first[0] %></td><!-- Total Audiencias-->
-                    <td scope="col" class="text-center"><%= t[1] %></td><!-- Organismo-->
-                    <td scope="col" class="text-center"><%= link_to t[2], controller: 'buscador', action:'activo', tipo:'activo', rut: t[5] %></td><!-- Proveedor-->
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+        <tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">1</td> <!-- Posición-->
+                    <td scope="col" class="text-center">9243</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Subsecretaría de Transportes</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=76.582.410-9&amp;tipo=activo">SOLUTIVA CONSULTORES LIMITADA</a></td><!-- Proveedor-->
                     <td scope="col" class="text-center"><!-- Audiencias-->
-                        <%= link_to controller: 'audiencia', action: 'detalle', rut: t[5], nombre:t[1], target: '_blank', id: 0, ruta: 'index' do %>
-                            <%= audienciasorg(t[5],t[1]).first[0] %>
-                        <% end %>
-                    </td>
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Subsecretar%C3%ADa+de+Transportes&amp;rut=76.582.410-9&amp;ruta=index&amp;target=_blank">
+                            1
+</a>                    </td>
                     <td scope="col" class="text-center"><!-- Licitaciones -->
 
-                        <%= link_to controller: 'licitacion', action: 'licitacion', rut: t[5], sujeto:'activo', org: t[1], target: '_blank' do %>
-                            <%= contratosorg(t[5],t[1]).first[0] %>
-                        <% end %>
-                    </td>
+                        <a href="/licitacion/licitacion?org=Subsecretar%C3%ADa+de+Transportes&amp;rut=76.582.410-9&amp;sujeto=activo&amp;target=_blank">
+                            9
+</a>                    </td>
 
-                </tr>
-                
-            <% end %>
-        </tbody>
-    </table> 
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">2</td> <!-- Posición-->
+                    <td scope="col" class="text-center">6138</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Subsecretaría del Medio Ambiente</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=76.079.340-K&amp;tipo=activo">SETEC SERVICIOS TECNOLOGICOS AMBIENTALES LIMITADA</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Subsecretar%C3%ADa+del+Medio+Ambiente&amp;rut=76.079.340-K&amp;ruta=index&amp;target=_blank">
+                            2
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Subsecretar%C3%ADa+del+Medio+Ambiente&amp;rut=76.079.340-K&amp;sujeto=activo&amp;target=_blank">
+                            33
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">3</td> <!-- Posición-->
+                    <td scope="col" class="text-center">5120</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Dirección del Trabajo</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=15.430.194-1&amp;tipo=activo">DEBORA FRANCISCA URETA CERDA</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Direcci%C3%B3n+del+Trabajo&amp;rut=15.430.194-1&amp;ruta=index&amp;target=_blank">
+                            1
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Direcci%C3%B3n+del+Trabajo&amp;rut=15.430.194-1&amp;sujeto=activo&amp;target=_blank">
+                            20
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">4</td> <!-- Posición-->
+                    <td scope="col" class="text-center">4687</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Servicio de Impuestos Internos</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=9.633.707-8&amp;tipo=activo">JUAN RUPERTO CANCINO GARRIDO</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Servicio+de+Impuestos+Internos&amp;rut=9.633.707-8&amp;ruta=index&amp;target=_blank">
+                            2
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Servicio+de+Impuestos+Internos&amp;rut=9.633.707-8&amp;sujeto=activo&amp;target=_blank">
+                            2
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">5</td> <!-- Posición-->
+                    <td scope="col" class="text-center">4531</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Subsecretaría de Energía</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=71.630.200-8&amp;tipo=activo">CORP DE DESARROLLO TECNOLOGICO</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Subsecretar%C3%ADa+de+Energ%C3%ADa&amp;rut=71.630.200-8&amp;ruta=index&amp;target=_blank">
+                            4
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Subsecretar%C3%ADa+de+Energ%C3%ADa&amp;rut=71.630.200-8&amp;sujeto=activo&amp;target=_blank">
+                            7
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">6</td> <!-- Posición-->
+                    <td scope="col" class="text-center">4230</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Servicio Nacional de Geología y Minería</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=80.621.200-8&amp;tipo=activo">MERCK S A</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Servicio+Nacional+de+Geolog%C3%ADa+y+Miner%C3%ADa&amp;rut=80.621.200-8&amp;ruta=index&amp;target=_blank">
+                            1
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Servicio+Nacional+de+Geolog%C3%ADa+y+Miner%C3%ADa&amp;rut=80.621.200-8&amp;sujeto=activo&amp;target=_blank">
+                            9
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">7</td> <!-- Posición-->
+                    <td scope="col" class="text-center">3781</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Gendarmería de Chile</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=92.475.000-6&amp;tipo=activo">KAUFMANN S A VEHICULOS MOTORIZADOS</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Gendarmer%C3%ADa+de+Chile&amp;rut=92.475.000-6&amp;ruta=index&amp;target=_blank">
+                            3
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Gendarmer%C3%ADa+de+Chile&amp;rut=92.475.000-6&amp;sujeto=activo&amp;target=_blank">
+                            112
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">8</td> <!-- Posición-->
+                    <td scope="col" class="text-center">2911</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Consejo Nacional de la Cultura y las Artes</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=76.062.012-2&amp;tipo=activo">DITECSUR LIMITADA</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Consejo+Nacional+de+la+Cultura+y+las+Artes&amp;rut=76.062.012-2&amp;ruta=index&amp;target=_blank">
+                            8
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Consejo+Nacional+de+la+Cultura+y+las+Artes&amp;rut=76.062.012-2&amp;sujeto=activo&amp;target=_blank">
+                            11
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">9</td> <!-- Posición-->
+                    <td scope="col" class="text-center">2607</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Servicio Agrícola y Ganadero</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=99.550.020-5&amp;tipo=activo">VIAMED TECHNICAL LABORATORY S A</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Servicio+Agr%C3%ADcola+y+Ganadero&amp;rut=99.550.020-5&amp;ruta=index&amp;target=_blank">
+                            6
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Servicio+Agr%C3%ADcola+y+Ganadero&amp;rut=99.550.020-5&amp;sujeto=activo&amp;target=_blank">
+                            2
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">10</td> <!-- Posición-->
+                    <td scope="col" class="text-center">2191</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Ejército de Chile</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=96.549.620-3&amp;tipo=activo">J LEIVA S A</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Ej%C3%A9rcito+de+Chile&amp;rut=96.549.620-3&amp;ruta=index&amp;target=_blank">
+                            2
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Ej%C3%A9rcito+de+Chile&amp;rut=96.549.620-3&amp;sujeto=activo&amp;target=_blank">
+                            101
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">11</td> <!-- Posición-->
+                    <td scope="col" class="text-center">2191</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Subsecretaria de Educación Parvularia</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=78.574.400-4&amp;tipo=activo">STATCOM DATAVOZ SPA</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Subsecretaria+de+Educaci%C3%B3n+Parvularia&amp;rut=78.574.400-4&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Subsecretaria+de+Educaci%C3%B3n+Parvularia&amp;rut=78.574.400-4&amp;sujeto=activo&amp;target=_blank">
+                            3
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">12</td> <!-- Posición-->
+                    <td scope="col" class="text-center">2000</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Subsecretaría del Patrimonio Cultural</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=65.671.340-2&amp;tipo=activo">O N G POLOC</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Subsecretar%C3%ADa+del+Patrimonio+Cultural&amp;rut=65.671.340-2&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Subsecretar%C3%ADa+del+Patrimonio+Cultural&amp;rut=65.671.340-2&amp;sujeto=activo&amp;target=_blank">
+                            1
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">13</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1920</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Subsecretaría de Desarrollo Regional</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=60.911.000-7&amp;tipo=activo">UNIVERSIDAD DE SANTIAGO DE CHILE</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Subsecretar%C3%ADa+de+Desarrollo+Regional&amp;rut=60.911.000-7&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Subsecretar%C3%ADa+de+Desarrollo+Regional&amp;rut=60.911.000-7&amp;sujeto=activo&amp;target=_blank">
+                            17
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">14</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1430</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Dirección General de Relaciones Económicas Internacionales</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=&amp;tipo=activo"></a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Direcci%C3%B3n+General+de+Relaciones+Econ%C3%B3micas+Internacionales&amp;rut=&amp;ruta=index&amp;target=_blank">
+                            47
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Direcci%C3%B3n+General+de+Relaciones+Econ%C3%B3micas+Internacionales&amp;rut=&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">15</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1379</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Dirección Nacional de Fronteras y Límites del Estado</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=99.231.000-6&amp;tipo=activo">HDI SEGUROS S.A.</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Direcci%C3%B3n+Nacional+de+Fronteras+y+L%C3%ADmites+del+Estado&amp;rut=99.231.000-6&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Direcci%C3%B3n+Nacional+de+Fronteras+y+L%C3%ADmites+del+Estado&amp;rut=99.231.000-6&amp;sujeto=activo&amp;target=_blank">
+                            7
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">16</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1325</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Armada de Chile</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=76.229.070-7&amp;tipo=activo">SOCIEDAD PROVEEDORA INDUSTRIAL MANTIN &amp; SERVICE LIMITADA</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Armada+de+Chile&amp;rut=76.229.070-7&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Armada+de+Chile&amp;rut=76.229.070-7&amp;sujeto=activo&amp;target=_blank">
+                            271
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">17</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1279</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Fuerza Aérea de Chile</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=96.792.430-k&amp;tipo=activo">SODIMAC S A</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Fuerza+A%C3%A9rea+de+Chile&amp;rut=96.792.430-k&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Fuerza+A%C3%A9rea+de+Chile&amp;rut=96.792.430-k&amp;sujeto=activo&amp;target=_blank">
+                            197
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">18</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1256</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Defensa Civil de Chile</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=77.793.670-0&amp;tipo=activo">PARRAGUEZ LIMITADA</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Defensa+Civil+de+Chile&amp;rut=77.793.670-0&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Defensa+Civil+de+Chile&amp;rut=77.793.670-0&amp;sujeto=activo&amp;target=_blank">
+                            1
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">19</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1236</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Dirección General de Movilización Nacional</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=&amp;tipo=activo"></a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Direcci%C3%B3n+General+de+Movilizaci%C3%B3n+Nacional&amp;rut=&amp;ruta=index&amp;target=_blank">
+                            21
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Direcci%C3%B3n+General+de+Movilizaci%C3%B3n+Nacional&amp;rut=&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">20</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1234</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Ministerio de Hacienda</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=96.792.430-k&amp;tipo=activo">SODIMAC S A</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Ministerio+de+Hacienda&amp;rut=96.792.430-k&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Ministerio+de+Hacienda&amp;rut=96.792.430-k&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">21</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1215</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Dirección Nacional del Servicio Civil</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=78.488.290-k&amp;tipo=activo">TIRONI Y ASOCIADOS S A</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Direcci%C3%B3n+Nacional+del+Servicio+Civil&amp;rut=78.488.290-k&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Direcci%C3%B3n+Nacional+del+Servicio+Civil&amp;rut=78.488.290-k&amp;sujeto=activo&amp;target=_blank">
+                            3
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">22</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1207</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Servicio Nacional de Aduanas</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=80.621.200-8&amp;tipo=activo">MERCK S A</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Servicio+Nacional+de+Aduanas&amp;rut=80.621.200-8&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Servicio+Nacional+de+Aduanas&amp;rut=80.621.200-8&amp;sujeto=activo&amp;target=_blank">
+                            14
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">23</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1201</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Superintendencia de Bancos e Instituciones Financieras</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=96.930.550-k&amp;tipo=activo">E BUSINESS DISTRIBUTION S A</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Superintendencia+de+Bancos+e+Instituciones+Financieras&amp;rut=96.930.550-k&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Superintendencia+de+Bancos+e+Instituciones+Financieras&amp;rut=96.930.550-k&amp;sujeto=activo&amp;target=_blank">
+                            2
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">24</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1192</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Superintendencia de Casinos de Juego</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=78.929.230-2&amp;tipo=activo">SIGA INGENIERIA Y CONSULTORIA S.A.</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Superintendencia+de+Casinos+de+Juego&amp;rut=78.929.230-2&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Superintendencia+de+Casinos+de+Juego&amp;rut=78.929.230-2&amp;sujeto=activo&amp;target=_blank">
+                            4
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">25</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1191</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Dirección de Compras y Contratación Pública</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=76.145.580-k&amp;tipo=activo">SOCIEDAD DE SERVICIOS GAMMA LIMITADA</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Direcci%C3%B3n+de+Compras+y+Contrataci%C3%B3n+P%C3%BAblica&amp;rut=76.145.580-k&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Direcci%C3%B3n+de+Compras+y+Contrataci%C3%B3n+P%C3%BAblica&amp;rut=76.145.580-k&amp;sujeto=activo&amp;target=_blank">
+                            1
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">26</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1187</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Subsecretaría General de Gobierno</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=&amp;tipo=activo"></a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Subsecretar%C3%ADa+General+de+Gobierno&amp;rut=&amp;ruta=index&amp;target=_blank">
+                            154
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Subsecretar%C3%ADa+General+de+Gobierno&amp;rut=&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">27</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1180</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Subsecretaría de Economía y Empresas de Menor Tamaño</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=76.062.452-7&amp;tipo=activo">INMOBILIARIA Y CONSTRUCTORA SANTA ANA LIMITADA</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Subsecretar%C3%ADa+de+Econom%C3%ADa+y+Empresas+de+Menor+Tama%C3%B1o&amp;rut=76.062.452-7&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Subsecretar%C3%ADa+de+Econom%C3%ADa+y+Empresas+de+Menor+Tama%C3%B1o&amp;rut=76.062.452-7&amp;sujeto=activo&amp;target=_blank">
+                            7
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">28</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1176</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Superintendencia de Electricidad y Combustibles</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=76.516.650-0&amp;tipo=activo">CLAUDIO BONILLA Y COMPANIA LIMITADA ASESORIAS E INVERSIONES</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Superintendencia+de+Electricidad+y+Combustibles&amp;rut=76.516.650-0&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Superintendencia+de+Electricidad+y+Combustibles&amp;rut=76.516.650-0&amp;sujeto=activo&amp;target=_blank">
+                            4
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">29</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1175</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Servicio Nacional del Consumidor</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=80.621.200-8&amp;tipo=activo">MERCK S A</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Servicio+Nacional+del+Consumidor&amp;rut=80.621.200-8&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Servicio+Nacional+del+Consumidor&amp;rut=80.621.200-8&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">30</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1162</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Subsecretaría de Educación</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=76.516.650-0&amp;tipo=activo">CLAUDIO BONILLA Y COMPANIA LIMITADA ASESORIAS E INVERSIONES</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Subsecretar%C3%ADa+de+Educaci%C3%B3n&amp;rut=76.516.650-0&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Subsecretar%C3%ADa+de+Educaci%C3%B3n&amp;rut=76.516.650-0&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">31</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1161</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Junta Nacional de Auxilio Escolar y Becas</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=&amp;tipo=activo"></a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Junta+Nacional+de+Auxilio+Escolar+y+Becas&amp;rut=&amp;ruta=index&amp;target=_blank">
+                            90
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Junta+Nacional+de+Auxilio+Escolar+y+Becas&amp;rut=&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">32</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1152</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Servicio de Registro Civil e Identificación</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=10.238.548-9&amp;tipo=activo">HERNAN EDMUNDO MENESES MENESES</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Servicio+de+Registro+Civil+e+Identificaci%C3%B3n&amp;rut=10.238.548-9&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Servicio+de+Registro+Civil+e+Identificaci%C3%B3n&amp;rut=10.238.548-9&amp;sujeto=activo&amp;target=_blank">
+                            3
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">33</td> <!-- Posición-->
+                    <td scope="col" class="text-center">1139</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Servicio Médico Legal</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=77.814.080-2&amp;tipo=activo">COMERCIALIZADORA DE PRODUCTOS PARA LABORATORIOS E INDUSTRIA LIMITADA</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Servicio+M%C3%A9dico+Legal&amp;rut=77.814.080-2&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Servicio+M%C3%A9dico+Legal&amp;rut=77.814.080-2&amp;sujeto=activo&amp;target=_blank">
+                            15
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">34</td> <!-- Posición-->
+                    <td scope="col" class="text-center">912</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Subsecretaría de Previsión Social</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=81.698.900-0&amp;tipo=activo">PONTIFICIA UNIVERSIDAD CATOLICA DE CHILE</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Subsecretar%C3%ADa+de+Previsi%C3%B3n+Social&amp;rut=81.698.900-0&amp;ruta=index&amp;target=_blank">
+                            1
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Subsecretar%C3%ADa+de+Previsi%C3%B3n+Social&amp;rut=81.698.900-0&amp;sujeto=activo&amp;target=_blank">
+                            7
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">35</td> <!-- Posición-->
+                    <td scope="col" class="text-center">875</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Subsecretaría del Trabajo</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=73.923.400-K&amp;tipo=activo">CORP DE DERECHO PRIVADO UNIVERSIDAD ALBERTO HURTADO</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Subsecretar%C3%ADa+del+Trabajo&amp;rut=73.923.400-K&amp;ruta=index&amp;target=_blank">
+                            1
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Subsecretar%C3%ADa+del+Trabajo&amp;rut=73.923.400-K&amp;sujeto=activo&amp;target=_blank">
+                            18
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">36</td> <!-- Posición-->
+                    <td scope="col" class="text-center">352</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Instituto de Seguridad Laboral</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=76.062.452-7&amp;tipo=activo">INMOBILIARIA Y CONSTRUCTORA SANTA ANA LIMITADA</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Instituto+de+Seguridad+Laboral&amp;rut=76.062.452-7&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Instituto+de+Seguridad+Laboral&amp;rut=76.062.452-7&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">37</td> <!-- Posición-->
+                    <td scope="col" class="text-center">341</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Dirección de Aeropuertos</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=76.516.650-0&amp;tipo=activo">CLAUDIO BONILLA Y COMPANIA LIMITADA ASESORIAS E INVERSIONES</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Direcci%C3%B3n+de+Aeropuertos&amp;rut=76.516.650-0&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Direcci%C3%B3n+de+Aeropuertos&amp;rut=76.516.650-0&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">38</td> <!-- Posición-->
+                    <td scope="col" class="text-center">312</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Dirección General de Aguas</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=77.814.080-2&amp;tipo=activo">COMERCIALIZADORA DE PRODUCTOS PARA LABORATORIOS E INDUSTRIA LIMITADA</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Direcci%C3%B3n+General+de+Aguas&amp;rut=77.814.080-2&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Direcci%C3%B3n+General+de+Aguas&amp;rut=77.814.080-2&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">39</td> <!-- Posición-->
+                    <td scope="col" class="text-center">225</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Dirección de Planeamiento</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=10.238.548-9&amp;tipo=activo">HERNAN EDMUNDO MENESES MENESES</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Direcci%C3%B3n+de+Planeamiento&amp;rut=10.238.548-9&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Direcci%C3%B3n+de+Planeamiento&amp;rut=10.238.548-9&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">40</td> <!-- Posición-->
+                    <td scope="col" class="text-center">117</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Dirección de Vialidad</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=80.621.200-8&amp;tipo=activo">MERCK S A</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Direcci%C3%B3n+de+Vialidad&amp;rut=80.621.200-8&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Direcci%C3%B3n+de+Vialidad&amp;rut=80.621.200-8&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">41</td> <!-- Posición-->
+                    <td scope="col" class="text-center">115</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Superintendencia de Salud</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=95.714.000-9&amp;tipo=activo">CLARO SERVICIOS EMPRESARIALES S.A.</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Superintendencia+de+Salud&amp;rut=95.714.000-9&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Superintendencia+de+Salud&amp;rut=95.714.000-9&amp;sujeto=activo&amp;target=_blank">
+                            1
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">42</td> <!-- Posición-->
+                    <td scope="col" class="text-center">113</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Serviu RM</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=95.714.000-9&amp;tipo=activo">CLARO SERVICIOS EMPRESARIALES S.A.</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Serviu+RM&amp;rut=95.714.000-9&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Serviu+RM&amp;rut=95.714.000-9&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">43</td> <!-- Posición-->
+                    <td scope="col" class="text-center">111</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Subsecretaría de Bienes Nacionales</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=&amp;tipo=activo"></a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Subsecretar%C3%ADa+de+Bienes+Nacionales&amp;rut=&amp;ruta=index&amp;target=_blank">
+                            501
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Subsecretar%C3%ADa+de+Bienes+Nacionales&amp;rut=&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">44</td> <!-- Posición-->
+                    <td scope="col" class="text-center">96</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Comisión Nacional de Riego</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=76.190.528-7&amp;tipo=activo">CONSTRUCCIONES ALEXIS RODRIGO FAUNDEZ RIQUELME EMPRESA INDIVIDUAL DE R</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Comisi%C3%B3n+Nacional+de+Riego&amp;rut=76.190.528-7&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Comisi%C3%B3n+Nacional+de+Riego&amp;rut=76.190.528-7&amp;sujeto=activo&amp;target=_blank">
+                            4
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">45</td> <!-- Posición-->
+                    <td scope="col" class="text-center">92</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Instituto de Desarrollo Agropecuario</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=&amp;tipo=activo"></a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Instituto+de+Desarrollo+Agropecuario&amp;rut=&amp;ruta=index&amp;target=_blank">
+                            104
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Instituto+de+Desarrollo+Agropecuario&amp;rut=&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">46</td> <!-- Posición-->
+                    <td scope="col" class="text-center">90</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Corporación Nacional Forestal</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=76.190.528-7&amp;tipo=activo">CONSTRUCCIONES ALEXIS RODRIGO FAUNDEZ RIQUELME EMPRESA INDIVIDUAL DE R</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Corporaci%C3%B3n+Nacional+Forestal&amp;rut=76.190.528-7&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Corporaci%C3%B3n+Nacional+Forestal&amp;rut=76.190.528-7&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">47</td> <!-- Posición-->
+                    <td scope="col" class="text-center">87</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Subsecretaría de Minería</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=76.013.690-5&amp;tipo=activo">COMERCIAL DITEN LIMITADA</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Subsecretar%C3%ADa+de+Miner%C3%ADa&amp;rut=76.013.690-5&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Subsecretar%C3%ADa+de+Miner%C3%ADa&amp;rut=76.013.690-5&amp;sujeto=activo&amp;target=_blank">
+                            1
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">48</td> <!-- Posición-->
+                    <td scope="col" class="text-center">53</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Comisión Chilena del Cobre</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=95.714.000-9&amp;tipo=activo">CLARO SERVICIOS EMPRESARIALES S.A.</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Comisi%C3%B3n+Chilena+del+Cobre&amp;rut=95.714.000-9&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Comisi%C3%B3n+Chilena+del+Cobre&amp;rut=95.714.000-9&amp;sujeto=activo&amp;target=_blank">
+                            0
+</a>                    </td>
+
+                </tr><tr role="row" class="odd">
+                    <td scope="col" class="text-center sorting_1">49</td> <!-- Posición-->
+                    <td scope="col" class="text-center">47</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Servicio Nacional de la Mujer</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=77.615.490-3&amp;tipo=activo">CENTRO DE CAPACITACION VALLE DEL MAR LIMITADA</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Servicio+Nacional+de+la+Mujer&amp;rut=77.615.490-3&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Servicio+Nacional+de+la+Mujer&amp;rut=77.615.490-3&amp;sujeto=activo&amp;target=_blank">
+                            8
+</a>                    </td>
+
+                </tr><tr role="row" class="even">
+                    <td scope="col" class="text-center sorting_1">50</td> <!-- Posición-->
+                    <td scope="col" class="text-center">26</td><!-- Total Audiencias-->
+                    <td scope="col" class="text-center">Consejo de Defensa del Estado</td><!-- Organismo-->
+                    <td scope="col" class="text-center"><a href="/buscador/activo?rut=96.724.350-7&amp;tipo=activo">MIGUEL CONCHA Y COMPANIA LIMITADA</a></td><!-- Proveedor-->
+                    <td scope="col" class="text-center"><!-- Audiencias-->
+                        <a href="/audiencia/detalle?id=0&amp;nombre=Consejo+de+Defensa+del+Estado&amp;rut=96.724.350-7&amp;ruta=index&amp;target=_blank">
+                            0
+</a>                    </td>
+                    <td scope="col" class="text-center"><!-- Licitaciones -->
+
+                        <a href="/licitacion/licitacion?org=Consejo+de+Defensa+del+Estado&amp;rut=96.724.350-7&amp;sujeto=activo&amp;target=_blank">
+                            4
+</a>                    </td>
+
+                </tr></tbody>
+    </table>
 
 </section>
