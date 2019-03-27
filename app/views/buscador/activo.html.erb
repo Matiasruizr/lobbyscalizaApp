@@ -16,7 +16,8 @@
            Proveedor  <%= radio_button_tag  'tipo', 'activo', params[:tipo], :checked => true %>  
            Comprador  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo] %>
         </div>
-            <input name="text123" class="form-control mr-sm col-7 center" type="text" id="autocomplete" placeholder="Buscar sujeto activo o pasivo" aria-label="Search">
+            <input name="text123" class="form-control mr-sm col-7 center" type="text" id="autocomplete" placeholder="Buscar sujetos activos" aria-label="Search">
+            <input name="pasivos"  class="form-control mr-sm col-7 center" type="text" placeholder="Buscar sujetos pasivo" aria-label="Search" id="autocompletepasivos">
             <input type="hidden" id="person_id" name="rut"/>
             <button id="test123" class="btn btn-primary my-2 my-sm" type="submit"><i class="fas fa-search"></i></button>
         <div class="col-12">
@@ -240,6 +241,13 @@ Dr Simmi	Santiago	21	4
     <% end %>
 </section>
 
+        <style>
+             #autocompletepasivos{
+                 display:none; 
+             }
+        </style>
+
+
 <!-- jquery-magicsearch-master -->
     <script
 			  src="https://code.jquery.com/jquery-2.0.2.min.js"
@@ -250,9 +258,8 @@ Dr Simmi	Santiago	21	4
 
     //https://stackoverrun.com/es/q/718908 formato
     
-
-  var data = [
-      // Pasivos
+    var pasivos = [
+        // Pasivos
        "PASIVOS - DCCP-Operaciones-Prueba Comprador, 00.000.000-0",
        "PASIVOS - Ilustre Municipalidad de Peralillo, 10.229.815-2",
        "PASIVOS - MUNICIPALIDAD DE PUERTO NATALES, 10.330.215-k",
@@ -2000,7 +2007,8 @@ Dr Simmi	Santiago	21	4
        "PASIVOS - Comisión Chilena de Energía Nuclear, 82.983.100-7",
        "PASIVOS - I. MUNICIPALIDAD POZO ALMONTE, 83.017.500-8",
        "PASIVOS - Universidad de la Frontera, 87.912.900-1",
-
+    ]
+  var data = [
       //Activos
       /**/
 "ACTIVO - SERVICIOS GENERALES KONG LTDA SERVIKONG LTDA, 1-799.730-0",
@@ -67353,4 +67361,29 @@ Dr Simmi	Santiago	21	4
     minLength: 2
     });
 
+    $( "#autocompletepasivos" ).autocomplete({
+    source: pasivos,
+    minLength: 2
+    });
+
+    // if ( $('#tipo_activo').checked ){
+    //     console.log('activo')
+    // } else if (  $('#tipo_pasivo').checked  ){
+    //      console.log'pasivo')
+    // }
+
+    $("#tipo_pasivo").change(function() {
+        if(this.checked) {
+            $('#autocompletepasivos').toggle();
+            $('#autocomplete').toggle();
+        }
+    });
+
+    
+    $("#tipo_activo").change(function() {
+        if(this.checked) {
+            $('#autocompletepasivos').toggle();
+            $('#autocomplete').toggle();
+        }
+    });
     </script>
