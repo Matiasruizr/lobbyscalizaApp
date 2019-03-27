@@ -7,7 +7,6 @@
 body{
     font-family: 'Roboto', sans-serif!important;
     position: relative;
-    padding-bottom: 200px;
 }
 nav{    
     background: linear-gradient(180deg, rgba(109,40,114,1) 0%, rgba(159,46,106,1) 100%);
@@ -115,7 +114,7 @@ nav{
             }
             a{
                 cursor: pointer;
-                margin-left: -51%;
+                margin-left: -45%;
                 margin-top:12%;
                 padding: 0.5% 1.5%;
                 font-size: 20px;
@@ -205,14 +204,14 @@ nav{
                 color: #ffffff;
                 border: none;
                 margin-bottom: 22%;
-                margin-left: 33%;
+                margin-left: 32%;
                 font-size: 34px;
 
                 
             }
             a{
                 cursor: pointer;
-                margin-left: -37%;
+                margin-left: -41%;
                 margin-top:10%;
                 padding: 0.5% 1.5%;
                 font-size: 20px;
@@ -866,6 +865,7 @@ footer{
     ul{
         li{
             margin: 10px 0;
+            list-style: none;
             a{
                 color: #FFFFFF;
                 opacity: 0.58;
@@ -927,7 +927,10 @@ footer{
     
 
     h1{
+        
         color: #FFFFFF;
+        margin-left: 3%;
+        padding-top: 2%;
     }
     .dataTables_paginate{
 
