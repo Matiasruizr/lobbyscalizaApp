@@ -21,7 +21,7 @@
             <tr>
                 <td scope="col" class="text-center"><%= @top10  %></td><!-- Posicion -->
                 <td scope="col" class="text-center">
-                     <%=  link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'pasivo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
+                     <%=  link_to controller: 'buscador', action: 'activo', rutpasivo: t[0], tipo: 'pasivo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
                        <%= t[0] %>
                     <% end %>
                 </td><!-- Rut -->
@@ -29,7 +29,7 @@
                 <td scope="col" class="text-center">$<%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td><!-- Monto adjudicados -->
                 <td scope="col" class="text-center"><%= t[3] %></td><!-- Cantidad de contratos -->
                 <td scope="col" class="text-center">
-                    <%=  link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'pasivo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
+                    <%=  link_to controller: 'buscador', action: 'activo', rutpasivo: t[0], tipo: 'pasivo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
                         <i class='fas fa-search'></i>
                     <% end %>
                 </td>
