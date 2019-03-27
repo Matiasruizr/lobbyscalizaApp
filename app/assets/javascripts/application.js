@@ -11,12 +11,11 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require activestorage
 //= require turbolinks
-//= require_tree .
 //= require jquery3
-$(document).ready(function(){
-
+//= require activestorage
+//= require_tree .
+document.addEventListener("turbolinks:load", function() {
     
         
 
@@ -67,5 +66,28 @@ $(document).ready(function(){
         }); // Fin Smoth scroll
 
 
-        
+      
+    $("#tipo_pasivo").change(function() {
+        if(this.checked) {
+            $('#autocompletepasivos').show();
+            $('#autocomplete').hide();
+        }
+    });
+
+    
+    $("#tipo_activo").change(function() {
+        if(this.checked) {
+            $('#autocompletepasivos').hide();
+            $('#autocomplete').show();
+        }
+    });
+    $( "#autocomplete" ).autocomplete({
+        source: data,
+        minLength: 2
+        });
+    
+        $( "#autocompletepasivos" ).autocomplete({
+        source: pasivos,
+        minLength: 2
+        });
 });

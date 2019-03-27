@@ -14,11 +14,12 @@
 <%
 =end%>
            Proveedor  <%= radio_button_tag  'tipo', 'activo', params[:tipo], :checked => true %>  
-           Comprador  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo] %>
+           Comprador  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo], :checked => false %>
         </div>
             <input name="text123" class="form-control mr-sm col-7 center" type="text" id="autocomplete" placeholder="Buscar sujetos activos" aria-label="Search">
-            <input name="pasivos"  class="form-control mr-sm col-7 center" type="text" placeholder="Buscar sujetos pasivo" aria-label="Search" id="autocompletepasivos">
+            <input name="textpasivo"  class="form-control mr-sm col-7 center" type="text" placeholder="Buscar sujetos pasivo" aria-label="Search" id="autocompletepasivos">
             <input type="hidden" id="person_id" name="rut"/>
+            <input type="hidden" id="person_id_pasivo" name="rutpasivo"/>
             <button id="test123" class="btn btn-primary my-2 my-sm" type="submit"><i class="fas fa-search"></i></button>
         <div class="col-12">
             Desde   &nbsp;&nbsp; <%# date_field :desde, params[:desde], :value => '2014-01-01' %>
@@ -71,6 +72,7 @@
                 <% end %>
             </tbody>
         </table>
+        <hr>
         <h2>LICITACIONES ADJUDICADAS</h2>
         <table class="table" id="licitaciones_adjudicadas">
         <div class="dt-buttons"><button id="licitaciones_adjudicadas_btn" class="boton_json">JSON</button></div>
@@ -97,6 +99,7 @@
                 <% end %> 
             </tbody>
         </table>
+        <hr> 
         <h2>Historia con distintos compradores:</h2>
         <table class="table" id="historial_compradores">
         <div class="dt-buttons"><button id="historial_compradores_btn" class="boton_json">JSON</button></div>
@@ -119,6 +122,7 @@
                 <% end %> 
             </tbody>
         </table>
+        
     <% elsif params[:tipo] == 'pasivo' %>
         <h2>Sujetos pasivos</h2>
         <table class="table" id="sujetos_pasivos_busquedas">
@@ -150,6 +154,7 @@
                 <% end %>
             </tbody>
         </table>
+        <hr>
       <h2>LICITACIONES</h2>
         <table class="table" id="licitaciones_otorgadas">
         <div class="dt-buttons"><button id="licitaciones_otorgadas_btn" class="boton_json">JSON</button></div>
@@ -181,6 +186,7 @@
                 <% end %> 
             </tbody>
         </table>
+        <hr>
         <h2>Historia con distintos Proveedores:</h2>
         <table class="table" id="historial_proveedores">
         <div class="dt-buttons"><button id="historial_proveedores_btn" class="boton_json">JSON</button></div>
@@ -245,6 +251,10 @@ Dr Simmi	Santiago	21	4
              #autocompletepasivos{
                  display:none; 
              }
+            hr{
+                border-top:45px solid white;
+                width:100%;
+            }
         </style>
 
 
@@ -253,7 +263,7 @@ Dr Simmi	Santiago	21	4
 			  src="https://code.jquery.com/jquery-2.0.2.min.js"
 			  integrity="sha256-TZWGoHXwgqBP1AF4SZxHIBKzUdtMGk0hCQegiR99itk="
 			  crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
     <script>
 
     //https://stackoverrun.com/es/q/718908 formato
@@ -67356,15 +67366,7 @@ Dr Simmi	Santiago	21	4
 "ACTIVO - COFIE SAS, FR28572003929",
 "ACTIVO - Universidad Politécnica de Valencia, Q4618002B"
 ]; 
-    $( "#autocomplete" ).autocomplete({
-    source: data,
-    minLength: 2
-    });
 
-    $( "#autocompletepasivos" ).autocomplete({
-    source: pasivos,
-    minLength: 2
-    });
 
     // if ( $('#tipo_activo').checked ){
     //     console.log('activo')
@@ -67372,18 +67374,4 @@ Dr Simmi	Santiago	21	4
     //      console.log'pasivo')
     // }
 
-    $("#tipo_pasivo").change(function() {
-        if(this.checked) {
-            $('#autocompletepasivos').toggle();
-            $('#autocomplete').toggle();
-        }
-    });
-
-    
-    $("#tipo_activo").change(function() {
-        if(this.checked) {
-            $('#autocompletepasivos').toggle();
-            $('#autocomplete').toggle();
-        }
-    });
     </script>

@@ -13,12 +13,15 @@ class BuscadorController < ApplicationController
     if params[:tipo]
       @tipo = "'"+params[:tipo]+"'"
     end
-
+    if params[:rutpasivo]
+      @rutpas = "'"+params[:rutpasivo]+"'"
+    end
+    
 
     if params[:tipo] == 'pasivo'
       @datos = ActiveRecord::Base.connection.execute("select comprador_rut_unidad, comprador_nombre_organismo
       from licitacion_detalle
-      where comprador_rut_unidad = #{@rut}
+      where comprador_rut_unidad = #{@rutpas}
       group by  comprador_rut_unidad;")
        @busquedalobbysta = ActiveRecord::Base.connection.execute("select CONCAT(spd.nombres,' ',spd.apellidos) as nombre, spd.cargo , count(audiencia_detalle.id) as numero_audiencias,
                                                                 institucion_nombre, spd.id

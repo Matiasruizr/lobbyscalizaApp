@@ -275,6 +275,14 @@ var licitaciones_otorgadas = tablaAJson('#licitaciones_otorgadas');
                 document.getElementById('person_id').value=n; 
             };
           });
+
+           $("#test123").click(function(){
+            var str = $("input[name='textpasivo']").val()
+            if (str.length>12){
+                var n = str.substring(str.indexOf(",") + 2);
+                document.getElementById('person_id_pasivo').value=n; 
+            };
+          });
   // licitaciones_adjudicadas
   // sujetos_pasivos_busquedas
   // licitaciones_otorgadas
