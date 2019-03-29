@@ -16,7 +16,7 @@
             <h3 id="car"class="texto-banner-2">¿Quieres saber si el Lobby impacta las Compras Públicas?</h3>
             <%= link_to 'Revisa acá', controller: 'buscador', action:'activo', :class =>'boton-banner-2' %>
         </div>
-        
+          
     </div>
     <div class="carousel-item banner-3">
       <img class="d-block w-100" src="/static/img/banner-3.png" alt="Third slide">
@@ -41,7 +41,7 @@
         <div class="info_box_grande">
             <h2>REVISA LOS TOP 10 COMPRADORES DEL ESTADO CON MAYOR NÚMERO DE <br>
             AUDIENCIAS OTORGADAS A PROVEEDORES</h2>
-            <%= link_to 'Ver más', controller: 'index', action:'top_compradores_del_estado' %>
+            <%= link_to 'Ver más', controller: 'index', action:'top_organismos_con_mas_audiencias' %>
             <div class="degradado_grande"></div>
             <img  src="/static/img/01.jpg" alt="First slide">
         </div>
@@ -50,14 +50,15 @@
         <div class="info_box">
             <h2>BUSCA POR COMPRADORES O <br>
             PROVEEDORES</h2>
-            <%= link_to 'Ver más', controller: 'index', action:'top_compradores_del_estado' %>
+            <%= link_to 'Ver más', controller: 'buscador', action:'activo' %>
             <div class="degradado_izquierda"></div>
             <img  src="/static/img/02.jpg" alt="First slide">
         </div>
         
         <div class="info_box">
             <h2>TOP 10 LOBBISTAS</h2>
-            <%= link_to 'Ver más', controller: 'index', action:'top_organismos_con_mas_audiencias' %>
+            <%= link_to 'Ver más', controller: 'index', action:'top_lobbysta_proveedor' %>
+             
             <p>¿Quieres saber quienes son los proveedores <br>
             con más audiencias de lobby?</p>
             <div class="degradado_izquierda"></div>
@@ -66,7 +67,7 @@
 
         <div class="info_box">
             <h2>CONOCE QUIENES SON LOS MAYORES COMPRADORES DEL ESTADO</h2>
-            <%= link_to 'Ver más', controller: 'index', action:'top_lobbysta_proveedor' %>
+            <%= link_to 'Ver más', controller: 'index', action:'top_compradores_del_estado' %>
             <div class="degradado_izquierda"></div>
             <img  src="/static/img/04.jpg" alt="First slide">
         </div>
