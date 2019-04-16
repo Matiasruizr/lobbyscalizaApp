@@ -16,6 +16,9 @@ class BuscadorController < ApplicationController
     if params[:rutpasivo]
       @rutpas = "'"+params[:rutpasivo]+"'"
     end
+    if params[:comuna]
+      @comuna = "'"+params[:comuna]+"'"
+    end
     
 
     if params[:tipo] == 'pasivo'
@@ -28,7 +31,8 @@ class BuscadorController < ApplicationController
                                                                 from audiencia_detalle
                                                                 join sujeto_pasivo_detalle spd on audiencia_detalle.sujeto_pasivo_id = spd.id
                                                                 join institucion_detalle id on id.codigo = spd.institucion_codigo
-                                                                where institucion_nombre like '%#{@datos.first[1]}%'
+                                                                join audiencia_cabecera auca on auca.id = audiencia_detalle.id
+                                                                where institucion_nombre like '%#{@datos.first[1]}%' and auca.comuna like #{@comuna}
                                                                 group by spd.id;")
 
        @licitaciones_otorgadas = ActiveRecord::Base.connection.execute("select tipo, count(codigo_externo)  
