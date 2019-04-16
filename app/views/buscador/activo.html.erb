@@ -26,7 +26,7 @@
             <input class="form-control" type="date" name="desde" value="2014-01-01"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Hasta  &nbsp;&nbsp;  <%# date_field :hasta, params[:hasta], :value => Time.now.strftime('%Y-%m-%d') %>
             <input class="form-control" type="date" name="hasta" value="<%= Time.now.strftime('%Y-%m-%d') %>">
-            Comuna <%= text_field_tag :comuna,class: "form-control mr-sm center" %>
+            Comuna <%= text_field_tag :comuna, nil, class: "form-control mr-sm center" %>
         </div>
     </form>
 </section>
