@@ -16,8 +16,11 @@ class BuscadorController < ApplicationController
     if params[:rutpasivo]
       @rutpas = "'"+params[:rutpasivo]+"'"
     end
+    # Parametro comuna para audiencias, de no enviar ninguna comuna, muestra todo.
     if params[:comuna]
       @comuna = "'"+params[:comuna]+"'"
+    else 
+      @comuna = "%"
     end
     
 
