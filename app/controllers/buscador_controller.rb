@@ -18,9 +18,7 @@ class BuscadorController < ApplicationController
     end
     # Parametro comuna para audiencias, de no enviar ninguna comuna, muestra todo.
     if params[:comuna]
-      @comuna = "'"+params[:comuna]+"'"
-    else 
-      @comuna = "%"
+      @comuna = "'"+params[:comuna]+"%'"
     end
     
 
