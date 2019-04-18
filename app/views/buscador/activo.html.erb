@@ -52,7 +52,7 @@
                 <tr>
                     <th scope="col" class="text-center">Sujeto activo</th>
                     <th scope="col">Remunerado</th>
-                    <th scope="col">Cantidad de audiencias <%# @cantidad_audiencias %></th>
+                    <th scope="col">Cantidad de audiencias</th>
                     <th scope="col">Detalle</th>
                 </tr>
             </thead>
@@ -60,11 +60,14 @@
                 <% if @audiencias1  %>
                 <% @audiencias1.each do |t| %>
                             <tr>
-                                <th class="text-center"><%= t[0] %> <%= t[1] %></th>
+                                <th class="text-center">
+                                 <%=  link_to controller: 'audiencia', action: 'detalle',  id: t[4], target: '_blank' do %>
+                                        <%= t[0] %> <%= t[1] %>
+                                    <% end %></th>
                                 <th class="text-center"><%= if t[2] == 'no' then 'Gestor de interés' else 'Lobbysta ' end %></th>
                                 <th class="text-center"> <%=  t[3] %></th>
                                 <th class="text-center"> 
-                                    <%=  link_to controller: 'audiencia', action: 'detalle',  id: t[4], target: '_blank' do %>
+                                    <%=  link_to controller: 'audiencia', action: 'detalle',  nombre: t[0], apellido: t[1], representa: @busquedalobbysta.first[1], target: '_blank' do %>
                                         <i class='fas fa-search'></i> 
                                     <% end %>
                                 </th>
