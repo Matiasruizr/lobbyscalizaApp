@@ -18,7 +18,7 @@ class BuscadorController < ApplicationController
     end
     # Parametro comuna para audiencias, de no enviar ninguna comuna, muestra todo.
     if params[:comuna]
-      @comuna = "'"+params[:comuna]+"%'"
+      @comuna = params[:comuna]
     end
     
 
@@ -33,7 +33,7 @@ class BuscadorController < ApplicationController
                                                                 join sujeto_pasivo_detalle spd on audiencia_detalle.sujeto_pasivo_id = spd.id
                                                                 join institucion_detalle id on id.codigo = spd.institucion_codigo
                                                                 join audiencia_cabecera auca on auca.id = audiencia_detalle.id
-                                                                where institucion_nombre like '%#{@datos.first[1]}%' and auca.comuna like #{@comuna}
+                                                                where institucion_nombre like '%#{@datos.first[1]}%' and auca.comuna like '%#{@comuna}%'
                                                                 group by spd.id;")
 
        @licitaciones_otorgadas = ActiveRecord::Base.connection.execute("select tipo, count(codigo_externo)  
