@@ -23,7 +23,16 @@ module IndexHelper
             where  spd.institucion_nombre like '#{org}') asd;")
     end 
 
-    def contratos(rut)
-        @contrato = ActiveRecord::Base.connection.execute("SELECT contratos, monto FROM cantidad_de_contratos where rut = '#{rut}';")
+    def cantidad_de_contratos_adjuntos(rut)
+        @contratos = ActiveRecord::Base.connection.execute("select sum(cnt.cant) from (select sum(case when src.canted >= 0 THEN 1 ELSE 0 END) as cant from (select tipo, count(*) as canted
+        from licitacion_item
+        join licitacion_detalle_licitacion_item  as inter
+        on licitacion_item.id = inter.licitacion_item_id
+        join licitacion_detalle on inter.codigo_externo = licitacion_detalle.codigo_externo
+        where adjudicacion_rut_proveedor = '#{rut}'
+        group by licitacion_detalle.codigo_externo
+        )src
+        group by tipo
+        order by tipo desc) cnt;")
     end
 end

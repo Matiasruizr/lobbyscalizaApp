@@ -68,4 +68,6 @@ module BuscadorHelper
         join sujeto_pasivo_detalle spd on ad.sujeto_pasivo_id = spd.id
         where asistente.representa_rut = '#{rut}' and spd.institucion_nombre like '%#{org}%' ;")
     end
+
+    
 end
