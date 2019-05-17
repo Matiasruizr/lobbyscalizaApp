@@ -69,6 +69,6 @@ module BuscadorHelper
         join audiencia_materia as am on adm.audiencia_materia_id = am.id
         join audiencia_cabecera as auca on auca.audience_detail_id = ad.id
         join sujeto_pasivo_detalle spd on ad.sujeto_pasivo_id = spd.id
-        where asistente.representa_rut = '#{rut}' and spd.institucion_nombre like '#{org}';")
+        where asistente.representa_rut = '#{rut}' and spd.institucion_nombre like '%#{org}%';")
     end
 end
