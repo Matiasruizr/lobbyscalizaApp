@@ -2,10 +2,10 @@ class BuscadorController < ApplicationController
   def activo
     # 
     if params[:desde]
-      @desde = "'"+params[:desde][0]+"'"
+      @desde = "'"+params[:desde]+"'"
     end
     if params[:hasta]
-      @hasta = "'"+params[:hasta][0]+"'"
+      @hasta = "'"+params[:hasta]+"'"
     end
     if params[:rut]
       @rut = "'"+params[:rut]+"'"
