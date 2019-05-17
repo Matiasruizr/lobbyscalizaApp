@@ -24,8 +24,8 @@
                     <% end %>
                 </td> <!-- Rut -->
                 <td scope="col" class="text-center"><%= t[1] %></td>
-                <td scope="col" class="text-center"><%= contratos(t[0]).first[0] %></td> <!-- Cantidad de adjudicaciones -->
-                <td scope="col" class="text-center">$<%= contratos(t[0]).first[1].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td> <!-- Monto total -->
+                <td scope="col" class="text-center"><%= t[3] %></td> <!-- Cantidad de adjudicaciones -->
+                <td scope="col" class="text-center">$<%= t[2].to_s.gsub(/\d(?=(...)+$)/, '\0.') %></td> <!-- Monto total -->
                 <td scope="col" class="text-center">
                     <%= link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'activo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
                         <i class='fas fa-search'></i>
