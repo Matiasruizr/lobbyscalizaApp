@@ -22,4 +22,8 @@ module IndexHelper
             join sujeto_pasivo_detalle spd on ad.sujeto_pasivo_id = spd.id
             where  spd.institucion_nombre like '#{org}') asd;")
     end 
+
+    def contratos(rut)
+        @contrato = ActiveRecord::Base.connection.execute("SELECT contratos, monto FROM cantidad_de_contratos where rut = '#{rut}';")
+    end
 end
