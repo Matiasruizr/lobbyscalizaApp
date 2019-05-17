@@ -66,6 +66,6 @@ module BuscadorHelper
         join audiencia_detalle_asistente as jds on asistente.id = jds.asistente_id
         join audiencia_detalle as ad on jds.audiencia_detalle_id = ad.id
         join sujeto_pasivo_detalle spd on ad.sujeto_pasivo_id = spd.id
-        where asistente.representa_rut = '#{rut}' and spd.institucion_nombre like '%#{org}%';")
+        where asistente.representa_rut = '#{rut}' and spd.institucion_nombre like '#{org}' ;")
     end
 end
