@@ -36,4 +36,11 @@ module IndexHelper
         # group by tipo
         # order by tipo desc) cnt;"
     end
+
+    def contratos_pasivos(rut)
+        @contratos_pas = ActiveRecord::Base.connection.execute("select sum(cnt.contrato) from (select count(codigo_externo) as contrato
+        from licitacion_detalle where comprador_rut_unidad = '#{rut}'
+        group by tipo
+        order by count(codigo_externo))cnt;")
+    end
 end

@@ -4,7 +4,6 @@
     <table class="table" id="top_proveedores_estado">
     <thead>
         <tr>
-      <th scope="col" class="text-center">Posición</th>
         <th scope="col" class="text-center">Rut</th>
         <th scope="col" class="text-center">Nombre proveedor</th>
         <th scope="col" class="text-center">Cantidad de contratos adjudicados</th>
@@ -13,11 +12,8 @@
         </tr>
     </thead>
     <tbody>
-        <% @top10 = 0 %>
         <% @topproveedoresdelestado.each do |t| %>
-        <% @top10 += 1 %>
             <tr>
-                <td scope="col" class="text-center"> <%= @top10  %></td>
                   <td scope="col" class="text-center">
                     <%= link_to controller: 'buscador', action: 'activo', rut: t[0], tipo: 'activo', desde: '2014-01-01', hasta: '2019-02-02', target: '_blank' do %>
                         <%=  t[0] %>
