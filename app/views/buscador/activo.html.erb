@@ -13,15 +13,15 @@
         <input type="radio" name="tipo" value="pasivo"> Comprador 
 <%
 =end%>
-           Proveedor  <%= radio_button_tag  'tipo', 'activo', params[:tipo], :checked => true %>  
-           Comprador  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo], :checked => false %>
+           Activo/Proveedor  <%= radio_button_tag  'tipo', 'activo', params[:tipo], :checked => true %>  
+           Pasivo/Comprador  <%= radio_button_tag  'tipo', 'pasivo', params[:tipo], :checked => false %>
         </div>
-            <input name="text123" class="form-control mr-sm col-7 center" type="text" id="autocomplete" placeholder="Buscar sujetos activos o proveedor" aria-label="Search">
-            <input name="textpasivo"  class="form-control mr-sm col-7 center" type="text" placeholder="Buscar sujetos pasivo o comprador" aria-label="Search" id="autocompletepasivos">
+            <input name="text123" class="form-control mr-sm col-7 center" type="text" id="autocomplete" placeholder="Buscar sujetos activos o proveedor" aria-label="Search" >
+            <input name="textpasivo"  class="form-control mr-sm col-7 center" type="text" placeholder="Buscar sujetos pasivo o comprador" aria-label="Search" id="autocompletepasivos" >
             <input type="hidden" id="person_id" name="rut"/>
             <input type="hidden" id="person_id_pasivo" name="rutpasivo"/>
             <button id="test123" class="btn btn-primary my-2 my-sm" type="submit"><i class="fas fa-search"></i></button>
-        <div class="col-12">
+        <div class="col-lg-12 col-8">
             Desde   &nbsp;&nbsp; <%# date_field :desde, params[:desde], :value => '2014-01-01' %>
             <input class="form-control" type="date" name="desde" value="2014-01-01"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Hasta  &nbsp;&nbsp;  <%# date_field :hasta, params[:hasta], :value => Time.now.strftime('%Y-%m-%d') %>
