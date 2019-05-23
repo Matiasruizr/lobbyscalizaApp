@@ -33,7 +33,7 @@
                         <td scope="col" class="text-center"> <%= l[2] %></td> <!-- Región -->
                         <td scope="col" class="text-center"> <%= l[5] %></td><!-- Toma Razón -->
                         
-                        <td scope="col" class="text-center"> <%= link_to l[3], controller: 'buscador', action:'activo', tipo:'pasivo', rutpasivo: l[4] %> </td><!-- Proevedor -->
+                        <td scope="col" class="text-center"> <%= link_to l[3], controller: 'buscador', action:'activo', tipo:'pasivo', rutpasivo: l[4], desde:"2014-01-01" , hasta: Time.now.strftime('%Y-%m-%d') %> </td><!-- Proevedor -->
                         <td scope="col" class="text-center">
                             <a href="<%= l[6] %>" target="_blank"> <i class='fas fa-search'></i> </a>
                         </td>

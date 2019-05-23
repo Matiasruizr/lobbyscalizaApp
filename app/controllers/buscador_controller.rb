@@ -59,7 +59,8 @@ class BuscadorController < ApplicationController
         case
         when remunerado = 1 then 'si' 
         when remunerado =0 then 'No' end,
-        count(asistente.id), cargo_activo.id from asistente
+        count(asistente.id), cargo_activo.id 
+        from asistente
         join cargo_activo on asistente.cargo_activo_id=cargo_activo.id
         where representa_rut = #{@rut}
         group by nombres, apellidos
